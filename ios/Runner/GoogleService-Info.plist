@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>4907830779-231e2uj9ihp1h0h0j9h58t54mlg3hslo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.4907830779-231e2uj9ihp1h0h0j9h58t54mlg3hslo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBx11T6lON1c7X0WHw0DucApJIKd8umvTI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>4907830779</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.bakery</string>
+	<key>PROJECT_ID</key>
+	<string>bakery-996</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bakery-996.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:4907830779:ios:50fc6a1dfe59608a420f5e</string>
+</dict>
+</plist>

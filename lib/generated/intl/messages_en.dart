@@ -21,5 +21,44 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alreadyHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "appName": MessageLookupByLibrary.simpleMessage("Hashtag"),
+        "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to logout?"),
+        "canNotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Can\'t be empty"),
+        "checkYourEmail":
+            MessageLookupByLibrary.simpleMessage("Check your email"),
+        "darkMode": MessageLookupByLibrary.simpleMessage("Dark mode"),
+        "doNotHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "emailAddress": MessageLookupByLibrary.simpleMessage("Email address"),
+        "emailCanNotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Email can\'t be empty"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot password?"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Full name"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "invalidEmailFormat":
+            MessageLookupByLibrary.simpleMessage("Invalid email format"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "no": MessageLookupByLibrary.simpleMessage("No"),
+        "noPageFound": MessageLookupByLibrary.simpleMessage("No page found!"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordCanNotBeLessThanEightCharacters":
+            MessageLookupByLibrary.simpleMessage(
+                "Password can\'t be less than eight characters"),
+        "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "somethingWentWrong":
+            MessageLookupByLibrary.simpleMessage("Something went wrong!"),
+        "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes")
+      };
 }
