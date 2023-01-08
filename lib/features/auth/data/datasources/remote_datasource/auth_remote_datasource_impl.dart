@@ -1,8 +1,8 @@
 import 'package:bakery/core/data/exceptions/return_app_exception.dart';
 import 'package:bakery/core/data/models/user_model.dart';
 import 'package:bakery/features/auth/data/datasources/remote_datasource/auth_remote_datasource.dart';
-import 'package:bakery/features/auth/data/models/login_model/login_model.dart';
-import 'package:bakery/features/auth/data/models/register_model/register_model.dart';
+import 'package:bakery/features/auth/data/models/login_data_model/login_data_model.dart';
+import 'package:bakery/features/auth/data/models/register_data_model/register_data_model.dart';
 import 'package:bakery/features/auth/data/services/auth_firebase_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
@@ -14,7 +14,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   const AuthRemoteDataSourceImpl(this._authFirebaseService);
 
   @override
-  Future<UserModel> register(RegisterModel registerModel) async {
+  Future<UserModel> register(RegisterDataModel registerModel) async {
     try {
       return _authFirebaseService.register(registerModel);
     } catch (exception) {
@@ -23,7 +23,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<UserModel> login(LoginModel loginModel) async {
+  Future<UserModel> login(LoginDataModel loginModel) async {
     try {
       return _authFirebaseService.login(loginModel);
     } catch (exception) {

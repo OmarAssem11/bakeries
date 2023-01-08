@@ -1,6 +1,6 @@
 import 'package:bakery/core/domain/params/no_params.dart';
-import 'package:bakery/features/auth/domain/entities/login_entity.dart';
-import 'package:bakery/features/auth/domain/entities/register_entity.dart';
+import 'package:bakery/features/auth/domain/entities/login_data/login_data.dart';
+import 'package:bakery/features/auth/domain/entities/register_data/register_data.dart';
 import 'package:bakery/features/auth/domain/usecases/forgot_password_usecase.dart';
 import 'package:bakery/features/auth/domain/usecases/get_current_user_usecase.dart';
 import 'package:bakery/features/auth/domain/usecases/is_logged_in_usecase.dart';
@@ -29,10 +29,10 @@ class AuthCubit extends Cubit<AuthState> {
   final IsLoggedInUseCase _isLoggedInUseCase;
   final GetCurrentUserUseCase _getCurrentUserUseCase;
 
-  Future<void> register(RegisterEntity registerEntity) async {
+  Future<void> register(RegisterData registerData) async {
     emit(const AuthLoading());
     final result = await _registerUseCase(
-      RegisterParams(registerEntity),
+      RegisterParams(registerData),
     );
     emit(
       result.fold(
@@ -42,9 +42,9 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 
-  Future<void> login(LoginEntity loginEntity) async {
+  Future<void> login(LoginData loginData) async {
     emit(const AuthLoading());
-    final result = await _loginUseCase(LoginParams(loginEntity));
+    final result = await _loginUseCase(LoginParams(loginData));
     emit(
       result.fold(
         (failure) => const AuthError(),

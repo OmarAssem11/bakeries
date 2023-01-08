@@ -7,6 +7,5 @@ extension UserMapper on User {
         name: name,
         email: email,
         password: password,
-        imageUrl: imageUrl,
       );
 }

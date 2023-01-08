@@ -7,6 +7,5 @@ extension UserModelMapper on UserModel {
         name: name,
         email: email,
         password: password,
-        imageUrl: imageUrl,
       );
 }

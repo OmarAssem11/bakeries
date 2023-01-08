@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد انك تريد تسجيل خروج؟"),
+        "bakeries": MessageLookupByLibrary.simpleMessage("مخابز"),
         "canNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("لا يمكن ان يكون فارغ"),
         "checkYourEmail":
@@ -35,11 +36,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
         "doNotHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "egp": MessageLookupByLibrary.simpleMessage("جم"),
         "emailAddress":
             MessageLookupByLibrary.simpleMessage("البريد الإكتروني"),
         "emailCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "البريد الإكتروني لا يمكن ان يكون فارغ"),
-        "english": MessageLookupByLibrary.simpleMessage("English"),
+        "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الأسم بالكامل"),

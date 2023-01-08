@@ -1,7 +1,7 @@
 import 'package:bakery/core/domain/failure/failure.dart';
 import 'package:bakery/core/domain/params/app_params.dart';
 import 'package:bakery/core/domain/usecases/usecase.dart';
-import 'package:bakery/features/auth/domain/entities/register_entity.dart';
+import 'package:bakery/features/auth/domain/entities/register_data/register_data.dart';
 import 'package:bakery/features/auth/domain/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -14,14 +14,14 @@ class RegisterUseCase implements UseCase<Unit, RegisterParams> {
 
   @override
   Future<Either<Failure, Unit>> call(RegisterParams registerParams) =>
-      _authRepository.register(registerParams.registerEntity);
+      _authRepository.register(registerParams.registerData);
 }
 
 class RegisterParams extends AppParams {
-  final RegisterEntity registerEntity;
+  final RegisterData registerData;
 
-  RegisterParams(this.registerEntity);
+  RegisterParams(this.registerData);
 
   @override
-  List<Object?> get props => [registerEntity];
+  List<Object?> get props => [registerData];
 }

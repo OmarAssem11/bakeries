@@ -9,6 +9,5 @@ class User with _$User {
     required String name,
     required String email,
     required String password,
-    @Default('') String imageUrl,
   }) = _User;
 }

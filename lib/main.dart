@@ -26,30 +26,33 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<SettingsCubit>()
-        ..getCurrentTheme()
-        ..getCurrentLocale(),
-      child: BlocBuilder<SettingsCubit, SettingsState>(
-        builder: (ctx, state) {
-          final cubit = BlocProvider.of<SettingsCubit>(ctx);
-          return MaterialApp(
-            title: 'Hashtag',
-            debugShowCheckedModeBanner: false,
-            onGenerateRoute: onGenerateRoute,
-            theme: getLightTheme(),
-            darkTheme: getDarkTheme(),
-            themeMode: cubit.currentTheme(),
-            locale: cubit.locale,
-            supportedLocales: S.delegate.supportedLocales,
-            localizationsDelegates: const [
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-            ],
-          );
-        },
+    return GestureDetector(
+      onTap: () => WidgetsBinding.instance.focusManager.primaryFocus?.unfocus(),
+      child: BlocProvider(
+        create: (_) => getIt<SettingsCubit>()
+          ..getCurrentTheme()
+          ..getCurrentLocale(),
+        child: BlocBuilder<SettingsCubit, SettingsState>(
+          builder: (ctx, state) {
+            final cubit = BlocProvider.of<SettingsCubit>(ctx);
+            return MaterialApp(
+              title: 'Hashtag',
+              debugShowCheckedModeBanner: false,
+              onGenerateRoute: onGenerateRoute,
+              theme: getLightTheme(),
+              darkTheme: getDarkTheme(),
+              themeMode: cubit.currentTheme(),
+              locale: cubit.locale,
+              supportedLocales: S.delegate.supportedLocales,
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+              ],
+            );
+          },
+        ),
       ),
     );
   }

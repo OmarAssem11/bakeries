@@ -23,7 +23,9 @@
     "areYouSureYouWantToLogout": "Are you sure you want to logout?",
     "yes": "Yes",
     "no": "No",
+    "egp": "EGP",
     "darkMode": "Dark mode",
+    "bakeries": "Bakeries",
     "english": "English",
-    "arabic": "العربية"
+    "arabic": "Arabic"
 }

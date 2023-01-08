@@ -8,10 +8,10 @@ import 'package:bakery/core/domain/failure/failure.dart';
 import 'package:bakery/core/domain/failure/return_failure.dart';
 import 'package:bakery/features/auth/data/datasources/local_datasource/auth_local_datasource.dart';
 import 'package:bakery/features/auth/data/datasources/remote_datasource/auth_remote_datasource.dart';
-import 'package:bakery/features/auth/data/mappers/login_mappers/login_entity_mapper.dart';
-import 'package:bakery/features/auth/data/mappers/register_mappers/register_entity_mapper.dart';
-import 'package:bakery/features/auth/domain/entities/login_entity.dart';
-import 'package:bakery/features/auth/domain/entities/register_entity.dart';
+import 'package:bakery/features/auth/data/mappers/login_data_mappers/login_data_mapper.dart';
+import 'package:bakery/features/auth/data/mappers/register_data_mappers/register_data_mapper.dart';
+import 'package:bakery/features/auth/domain/entities/login_data/login_data.dart';
+import 'package:bakery/features/auth/domain/entities/register_data/register_data.dart';
 import 'package:bakery/features/auth/domain/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -27,10 +27,10 @@ class AuthRepositoryImpl implements AuthRepository {
   );
 
   @override
-  Future<Either<Failure, Unit>> register(RegisterEntity registerEntity) async {
+  Future<Either<Failure, Unit>> register(RegisterData registerData) async {
     try {
       final userModel =
-          await _authRemoteDataSource.register(registerEntity.toModel);
+          await _authRemoteDataSource.register(registerData.toModel);
       await _authLocalDataSource.saveUser(userModel);
       return right(unit);
     } on AppException catch (appException) {
@@ -39,9 +39,9 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> login(LoginEntity loginEntity) async {
+  Future<Either<Failure, Unit>> login(LoginData loginData) async {
     try {
-      final userModel = await _authRemoteDataSource.login(loginEntity.toModel);
+      final userModel = await _authRemoteDataSource.login(loginData.toModel);
       await _authLocalDataSource.saveUser(userModel);
       return right(unit);
     } on AppException catch (appException) {

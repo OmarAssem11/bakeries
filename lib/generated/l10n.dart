@@ -290,11 +290,31 @@ class S {
     );
   }
 
+  /// `EGP`
+  String get egp {
+    return Intl.message(
+      'EGP',
+      name: 'egp',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Dark mode`
   String get darkMode {
     return Intl.message(
       'Dark mode',
       name: 'darkMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bakeries`
+  String get bakeries {
+    return Intl.message(
+      'Bakeries',
+      name: 'bakeries',
       desc: '',
       args: [],
     );
@@ -310,10 +330,10 @@ class S {
     );
   }
 
-  /// `العربية`
+  /// `Arabic`
   String get arabic {
     return Intl.message(
-      'العربية',
+      'Arabic',
       name: 'arabic',
       desc: '',
       args: [],

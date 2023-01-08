@@ -4,6 +4,9 @@ import 'package:bakery/features/auth/presentation/screens/forgot_password_screen
 import 'package:bakery/features/auth/presentation/screens/login_screen.dart';
 import 'package:bakery/features/auth/presentation/screens/register_screen.dart';
 import 'package:bakery/features/auth/presentation/screens/starter_screen.dart';
+import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart';
+import 'package:bakery/features/bakeries/presentation/screens/bakeries_list_screen.dart';
+import 'package:bakery/features/bakeries/presentation/screens/bakery_details_screen.dart';
 import 'package:bakery/features/settings/presentation/screens/settings_screen.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +16,9 @@ class AppRoutes {
   static const String starter = '/';
   static const String login = '/login';
   static const String register = '/register';
-  static const String forgotPassword = '/forgot_password';
-  static const String home = '/home';
-  static const String addPost = '/add_post';
+  static const String forgotPassword = '/forgot-password';
+  static const String bakeriesList = '/bakeries-list';
+  static const String bakeryDetails = '/bakery-details';
   static const String settings = '/settings';
 }
 
@@ -48,6 +51,21 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
           create: (_) => getIt<AuthCubit>(),
           child: const ForgotPasswordScreen(),
         ),
+      );
+    case AppRoutes.bakeriesList:
+      return MaterialPageRoute(
+        builder: (_) => BlocProvider(
+          create: (_) => getIt<BakeriesCubit>(),
+          child: const BakeriesListScreen(),
+        ),
+      );
+    case AppRoutes.bakeryDetails:
+      return MaterialPageRoute(
+        builder: (_) => BlocProvider(
+          create: (_) => getIt<BakeriesCubit>(),
+          child: const BakeryDetailsScreen(),
+        ),
+        settings: routeSettings,
       );
     case AppRoutes.settings:
       return MaterialPageRoute(

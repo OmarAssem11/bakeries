@@ -1,6 +1,6 @@
 import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/font_manager.dart';
-import 'package:bakery/core/presentation/resources/styles_manager.dart';
+import 'package:bakery/core/presentation/resources/text_styles_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -17,8 +17,8 @@ ThemeData getLightTheme() => ThemeData(
       appBarTheme: AppBarTheme(
         color: ColorManager.primary,
         elevation: Sizes.s4,
-        titleTextStyle: getRegularTextStyle(
-          fontSize: FontSizeManager.s16,
+        titleTextStyle: getMediumTextStyle(
+          fontSize: FontSizeManager.s20,
           color: ColorManager.white,
         ),
       ),
@@ -28,10 +28,19 @@ ThemeData getLightTheme() => ThemeData(
         disabledColor: ColorManager.grey,
         buttonColor: ColorManager.primary,
       ),
+      //TextButton
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          textStyle: getMediumTextStyle(
+            color: ColorManager.primary,
+            fontSize: 18,
+          ),
+        ),
+      ),
       //ElevatedButton
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          textStyle: getRegularTextStyle(
+          textStyle: getSemiBoldTextStyle(
             color: ColorManager.white,
             fontSize: FontSizeManager.s18,
           ),
@@ -43,17 +52,17 @@ ThemeData getLightTheme() => ThemeData(
       ),
       //Text
       textTheme: TextTheme(
-        titleLarge: getLightTextStyle(
-          color: ColorManager.white,
+        titleLarge: getMediumTextStyle(
+          color: ColorManager.black,
           fontSize: FontSizeManager.s22,
         ),
-        bodyLarge: getSemiBoldTextStyle(
-          color: ColorManager.black,
+        bodyLarge: getRegularTextStyle(
+          color: ColorManager.darkGrey,
           fontSize: FontSizeManager.s16,
         ),
         bodyMedium: getMediumTextStyle(
           color: ColorManager.black,
-          fontSize: FontSizeManager.s14,
+          fontSize: FontSizeManager.s16,
         ),
         bodySmall: getRegularTextStyle(
           color: ColorManager.grey,
@@ -76,7 +85,7 @@ ThemeData getLightTheme() => ThemeData(
         ),
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: ColorManager.primary,
+            color: ColorManager.grey,
             width: Sizes.s1_5,
           ),
           borderRadius: BorderRadius.all(
@@ -85,7 +94,7 @@ ThemeData getLightTheme() => ThemeData(
         ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: ColorManager.grey,
+            color: ColorManager.primary,
             width: Sizes.s1_5,
           ),
           borderRadius: BorderRadius.all(
@@ -126,8 +135,8 @@ ThemeData getDarkTheme() => ThemeData(
       appBarTheme: AppBarTheme(
         color: ColorManager.primary,
         elevation: Sizes.s4,
-        titleTextStyle: getRegularTextStyle(
-          fontSize: FontSizeManager.s16,
+        titleTextStyle: getMediumTextStyle(
+          fontSize: FontSizeManager.s20,
           color: ColorManager.white,
         ),
       ),
@@ -136,6 +145,15 @@ ThemeData getDarkTheme() => ThemeData(
         shape: StadiumBorder(),
         disabledColor: ColorManager.grey,
         buttonColor: ColorManager.primary,
+      ),
+      //TextButton
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          textStyle: getMediumTextStyle(
+            color: ColorManager.primary,
+            fontSize: 18,
+          ),
+        ),
       ),
       //ElevatedButton
       elevatedButtonTheme: ElevatedButtonThemeData(

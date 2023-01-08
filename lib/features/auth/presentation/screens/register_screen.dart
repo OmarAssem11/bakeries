@@ -5,7 +5,7 @@ import 'package:bakery/core/presentation/validation/validators.dart';
 import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
 import 'package:bakery/core/presentation/widgets/password_text_form_field.dart';
-import 'package:bakery/features/auth/domain/entities/register_entity.dart';
+import 'package:bakery/features/auth/domain/entities/register_data/register_data.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_state.dart';
 import 'package:bakery/generated/l10n.dart';
@@ -46,7 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             children: [
               Text(
                 S.current.register,
-                style: _textTheme.headline4,
+                style: _textTheme.titleLarge?.copyWith(fontSize: 32),
               ),
               const SizedBox(height: Sizes.s8),
               CustomTextFormField(
@@ -77,7 +77,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     success: (_) =>
                         WidgetsBinding.instance.addPostFrameCallback(
                       (_) => Navigator.of(context).pushReplacementNamed(
-                        AppRoutes.home,
+                        AppRoutes.bakeriesList,
                       ),
                     ),
                   );
@@ -86,7 +86,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         BlocProvider.of<AuthCubit>(context).register(
-                          RegisterEntity(
+                          RegisterData(
                             name: _nameController.text,
                             email: _emailController.text,
                             password: _passwordController.text,
@@ -104,7 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   Text(
                     S.current.alreadyHaveAnAccount,
-                    style: _textTheme.subtitle1,
+                    style: _textTheme.bodyMedium,
                   ),
                   TextButton(
                     onPressed: () => Navigator.of(context)

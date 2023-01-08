@@ -5,7 +5,7 @@ import 'package:bakery/core/presentation/validation/validators.dart';
 import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
 import 'package:bakery/core/presentation/widgets/password_text_form_field.dart';
-import 'package:bakery/features/auth/domain/entities/login_entity.dart';
+import 'package:bakery/features/auth/domain/entities/login_data/login_data.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_state.dart';
 import 'package:bakery/generated/l10n.dart';
@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: Sizes.s20),
               Text(
                 S.current.login,
-                style: _textTheme.headline4,
+                style: _textTheme.titleLarge?.copyWith(fontSize: 32),
               ),
               const SizedBox(height: Sizes.s8),
               CustomTextFormField(
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     success: (_) =>
                         WidgetsBinding.instance.addPostFrameCallback(
                       (_) => Navigator.of(context).pushReplacementNamed(
-                        AppRoutes.home,
+                        AppRoutes.bakeriesList,
                       ),
                     ),
                   );
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         BlocProvider.of<AuthCubit>(context).login(
-                          LoginEntity(
+                          LoginData(
                             email: _emailController.text,
                             password: _passwordController.text,
                           ),
@@ -102,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Text(
                     S.current.doNotHaveAnAccount,
-                    style: _textTheme.subtitle1,
+                    style: _textTheme.bodyMedium,
                   ),
                   TextButton(
                     onPressed: () => Navigator.of(context)
