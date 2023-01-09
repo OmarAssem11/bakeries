@@ -1,3 +1,4 @@
+import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
@@ -52,10 +53,10 @@ class _BakeryDetailsScreenState extends State<BakeryDetailsScreen> {
                         onTap: Navigator.of(context).pop,
                         child: const CircleAvatar(
                           radius: Sizes.s20,
-                          backgroundColor: Colors.white,
+                          backgroundColor: ColorManager.white,
                           child: Icon(
                             Icons.arrow_back,
-                            color: Colors.black87,
+                            color: ColorManager.black,
                             size: Sizes.s28,
                           ),
                         ),
@@ -87,7 +88,7 @@ class _BakeryDetailsScreenState extends State<BakeryDetailsScreen> {
                             itemCount: bakery.products!.length,
                             physics: const BouncingScrollPhysics(),
                             separatorBuilder: (_, __) => const Divider(
-                              color: Colors.grey,
+                              color: ColorManager.lightGrey,
                               height: Sizes.s32,
                             ),
                           ),

@@ -1,10 +1,17 @@
 import 'package:bakery/core/presentation/resources/color_manager.dart';
+import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
+import 'package:bakery/core/presentation/util/toast.dart';
+import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
+import 'package:bakery/features/cart/domain/entities/cart_order/cart_order.dart';
+import 'package:bakery/features/cart/presentation/cubit/cart_cubit.dart';
+import 'package:bakery/features/cart/presentation/cubit/cart_state.dart';
 import 'package:bakery/features/products/presentation/cubit/products_cubit.dart';
 import 'package:bakery/features/products/presentation/cubit/products_state.dart';
 import 'package:bakery/features/products/presentation/widgets/quantity_price_counter.dart';
+import 'package:bakery/generated/l10n.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +26,7 @@ class ProductDetailsBottomSheet extends StatefulWidget {
 
 class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
   int quantity = 1;
+  bool isLoading = false;
   late TextTheme _textTheme;
   late Size _screenSize;
 
@@ -59,7 +67,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                       width: Sizes.s32,
                       height: Sizes.s32,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: ColorManager.white,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: IconButton(
@@ -98,6 +106,41 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                             setState(() => quantity = value),
                       ),
                     ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: BlocConsumer<CartCubit, CartState>(
+                    listener: (context, state) {
+                      state.mapOrNull(
+                        addToCartLoading: (_) => isLoading = true,
+                        addToCartError: (_) => showToast(),
+                      );
+                    },
+                    builder: (context, state) {
+                      return state.maybeWhen(
+                        addToCartSuccess: () {
+                          isLoading = false;
+                          return CustomElevatedButton(
+                            label: S.current.viewBasket,
+                            onPressed: () =>
+                                Navigator.of(context).pushNamed(AppRoutes.cart),
+                            isLoading: isLoading,
+                          );
+                        },
+                        orElse: () => CustomElevatedButton(
+                          label: S.current.addToBasket,
+                          onPressed: () =>
+                              BlocProvider.of<CartCubit>(context).addToCart(
+                            CartOrder(
+                              productId: product.id,
+                              quantity: quantity,
+                            ),
+                          ),
+                          isLoading: isLoading,
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],

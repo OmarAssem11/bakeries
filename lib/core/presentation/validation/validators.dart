@@ -18,6 +18,15 @@ String? passwordValidator(String? password) {
   return null;
 }
 
+String? phoneValidator(String? phone) {
+  if (phone == null || phone.isEmpty) {
+    return S.current.phoneCanNotBeEmpty;
+  } else if (phone.substring(0, 2) != '01' || phone.length != 11) {
+    return S.current.invalidPhoneNumber;
+  }
+  return null;
+}
+
 String? generalValidator({
   required String fieldName,
   required String? value,

@@ -21,7 +21,7 @@ class ThemeSwitch extends StatelessWidget {
             child: Icon(
               Icons.dark_mode,
               size: Sizes.s28,
-              color: Colors.white,
+              color: ColorManager.white,
             ),
           ),
           const SizedBox(width: Sizes.s16),

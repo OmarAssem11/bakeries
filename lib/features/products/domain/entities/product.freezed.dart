@@ -21,10 +21,11 @@ mixin _$Product {
   double get price => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  int? get quantity => throw _privateConstructorUsedError;
   String? get category => throw _privateConstructorUsedError;
-  int? get bakeryId => throw _privateConstructorUsedError;
+  int? get quantity => throw _privateConstructorUsedError;
   String? get bakeryName => throw _privateConstructorUsedError;
+  String? get bakeryImageUrl => throw _privateConstructorUsedError;
+  String? get bakeryAddress => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
@@ -41,10 +42,11 @@ abstract class $ProductCopyWith<$Res> {
       double price,
       String imageUrl,
       String? description,
-      int? quantity,
       String? category,
-      int? bakeryId,
-      String? bakeryName});
+      int? quantity,
+      String? bakeryName,
+      String? bakeryImageUrl,
+      String? bakeryAddress});
 }
 
 /// @nodoc
@@ -65,10 +67,11 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     Object? price = null,
     Object? imageUrl = null,
     Object? description = freezed,
-    Object? quantity = freezed,
     Object? category = freezed,
-    Object? bakeryId = freezed,
+    Object? quantity = freezed,
     Object? bakeryName = freezed,
+    Object? bakeryImageUrl = freezed,
+    Object? bakeryAddress = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -91,21 +94,25 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as String?,
-      bakeryId: freezed == bakeryId
-          ? _value.bakeryId
-          : bakeryId // ignore: cast_nullable_to_non_nullable
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
               as int?,
       bakeryName: freezed == bakeryName
           ? _value.bakeryName
           : bakeryName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      bakeryImageUrl: freezed == bakeryImageUrl
+          ? _value.bakeryImageUrl
+          : bakeryImageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      bakeryAddress: freezed == bakeryAddress
+          ? _value.bakeryAddress
+          : bakeryAddress // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -124,10 +131,11 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       double price,
       String imageUrl,
       String? description,
-      int? quantity,
       String? category,
-      int? bakeryId,
-      String? bakeryName});
+      int? quantity,
+      String? bakeryName,
+      String? bakeryImageUrl,
+      String? bakeryAddress});
 }
 
 /// @nodoc
@@ -145,10 +153,11 @@ class __$$_ProductCopyWithImpl<$Res>
     Object? price = null,
     Object? imageUrl = null,
     Object? description = freezed,
-    Object? quantity = freezed,
     Object? category = freezed,
-    Object? bakeryId = freezed,
+    Object? quantity = freezed,
     Object? bakeryName = freezed,
+    Object? bakeryImageUrl = freezed,
+    Object? bakeryAddress = freezed,
   }) {
     return _then(_$_Product(
       id: null == id
@@ -171,21 +180,25 @@ class __$$_ProductCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as String?,
-      bakeryId: freezed == bakeryId
-          ? _value.bakeryId
-          : bakeryId // ignore: cast_nullable_to_non_nullable
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
               as int?,
       bakeryName: freezed == bakeryName
           ? _value.bakeryName
           : bakeryName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      bakeryImageUrl: freezed == bakeryImageUrl
+          ? _value.bakeryImageUrl
+          : bakeryImageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      bakeryAddress: freezed == bakeryAddress
+          ? _value.bakeryAddress
+          : bakeryAddress // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -200,10 +213,11 @@ class _$_Product implements _Product {
       required this.price,
       required this.imageUrl,
       this.description,
-      this.quantity,
       this.category,
-      this.bakeryId,
-      this.bakeryName});
+      this.quantity,
+      this.bakeryName,
+      this.bakeryImageUrl,
+      this.bakeryAddress});
 
   @override
   final String id;
@@ -216,17 +230,19 @@ class _$_Product implements _Product {
   @override
   final String? description;
   @override
-  final int? quantity;
-  @override
   final String? category;
   @override
-  final int? bakeryId;
+  final int? quantity;
   @override
   final String? bakeryName;
+  @override
+  final String? bakeryImageUrl;
+  @override
+  final String? bakeryAddress;
 
   @override
   String toString() {
-    return 'Product(id: $id, name: $name, price: $price, imageUrl: $imageUrl, description: $description, quantity: $quantity, category: $category, bakeryId: $bakeryId, bakeryName: $bakeryName)';
+    return 'Product(id: $id, name: $name, price: $price, imageUrl: $imageUrl, description: $description, category: $category, quantity: $quantity, bakeryName: $bakeryName, bakeryImageUrl: $bakeryImageUrl, bakeryAddress: $bakeryAddress)';
   }
 
   @override
@@ -241,19 +257,31 @@ class _$_Product implements _Product {
                 other.imageUrl == imageUrl) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.quantity, quantity) ||
-                other.quantity == quantity) &&
             (identical(other.category, category) ||
                 other.category == category) &&
-            (identical(other.bakeryId, bakeryId) ||
-                other.bakeryId == bakeryId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
             (identical(other.bakeryName, bakeryName) ||
-                other.bakeryName == bakeryName));
+                other.bakeryName == bakeryName) &&
+            (identical(other.bakeryImageUrl, bakeryImageUrl) ||
+                other.bakeryImageUrl == bakeryImageUrl) &&
+            (identical(other.bakeryAddress, bakeryAddress) ||
+                other.bakeryAddress == bakeryAddress));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, price, imageUrl,
-      description, quantity, category, bakeryId, bakeryName);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      price,
+      imageUrl,
+      description,
+      category,
+      quantity,
+      bakeryName,
+      bakeryImageUrl,
+      bakeryAddress);
 
   @JsonKey(ignore: true)
   @override
@@ -269,10 +297,11 @@ abstract class _Product implements Product {
       required final double price,
       required final String imageUrl,
       final String? description,
-      final int? quantity,
       final String? category,
-      final int? bakeryId,
-      final String? bakeryName}) = _$_Product;
+      final int? quantity,
+      final String? bakeryName,
+      final String? bakeryImageUrl,
+      final String? bakeryAddress}) = _$_Product;
 
   @override
   String get id;
@@ -285,13 +314,15 @@ abstract class _Product implements Product {
   @override
   String? get description;
   @override
-  int? get quantity;
-  @override
   String? get category;
   @override
-  int? get bakeryId;
+  int? get quantity;
   @override
   String? get bakeryName;
+  @override
+  String? get bakeryImageUrl;
+  @override
+  String? get bakeryAddress;
   @override
   @JsonKey(ignore: true)
   _$$_ProductCopyWith<_$_Product> get copyWith =>

@@ -21,7 +21,7 @@ class QuantityPriceCounter extends StatefulWidget {
 
 class _QuantityPriceCounterState extends State<QuantityPriceCounter> {
   late int _quantity;
-  late TextStyle? _bodyMedium;
+  late TextStyle? _bodyLarge;
   late Color _primaryColor;
 
   @override
@@ -33,7 +33,7 @@ class _QuantityPriceCounterState extends State<QuantityPriceCounter> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _bodyMedium = Theme.of(context).textTheme.bodyMedium;
+    _bodyLarge = Theme.of(context).textTheme.bodyLarge;
     _primaryColor = Theme.of(context).primaryColor;
   }
 
@@ -45,7 +45,7 @@ class _QuantityPriceCounterState extends State<QuantityPriceCounter> {
         children: [
           Text(
             '${S.current.egp} ${widget.price * _quantity}',
-            style: _bodyMedium,
+            style: _bodyLarge,
           ),
           const Spacer(),
           IconButton(
@@ -68,7 +68,7 @@ class _QuantityPriceCounterState extends State<QuantityPriceCounter> {
             padding: const EdgeInsets.only(top: Insets.s),
             child: Text(
               '$_quantity',
-              style: _bodyMedium,
+              style: _bodyLarge,
             ),
           ),
           IconButton(

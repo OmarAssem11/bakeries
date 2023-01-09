@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     success: (_) =>
                         WidgetsBinding.instance.addPostFrameCallback(
                       (_) => Navigator.of(context).pushReplacementNamed(
-                        AppRoutes.bakeriesList,
+                        AppRoutes.bakeries,
                       ),
                     ),
                   );

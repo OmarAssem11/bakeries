@@ -10,6 +10,9 @@ class ProductModel {
   final String imageUrl;
   final double price;
   final String category;
+  final String? bakeryName;
+  final String? bakeryImageUrl;
+  final String? bakeryAddress;
 
   const ProductModel({
     required this.id,
@@ -18,7 +21,12 @@ class ProductModel {
     required this.imageUrl,
     required this.price,
     required this.category,
+    this.bakeryName,
+    this.bakeryImageUrl,
+    this.bakeryAddress,
   });
+
+  Map<String, dynamic> toJson() => _$ProductModelToJson(this);
 
   factory ProductModel.fromJson(Map<String, dynamic> json) =>
       _$ProductModelFromJson(json);

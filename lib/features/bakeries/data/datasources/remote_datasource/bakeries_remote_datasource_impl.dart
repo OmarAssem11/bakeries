@@ -14,7 +14,7 @@ class BakeriesRemoteDataSourceImpl implements BakeriesRemoteDataSource {
   @override
   Future<List<BakeryModel>> getAllBakeries() async {
     try {
-      return _bakeriesFirebaseService.getAllBakeries();
+      return await _bakeriesFirebaseService.getAllBakeries();
     } catch (exception) {
       throw returnRemoteAppException(exception);
     }
@@ -23,7 +23,7 @@ class BakeriesRemoteDataSourceImpl implements BakeriesRemoteDataSource {
   @override
   Future<BakeryDetailsModel> getBakeryDetails(String bakeryId) async {
     try {
-      return _bakeriesFirebaseService.getBakeryDetails(bakeryId);
+      return await _bakeriesFirebaseService.getBakeryDetails(bakeryId);
     } catch (exception) {
       throw returnRemoteAppException(exception);
     }

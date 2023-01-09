@@ -10,9 +10,10 @@ class Product with _$Product {
     required double price,
     required String imageUrl,
     String? description,
-    int? quantity,
     String? category,
-    int? bakeryId,
+    int? quantity,
     String? bakeryName,
+    String? bakeryImageUrl,
+    String? bakeryAddress,
   }) = _Product;
 }

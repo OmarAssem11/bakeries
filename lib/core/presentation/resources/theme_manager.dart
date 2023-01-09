@@ -21,6 +21,10 @@ ThemeData getLightTheme() => ThemeData(
           fontSize: FontSizeManager.s20,
           color: ColorManager.white,
         ),
+        actionsIconTheme: const IconThemeData(
+          color: ColorManager.white,
+          size: Sizes.s28,
+        ),
       ),
       //Button
       buttonTheme: const ButtonThemeData(
@@ -138,6 +142,10 @@ ThemeData getDarkTheme() => ThemeData(
         titleTextStyle: getMediumTextStyle(
           fontSize: FontSizeManager.s20,
           color: ColorManager.white,
+        ),
+        actionsIconTheme: const IconThemeData(
+          color: ColorManager.white,
+          size: Sizes.s28,
         ),
       ),
       //Button

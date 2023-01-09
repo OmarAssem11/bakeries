@@ -1,3 +1,5 @@
+import 'package:bakery/core/presentation/resources/color_manager.dart';
+import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
@@ -8,14 +10,14 @@ import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart ';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BakeriesListScreen extends StatefulWidget {
-  const BakeriesListScreen();
+class BakeriesScreen extends StatefulWidget {
+  const BakeriesScreen();
 
   @override
-  State<BakeriesListScreen> createState() => _BakeriesListScreenState();
+  State<BakeriesScreen> createState() => _BakeriesScreenState();
 }
 
-class _BakeriesListScreenState extends State<BakeriesListScreen> {
+class _BakeriesScreenState extends State<BakeriesScreen> {
   @override
   void initState() {
     super.initState();
@@ -26,7 +28,17 @@ class _BakeriesListScreenState extends State<BakeriesListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.of(context).pushNamed(AppRoutes.orders),
+          icon: const Icon(Icons.menu),
+        ),
         title: Text(S.current.bakeries),
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.of(context).pushNamed(AppRoutes.cart),
+            icon: const Icon(Icons.shopping_basket_rounded),
+          ),
+        ],
       ),
       body: BlocBuilder<BakeriesCubit, BakeriesState>(
         builder: (context, state) {
@@ -40,7 +52,7 @@ class _BakeriesListScreenState extends State<BakeriesListScreen> {
               itemCount: bakeries.length,
               separatorBuilder: (_, __) => const Divider(
                 thickness: 1,
-                color: Colors.grey,
+                color: ColorManager.lightGrey,
                 indent: Sizes.s20,
                 endIndent: Sizes.s20,
               ),

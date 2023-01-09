@@ -13,7 +13,7 @@ class ProductsRemoteDataSourceImpl implements ProductsRemoteDataSource {
   @override
   Future<ProductModel> getProductDetails(String productId) async {
     try {
-      return _productsFirebaseService.getProductDetails(productId);
+      return await _productsFirebaseService.getProductDetails(productId);
     } catch (exception) {
       throw returnRemoteAppException(exception);
     }

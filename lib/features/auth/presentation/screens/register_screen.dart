@@ -77,7 +77,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     success: (_) =>
                         WidgetsBinding.instance.addPostFrameCallback(
                       (_) => Navigator.of(context).pushReplacementNamed(
-                        AppRoutes.bakeriesList,
+                        AppRoutes.bakeries,
                       ),
                     ),
                   );

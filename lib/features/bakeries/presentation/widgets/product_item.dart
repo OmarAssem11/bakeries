@@ -1,5 +1,6 @@
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/di/injector.dart';
+import 'package:bakery/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:bakery/features/products/domain/entities/product.dart';
 import 'package:bakery/features/products/presentation/cubit/products_cubit.dart';
 import 'package:bakery/features/products/presentation/widgets/product_details_bottom_sheet.dart';
@@ -68,9 +69,16 @@ class ProductItem extends StatelessWidget {
             topRight: Radius.circular(Sizes.s20),
           ),
         ),
-        builder: (context) => BlocProvider(
-          create: (context) =>
-              getIt<ProductsCubit>()..getProductDetails(product.id),
+        builder: (_) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (_) =>
+                  getIt<ProductsCubit>()..getProductDetails(product.id),
+            ),
+            BlocProvider(
+              create: (_) => getIt<CartCubit>(),
+            ),
+          ],
           child: const FractionallySizedBox(
             heightFactor: 0.65,
             child: ProductDetailsBottomSheet(),

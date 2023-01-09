@@ -50,11 +50,11 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Hashtag`
-  String get appName {
+  /// `en`
+  String get localeName {
     return Intl.message(
-      'Hashtag',
-      name: 'appName',
+      'en',
+      name: 'localeName',
       desc: '',
       args: [],
     );
@@ -335,6 +335,356 @@ class S {
     return Intl.message(
       'Arabic',
       name: 'arabic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone can't be empty`
+  String get phoneCanNotBeEmpty {
+    return Intl.message(
+      'Phone can\'t be empty',
+      name: 'phoneCanNotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid phone number`
+  String get invalidPhoneNumber {
+    return Intl.message(
+      'Invalid phone number',
+      name: 'invalidPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My orders`
+  String get myOrders {
+    return Intl.message(
+      'My orders',
+      name: 'myOrders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Basket`
+  String get basket {
+    return Intl.message(
+      'Basket',
+      name: 'basket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Special request`
+  String get specialRequest {
+    return Intl.message(
+      'Special request',
+      name: 'specialRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a note`
+  String get addANote {
+    return Intl.message(
+      'Add a note',
+      name: 'addANote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Anything else we need to know?`
+  String get anythingElseWeNeedToKnow {
+    return Intl.message(
+      'Anything else we need to know?',
+      name: 'anythingElseWeNeedToKnow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment summery`
+  String get paymentSummery {
+    return Intl.message(
+      'Payment summery',
+      name: 'paymentSummery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subtotal`
+  String get subtotal {
+    return Intl.message(
+      'Subtotal',
+      name: 'subtotal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery fee`
+  String get deliveryFee {
+    return Intl.message(
+      'Delivery fee',
+      name: 'deliveryFee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total amount`
+  String get totalAmount {
+    return Intl.message(
+      'Total amount',
+      name: 'totalAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checkout`
+  String get checkout {
+    return Intl.message(
+      'Checkout',
+      name: 'checkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to basket`
+  String get addToBasket {
+    return Intl.message(
+      'Add to basket',
+      name: 'addToBasket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item added to your basket`
+  String get itemAddedToYourBasket {
+    return Intl.message(
+      'Item added to your basket',
+      name: 'itemAddedToYourBasket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View basket`
+  String get viewBasket {
+    return Intl.message(
+      'View basket',
+      name: 'viewBasket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your basket is empty!`
+  String get yourBasketIsEmpty {
+    return Intl.message(
+      'Your basket is empty!',
+      name: 'yourBasketIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message(
+      'Address',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get phone {
+    return Intl.message(
+      'Phone',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay with`
+  String get payWith {
+    return Intl.message(
+      'Pay with',
+      name: 'payWith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash on delivery`
+  String get cashOnDelivery {
+    return Intl.message(
+      'Cash on delivery',
+      name: 'cashOnDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `place order`
+  String get placeOrder {
+    return Intl.message(
+      'place order',
+      name: 'placeOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order details`
+  String get orderDetails {
+    return Intl.message(
+      'Order details',
+      name: 'orderDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit profile`
+  String get editProfile {
+    return Intl.message(
+      'Edit profile',
+      name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change`
+  String get change {
+    return Intl.message(
+      'Change',
+      name: 'change',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm address`
+  String get confirmAddress {
+    return Intl.message(
+      'Confirm address',
+      name: 'confirmAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order ID`
+  String get orderId {
+    return Intl.message(
+      'Order ID',
+      name: 'orderId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't worry it happens. Please enter the address \n associated with your account`
+  String get forgotPasswordCaption {
+    return Intl.message(
+      'Don\'t worry it happens. Please enter the address \n associated with your account',
+      name: 'forgotPasswordCaption',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enable Your Location Service`
+  String get pleaseEnableYourLocation {
+    return Intl.message(
+      'Please enable Your Location Service',
+      name: 'pleaseEnableYourLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permissions are denied`
+  String get locationPermissionsDenied {
+    return Intl.message(
+      'Location permissions are denied',
+      name: 'locationPermissionsDenied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permissions are permanently denied, we cannot request permissions`
+  String get locationPermissionsPermanentlyDenied {
+    return Intl.message(
+      'Location permissions are permanently denied, we cannot request permissions',
+      name: 'locationPermissionsPermanentlyDenied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no orders yet!`
+  String get youHaveNoOrdersYet {
+    return Intl.message(
+      'You have no orders yet!',
+      name: 'youHaveNoOrdersYet',
       desc: '',
       args: [],
     );
