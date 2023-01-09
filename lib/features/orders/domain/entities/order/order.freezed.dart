@@ -23,6 +23,7 @@ mixin _$Order {
   double get subtotal => throw _privateConstructorUsedError;
   double get totalPrice => throw _privateConstructorUsedError;
   List<Product> get products => throw _privateConstructorUsedError;
+  double? get rating => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OrderCopyWith<Order> get copyWith => throw _privateConstructorUsedError;
@@ -40,7 +41,8 @@ abstract class $OrderCopyWith<$Res> {
       double deliveryFee,
       double subtotal,
       double totalPrice,
-      List<Product> products});
+      List<Product> products,
+      double? rating});
 }
 
 /// @nodoc
@@ -63,6 +65,7 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     Object? subtotal = null,
     Object? totalPrice = null,
     Object? products = null,
+    Object? rating = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -93,6 +96,10 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
+      rating: freezed == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as double?,
     ) as $Val);
   }
 }
@@ -110,7 +117,8 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
       double deliveryFee,
       double subtotal,
       double totalPrice,
-      List<Product> products});
+      List<Product> products,
+      double? rating});
 }
 
 /// @nodoc
@@ -129,6 +137,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
     Object? subtotal = null,
     Object? totalPrice = null,
     Object? products = null,
+    Object? rating = freezed,
   }) {
     return _then(_$_Order(
       id: null == id
@@ -159,6 +168,10 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
+      rating: freezed == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
@@ -173,7 +186,8 @@ class _$_Order implements _Order {
       required this.deliveryFee,
       required this.subtotal,
       required this.totalPrice,
-      required final List<Product> products})
+      required final List<Product> products,
+      this.rating})
       : _products = products;
 
   @override
@@ -197,8 +211,11 @@ class _$_Order implements _Order {
   }
 
   @override
+  final double? rating;
+
+  @override
   String toString() {
-    return 'Order(id: $id, status: $status, dateTime: $dateTime, deliveryFee: $deliveryFee, subtotal: $subtotal, totalPrice: $totalPrice, products: $products)';
+    return 'Order(id: $id, status: $status, dateTime: $dateTime, deliveryFee: $deliveryFee, subtotal: $subtotal, totalPrice: $totalPrice, products: $products, rating: $rating)';
   }
 
   @override
@@ -216,7 +233,8 @@ class _$_Order implements _Order {
                 other.subtotal == subtotal) &&
             (identical(other.totalPrice, totalPrice) ||
                 other.totalPrice == totalPrice) &&
-            const DeepCollectionEquality().equals(other._products, _products));
+            const DeepCollectionEquality().equals(other._products, _products) &&
+            (identical(other.rating, rating) || other.rating == rating));
   }
 
   @override
@@ -228,7 +246,8 @@ class _$_Order implements _Order {
       deliveryFee,
       subtotal,
       totalPrice,
-      const DeepCollectionEquality().hash(_products));
+      const DeepCollectionEquality().hash(_products),
+      rating);
 
   @JsonKey(ignore: true)
   @override
@@ -245,7 +264,8 @@ abstract class _Order implements Order {
       required final double deliveryFee,
       required final double subtotal,
       required final double totalPrice,
-      required final List<Product> products}) = _$_Order;
+      required final List<Product> products,
+      final double? rating}) = _$_Order;
 
   @override
   String get id;
@@ -261,6 +281,8 @@ abstract class _Order implements Order {
   double get totalPrice;
   @override
   List<Product> get products;
+  @override
+  double? get rating;
   @override
   @JsonKey(ignore: true)
   _$$_OrderCopyWith<_$_Order> get copyWith =>

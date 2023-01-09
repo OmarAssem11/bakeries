@@ -2,6 +2,7 @@ import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
+import 'package:bakery/core/presentation/widgets/rating_widget.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_state.dart';
 import 'package:bakery/features/bakeries/presentation/widgets/product_item.dart';
@@ -71,9 +72,15 @@ class _BakeryDetailsScreenState extends State<BakeryDetailsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: Sizes.s16),
-                        Text(
-                          bakery.name,
-                          style: _textTheme.titleLarge,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              bakery.name,
+                              style: _textTheme.titleLarge,
+                            ),
+                            Rating(bakery.rating),
+                          ],
                         ),
                         const SizedBox(height: Sizes.s12),
                         Text(

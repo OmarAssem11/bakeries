@@ -62,5 +62,8 @@
     "locationPermissionsDenied": "تصاريح الوصول إلي موقع الهاتف مرفوضة",
     "locationPermissionsPermanentlyDenied": "تصاريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصاريح",
     "retry": "أعد المحاولة",
-    "youHaveNoOrdersYet": "ليس لديك اي طلبات بعد!"
+    "youHaveNoOrdersYet": "ليس لديك اي طلبات بعد!",
+    "markAsCollected": "أشر انها وصلت",
+    "rateYourOrder": "قيم طلبك",
+    "orderRating": "تقييم الطلب"
 }

@@ -25,6 +25,9 @@ mixin _$OrdersState {
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(Order order) getOrderDetailsSuccess,
     required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +39,9 @@ mixin _$OrdersState {
     TResult? Function()? getOrderDetailsLoading,
     TResult? Function(Order order)? getOrderDetailsSuccess,
     TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +53,9 @@ mixin _$OrdersState {
     TResult Function()? getOrderDetailsLoading,
     TResult Function(Order order)? getOrderDetailsSuccess,
     TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,6 +70,12 @@ mixin _$OrdersState {
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
     required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +87,12 @@ mixin _$OrdersState {
     TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +104,12 @@ mixin _$OrdersState {
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -151,6 +178,9 @@ class _$OrdersInitial implements OrdersInitial {
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(Order order) getOrderDetailsSuccess,
     required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
   }) {
     return initial();
   }
@@ -165,6 +195,9 @@ class _$OrdersInitial implements OrdersInitial {
     TResult? Function()? getOrderDetailsLoading,
     TResult? Function(Order order)? getOrderDetailsSuccess,
     TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
   }) {
     return initial?.call();
   }
@@ -179,6 +212,9 @@ class _$OrdersInitial implements OrdersInitial {
     TResult Function()? getOrderDetailsLoading,
     TResult Function(Order order)? getOrderDetailsSuccess,
     TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -199,6 +235,12 @@ class _$OrdersInitial implements OrdersInitial {
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
     required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
   }) {
     return initial(this);
   }
@@ -213,6 +255,12 @@ class _$OrdersInitial implements OrdersInitial {
     TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
   }) {
     return initial?.call(this);
   }
@@ -227,6 +275,12 @@ class _$OrdersInitial implements OrdersInitial {
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -285,6 +339,9 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(Order order) getOrderDetailsSuccess,
     required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
   }) {
     return getOrdersListLoading();
   }
@@ -299,6 +356,9 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     TResult? Function()? getOrderDetailsLoading,
     TResult? Function(Order order)? getOrderDetailsSuccess,
     TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
   }) {
     return getOrdersListLoading?.call();
   }
@@ -313,6 +373,9 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     TResult Function()? getOrderDetailsLoading,
     TResult Function(Order order)? getOrderDetailsSuccess,
     TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrdersListLoading != null) {
@@ -333,6 +396,12 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
     required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
   }) {
     return getOrdersListLoading(this);
   }
@@ -347,6 +416,12 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
   }) {
     return getOrdersListLoading?.call(this);
   }
@@ -361,6 +436,12 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrdersListLoading != null) {
@@ -452,6 +533,9 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(Order order) getOrderDetailsSuccess,
     required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
   }) {
     return getOrdersListSuccess(orders);
   }
@@ -466,6 +550,9 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     TResult? Function()? getOrderDetailsLoading,
     TResult? Function(Order order)? getOrderDetailsSuccess,
     TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
   }) {
     return getOrdersListSuccess?.call(orders);
   }
@@ -480,6 +567,9 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     TResult Function()? getOrderDetailsLoading,
     TResult Function(Order order)? getOrderDetailsSuccess,
     TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrdersListSuccess != null) {
@@ -500,6 +590,12 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
     required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
   }) {
     return getOrdersListSuccess(this);
   }
@@ -514,6 +610,12 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
   }) {
     return getOrdersListSuccess?.call(this);
   }
@@ -528,6 +630,12 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrdersListSuccess != null) {
@@ -592,6 +700,9 @@ class _$GetOrdersListError implements GetOrdersListError {
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(Order order) getOrderDetailsSuccess,
     required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
   }) {
     return getOrdersListError();
   }
@@ -606,6 +717,9 @@ class _$GetOrdersListError implements GetOrdersListError {
     TResult? Function()? getOrderDetailsLoading,
     TResult? Function(Order order)? getOrderDetailsSuccess,
     TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
   }) {
     return getOrdersListError?.call();
   }
@@ -620,6 +734,9 @@ class _$GetOrdersListError implements GetOrdersListError {
     TResult Function()? getOrderDetailsLoading,
     TResult Function(Order order)? getOrderDetailsSuccess,
     TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrdersListError != null) {
@@ -640,6 +757,12 @@ class _$GetOrdersListError implements GetOrdersListError {
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
     required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
   }) {
     return getOrdersListError(this);
   }
@@ -654,6 +777,12 @@ class _$GetOrdersListError implements GetOrdersListError {
     TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
   }) {
     return getOrdersListError?.call(this);
   }
@@ -668,6 +797,12 @@ class _$GetOrdersListError implements GetOrdersListError {
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrdersListError != null) {
@@ -726,6 +861,9 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(Order order) getOrderDetailsSuccess,
     required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
   }) {
     return getOrderDetailsLoading();
   }
@@ -740,6 +878,9 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     TResult? Function()? getOrderDetailsLoading,
     TResult? Function(Order order)? getOrderDetailsSuccess,
     TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
   }) {
     return getOrderDetailsLoading?.call();
   }
@@ -754,6 +895,9 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     TResult Function()? getOrderDetailsLoading,
     TResult Function(Order order)? getOrderDetailsSuccess,
     TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsLoading != null) {
@@ -774,6 +918,12 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
     required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
   }) {
     return getOrderDetailsLoading(this);
   }
@@ -788,6 +938,12 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
   }) {
     return getOrderDetailsLoading?.call(this);
   }
@@ -802,6 +958,12 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsLoading != null) {
@@ -897,6 +1059,9 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(Order order) getOrderDetailsSuccess,
     required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
   }) {
     return getOrderDetailsSuccess(order);
   }
@@ -911,6 +1076,9 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     TResult? Function()? getOrderDetailsLoading,
     TResult? Function(Order order)? getOrderDetailsSuccess,
     TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
   }) {
     return getOrderDetailsSuccess?.call(order);
   }
@@ -925,6 +1093,9 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     TResult Function()? getOrderDetailsLoading,
     TResult Function(Order order)? getOrderDetailsSuccess,
     TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsSuccess != null) {
@@ -945,6 +1116,12 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
     required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
   }) {
     return getOrderDetailsSuccess(this);
   }
@@ -959,6 +1136,12 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
   }) {
     return getOrderDetailsSuccess?.call(this);
   }
@@ -973,6 +1156,12 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsSuccess != null) {
@@ -1037,6 +1226,9 @@ class _$GetOrderDetailsError implements GetOrderDetailsError {
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(Order order) getOrderDetailsSuccess,
     required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
   }) {
     return getOrderDetailsError();
   }
@@ -1051,6 +1243,9 @@ class _$GetOrderDetailsError implements GetOrderDetailsError {
     TResult? Function()? getOrderDetailsLoading,
     TResult? Function(Order order)? getOrderDetailsSuccess,
     TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
   }) {
     return getOrderDetailsError?.call();
   }
@@ -1065,6 +1260,9 @@ class _$GetOrderDetailsError implements GetOrderDetailsError {
     TResult Function()? getOrderDetailsLoading,
     TResult Function(Order order)? getOrderDetailsSuccess,
     TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsError != null) {
@@ -1085,6 +1283,12 @@ class _$GetOrderDetailsError implements GetOrderDetailsError {
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
     required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
   }) {
     return getOrderDetailsError(this);
   }
@@ -1099,6 +1303,12 @@ class _$GetOrderDetailsError implements GetOrderDetailsError {
     TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
   }) {
     return getOrderDetailsError?.call(this);
   }
@@ -1113,6 +1323,12 @@ class _$GetOrderDetailsError implements GetOrderDetailsError {
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsError != null) {
@@ -1124,4 +1340,495 @@ class _$GetOrderDetailsError implements GetOrderDetailsError {
 
 abstract class GetOrderDetailsError implements OrdersState {
   const factory GetOrderDetailsError() = _$GetOrderDetailsError;
+}
+
+/// @nodoc
+abstract class _$$MarkOrderAsCollectedLoadingCopyWith<$Res> {
+  factory _$$MarkOrderAsCollectedLoadingCopyWith(
+          _$MarkOrderAsCollectedLoading value,
+          $Res Function(_$MarkOrderAsCollectedLoading) then) =
+      __$$MarkOrderAsCollectedLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MarkOrderAsCollectedLoadingCopyWithImpl<$Res>
+    extends _$OrdersStateCopyWithImpl<$Res, _$MarkOrderAsCollectedLoading>
+    implements _$$MarkOrderAsCollectedLoadingCopyWith<$Res> {
+  __$$MarkOrderAsCollectedLoadingCopyWithImpl(
+      _$MarkOrderAsCollectedLoading _value,
+      $Res Function(_$MarkOrderAsCollectedLoading) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MarkOrderAsCollectedLoading implements MarkOrderAsCollectedLoading {
+  const _$MarkOrderAsCollectedLoading();
+
+  @override
+  String toString() {
+    return 'OrdersState.markOrderAsCollectedLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkOrderAsCollectedLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> orders) getOrdersListSuccess,
+    required TResult Function() getOrdersListError,
+    required TResult Function() getOrderDetailsLoading,
+    required TResult Function(Order order) getOrderDetailsSuccess,
+    required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getOrdersListLoading,
+    TResult? Function(List<Order> orders)? getOrdersListSuccess,
+    TResult? Function()? getOrdersListError,
+    TResult? Function()? getOrderDetailsLoading,
+    TResult? Function(Order order)? getOrderDetailsSuccess,
+    TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> orders)? getOrdersListSuccess,
+    TResult Function()? getOrdersListError,
+    TResult Function()? getOrderDetailsLoading,
+    TResult Function(Order order)? getOrderDetailsSuccess,
+    TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
+    required TResult orElse(),
+  }) {
+    if (markOrderAsCollectedLoading != null) {
+      return markOrderAsCollectedLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
+    required TResult Function(GetOrderDetailsLoading value)
+        getOrderDetailsLoading,
+    required TResult Function(GetOrderDetailsSuccess value)
+        getOrderDetailsSuccess,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OrdersInitial value)? initial,
+    TResult? Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult? Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult? Function(GetOrdersListError value)? getOrdersListError,
+    TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
+    TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
+    required TResult orElse(),
+  }) {
+    if (markOrderAsCollectedLoading != null) {
+      return markOrderAsCollectedLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MarkOrderAsCollectedLoading implements OrdersState {
+  const factory MarkOrderAsCollectedLoading() = _$MarkOrderAsCollectedLoading;
+}
+
+/// @nodoc
+abstract class _$$MarkOrderAsCollectedSuccessCopyWith<$Res> {
+  factory _$$MarkOrderAsCollectedSuccessCopyWith(
+          _$MarkOrderAsCollectedSuccess value,
+          $Res Function(_$MarkOrderAsCollectedSuccess) then) =
+      __$$MarkOrderAsCollectedSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MarkOrderAsCollectedSuccessCopyWithImpl<$Res>
+    extends _$OrdersStateCopyWithImpl<$Res, _$MarkOrderAsCollectedSuccess>
+    implements _$$MarkOrderAsCollectedSuccessCopyWith<$Res> {
+  __$$MarkOrderAsCollectedSuccessCopyWithImpl(
+      _$MarkOrderAsCollectedSuccess _value,
+      $Res Function(_$MarkOrderAsCollectedSuccess) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MarkOrderAsCollectedSuccess implements MarkOrderAsCollectedSuccess {
+  const _$MarkOrderAsCollectedSuccess();
+
+  @override
+  String toString() {
+    return 'OrdersState.markOrderAsCollectedSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkOrderAsCollectedSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> orders) getOrdersListSuccess,
+    required TResult Function() getOrdersListError,
+    required TResult Function() getOrderDetailsLoading,
+    required TResult Function(Order order) getOrderDetailsSuccess,
+    required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getOrdersListLoading,
+    TResult? Function(List<Order> orders)? getOrdersListSuccess,
+    TResult? Function()? getOrdersListError,
+    TResult? Function()? getOrderDetailsLoading,
+    TResult? Function(Order order)? getOrderDetailsSuccess,
+    TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> orders)? getOrdersListSuccess,
+    TResult Function()? getOrdersListError,
+    TResult Function()? getOrderDetailsLoading,
+    TResult Function(Order order)? getOrderDetailsSuccess,
+    TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
+    required TResult orElse(),
+  }) {
+    if (markOrderAsCollectedSuccess != null) {
+      return markOrderAsCollectedSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
+    required TResult Function(GetOrderDetailsLoading value)
+        getOrderDetailsLoading,
+    required TResult Function(GetOrderDetailsSuccess value)
+        getOrderDetailsSuccess,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OrdersInitial value)? initial,
+    TResult? Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult? Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult? Function(GetOrdersListError value)? getOrdersListError,
+    TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
+    TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
+    required TResult orElse(),
+  }) {
+    if (markOrderAsCollectedSuccess != null) {
+      return markOrderAsCollectedSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MarkOrderAsCollectedSuccess implements OrdersState {
+  const factory MarkOrderAsCollectedSuccess() = _$MarkOrderAsCollectedSuccess;
+}
+
+/// @nodoc
+abstract class _$$MarkOrderAsCollectedErrorCopyWith<$Res> {
+  factory _$$MarkOrderAsCollectedErrorCopyWith(
+          _$MarkOrderAsCollectedError value,
+          $Res Function(_$MarkOrderAsCollectedError) then) =
+      __$$MarkOrderAsCollectedErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MarkOrderAsCollectedErrorCopyWithImpl<$Res>
+    extends _$OrdersStateCopyWithImpl<$Res, _$MarkOrderAsCollectedError>
+    implements _$$MarkOrderAsCollectedErrorCopyWith<$Res> {
+  __$$MarkOrderAsCollectedErrorCopyWithImpl(_$MarkOrderAsCollectedError _value,
+      $Res Function(_$MarkOrderAsCollectedError) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MarkOrderAsCollectedError implements MarkOrderAsCollectedError {
+  const _$MarkOrderAsCollectedError();
+
+  @override
+  String toString() {
+    return 'OrdersState.markOrderAsCollectedError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkOrderAsCollectedError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> orders) getOrdersListSuccess,
+    required TResult Function() getOrdersListError,
+    required TResult Function() getOrderDetailsLoading,
+    required TResult Function(Order order) getOrderDetailsSuccess,
+    required TResult Function() getOrderDetailsError,
+    required TResult Function() markOrderAsCollectedLoading,
+    required TResult Function() markOrderAsCollectedSuccess,
+    required TResult Function() markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getOrdersListLoading,
+    TResult? Function(List<Order> orders)? getOrdersListSuccess,
+    TResult? Function()? getOrdersListError,
+    TResult? Function()? getOrderDetailsLoading,
+    TResult? Function(Order order)? getOrderDetailsSuccess,
+    TResult? Function()? getOrderDetailsError,
+    TResult? Function()? markOrderAsCollectedLoading,
+    TResult? Function()? markOrderAsCollectedSuccess,
+    TResult? Function()? markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> orders)? getOrdersListSuccess,
+    TResult Function()? getOrdersListError,
+    TResult Function()? getOrderDetailsLoading,
+    TResult Function(Order order)? getOrderDetailsSuccess,
+    TResult Function()? getOrderDetailsError,
+    TResult Function()? markOrderAsCollectedLoading,
+    TResult Function()? markOrderAsCollectedSuccess,
+    TResult Function()? markOrderAsCollectedError,
+    required TResult orElse(),
+  }) {
+    if (markOrderAsCollectedError != null) {
+      return markOrderAsCollectedError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
+    required TResult Function(GetOrderDetailsLoading value)
+        getOrderDetailsLoading,
+    required TResult Function(GetOrderDetailsSuccess value)
+        getOrderDetailsSuccess,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
+    required TResult Function(MarkOrderAsCollectedLoading value)
+        markOrderAsCollectedLoading,
+    required TResult Function(MarkOrderAsCollectedSuccess value)
+        markOrderAsCollectedSuccess,
+    required TResult Function(MarkOrderAsCollectedError value)
+        markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OrdersInitial value)? initial,
+    TResult? Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult? Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult? Function(GetOrdersListError value)? getOrdersListError,
+    TResult? Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult? Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult? Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult? Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult? Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult? Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
+  }) {
+    return markOrderAsCollectedError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
+    TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
+    TResult Function(MarkOrderAsCollectedLoading value)?
+        markOrderAsCollectedLoading,
+    TResult Function(MarkOrderAsCollectedSuccess value)?
+        markOrderAsCollectedSuccess,
+    TResult Function(MarkOrderAsCollectedError value)?
+        markOrderAsCollectedError,
+    required TResult orElse(),
+  }) {
+    if (markOrderAsCollectedError != null) {
+      return markOrderAsCollectedError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MarkOrderAsCollectedError implements OrdersState {
+  const factory MarkOrderAsCollectedError() = _$MarkOrderAsCollectedError;
 }

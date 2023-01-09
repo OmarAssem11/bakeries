@@ -1,4 +1,4 @@
-import 'package:bakery/features/orders/domain/entities/order.dart';
+import 'package:bakery/features/orders/domain/entities/order/order.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'orders_state.freezed.dart';
@@ -18,4 +18,11 @@ class OrdersState with _$OrdersState {
     Order order,
   ) = GetOrderDetailsSuccess;
   const factory OrdersState.getOrderDetailsError() = GetOrderDetailsError;
+
+  const factory OrdersState.markOrderAsCollectedLoading() =
+      MarkOrderAsCollectedLoading;
+  const factory OrdersState.markOrderAsCollectedSuccess() =
+      MarkOrderAsCollectedSuccess;
+  const factory OrdersState.markOrderAsCollectedError() =
+      MarkOrderAsCollectedError;
 }

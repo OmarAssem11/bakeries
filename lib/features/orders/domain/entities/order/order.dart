@@ -13,5 +13,6 @@ class Order with _$Order {
     required double subtotal,
     required double totalPrice,
     required List<Product> products,
+    double? rating,
   }) = _Order;
 }

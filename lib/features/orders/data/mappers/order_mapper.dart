@@ -1,6 +1,6 @@
 import 'package:bakery/features/orders/data/mappers/order_product_mapper.dart';
 import 'package:bakery/features/orders/data/models/order_model/order_model.dart';
-import 'package:bakery/features/orders/domain/entities/order.dart';
+import 'package:bakery/features/orders/domain/entities/order/order.dart';
 
 extension OrderMapper on OrderModel {
   Order get fromModel => Order(
@@ -13,5 +13,6 @@ extension OrderMapper on OrderModel {
         products: orderProductsModels
             .map((orderProductModel) => orderProductModel.fromModel)
             .toList(),
+        rating: rating,
       );
 }

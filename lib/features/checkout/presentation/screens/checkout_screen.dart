@@ -113,11 +113,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 listener: (context, state) {
                   state.mapOrNull(
                     loading: (_) => isLoading = true,
-                    error: (state) => showToast(),
-                    success: (success) => Navigator.of(context).pushNamed(
-                      AppRoutes.orderDetails,
-                      arguments: success.orderId,
-                    ),
+                    error: (_) => showToast(),
+                    success: (successState) {
+                      Navigator.of(context).popUntil((route) => route.isFirst);
+                      Navigator.of(context)
+                          .pushReplacementNamed(AppRoutes.bakeries);
+                      Navigator.of(context).pushNamed(
+                        AppRoutes.orderDetails,
+                        arguments: successState.orderId,
+                      );
+                    },
                   );
                 },
                 builder: (context, state) {

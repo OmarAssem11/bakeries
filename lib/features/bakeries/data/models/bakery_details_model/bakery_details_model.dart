@@ -9,6 +9,7 @@ class BakeryDetailsModel {
   final String name;
   final String description;
   final String imageUrl;
+  final double rating;
   final String address;
   final String phone;
   final List<ProductModel> products;
@@ -18,6 +19,7 @@ class BakeryDetailsModel {
     required this.name,
     required this.description,
     required this.imageUrl,
+    required this.rating,
     required this.address,
     required this.phone,
     required this.products,

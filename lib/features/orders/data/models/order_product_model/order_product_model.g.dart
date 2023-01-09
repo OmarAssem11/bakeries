@@ -8,6 +8,7 @@ part of 'order_product_model.dart';
 
 OrderProductModel _$OrderProductModelFromJson(Map<String, dynamic> json) =>
     OrderProductModel(
+      id: json['id'] as String,
       name: json['name'] as String,
       imageUrl: json['imageUrl'] as String,
       price: (json['price'] as num).toDouble(),
@@ -18,6 +19,7 @@ OrderProductModel _$OrderProductModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$OrderProductModelToJson(OrderProductModel instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'imageUrl': instance.imageUrl,
       'price': instance.price,

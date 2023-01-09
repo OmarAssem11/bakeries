@@ -10,6 +10,7 @@ class Bakery with _$Bakery {
     required String name,
     required String description,
     required String imageUrl,
+    required double rating,
     String? address,
     String? phone,
     List<Product>? products,

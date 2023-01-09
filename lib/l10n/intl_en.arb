@@ -62,5 +62,8 @@
     "locationPermissionsDenied": "Location permissions are denied",
     "locationPermissionsPermanentlyDenied": "Location permissions are permanently denied, we cannot request permissions",
     "retry": "Retry",
-    "youHaveNoOrdersYet": "You have no orders yet!"
+    "youHaveNoOrdersYet": "You have no orders yet!",
+    "markAsCollected": "Mark as collected",
+    "rateYourOrder": "Rate your order",
+    "orderRating": "Order Rating"
 }

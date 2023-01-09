@@ -85,7 +85,6 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
                     );
                   },
                   label: S.current.confirmAddress,
-                  isLoading: false,
                 ),
               ),
             ),

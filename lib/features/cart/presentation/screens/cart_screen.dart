@@ -102,7 +102,6 @@ class _CartScreenState extends State<CartScreen> {
                               AppRoutes.addressLocation,
                               arguments: subtotal,
                             ),
-                            isLoading: false,
                           ),
                         ],
                       ),

@@ -14,6 +14,7 @@ class OrderModel {
   final double subTotal;
   final double totalPrice;
   final List<OrderProductModel> orderProductsModels;
+  final double? rating;
 
   const OrderModel({
     required this.id,
@@ -23,6 +24,7 @@ class OrderModel {
     required this.subTotal,
     required this.totalPrice,
     required this.orderProductsModels,
+    this.rating,
   });
 
   Map<String, dynamic> toJson() => _$OrderModelToJson(this);

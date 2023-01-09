@@ -8,12 +8,14 @@ class BakeryModel {
   final String name;
   final String description;
   final String imageUrl;
+  final double rating;
 
   const BakeryModel({
     required this.id,
     required this.name,
     required this.description,
     required this.imageUrl,
+    required this.rating,
   });
 
   factory BakeryModel.fromJson(Map<String, dynamic> json) =>

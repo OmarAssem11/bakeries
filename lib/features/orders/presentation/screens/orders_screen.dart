@@ -1,3 +1,4 @@
+import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
@@ -47,10 +48,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                       ),
                     ),
                     itemCount: orders.length,
-                    separatorBuilder: (_, __) => Divider(
+                    separatorBuilder: (_, __) => const Divider(
                       thickness: Sizes.s1,
                       height: Sizes.s1,
-                      color: Theme.of(context).colorScheme.surface,
+                      color: ColorManager.lightGrey,
                     ),
                   ),
             orElse: () => const SizedBox.expand(),

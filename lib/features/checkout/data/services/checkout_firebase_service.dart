@@ -30,6 +30,7 @@ class CheckoutFirebaseService {
     final orderProductsModels = cartProductsModels.map((cartProductModel) {
       final productModel = cartProductModel.productModel;
       return OrderProductModel(
+        id: productModel.id,
         name: productModel.name,
         imageUrl: productModel.imageUrl,
         price: productModel.price,

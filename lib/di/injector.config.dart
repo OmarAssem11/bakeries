@@ -6,7 +6,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:bakery/core/data/datasources/cache_helper.dart' as _i45;
-import 'package:bakery/di/app_module.dart' as _i60;
+import 'package:bakery/di/app_module.dart' as _i61;
 import 'package:bakery/features/auth/data/datasources/local_datasource/auth_local_datasource.dart'
     as _i40;
 import 'package:bakery/features/auth/data/datasources/local_datasource/auth_local_datasource_impl.dart'
@@ -32,9 +32,9 @@ import 'package:bakery/features/auth/domain/usecases/login_usecase.dart'
 import 'package:bakery/features/auth/domain/usecases/logout_usecase.dart'
     as _i55;
 import 'package:bakery/features/auth/domain/usecases/register_usecase.dart'
-    as _i58;
-import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart'
     as _i59;
+import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart'
+    as _i60;
 import 'package:bakery/features/bakeries/data/datasources/remote_datasource/bakeries_remote_datasource.dart'
     as _i7;
 import 'package:bakery/features/bakeries/data/datasources/remote_datasource/bakeries_remote_datasource_impl.dart'
@@ -99,8 +99,10 @@ import 'package:bakery/features/orders/domain/usecases/get_order_details_usecase
     as _i50;
 import 'package:bakery/features/orders/domain/usecases/get_orders_usecase.dart'
     as _i51;
-import 'package:bakery/features/orders/presentation/cubit/orders_cubit.dart'
+import 'package:bakery/features/orders/domain/usecases/mark_order_as_collected.dart'
     as _i56;
+import 'package:bakery/features/orders/presentation/cubit/orders_cubit.dart'
+    as _i57;
 import 'package:bakery/features/products/data/datasources/remote_datasource/products_remote_datasource.dart'
     as _i33;
 import 'package:bakery/features/products/data/datasources/remote_datasource/products_remote_datasource_impl.dart'
@@ -114,7 +116,7 @@ import 'package:bakery/features/products/domain/repository/products_repository.d
 import 'package:bakery/features/products/domain/usecases/get_product_details_usecase.dart'
     as _i52;
 import 'package:bakery/features/products/presentation/cubit/products_cubit.dart'
-    as _i57;
+    as _i58;
 import 'package:bakery/features/settings/presentation/cubit/settings_cubit.dart'
     as _i37;
 import 'package:get_it/get_it.dart' as _i1;
@@ -223,16 +225,19 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i54.LoginUseCase(gh<_i42.AuthRepository>()));
     gh.lazySingleton<_i55.LogoutUseCase>(
         () => _i55.LogoutUseCase(gh<_i42.AuthRepository>()));
-    gh.factory<_i56.OrdersCubit>(() => _i56.OrdersCubit(
+    gh.lazySingleton<_i56.MarkOrderAsCollectedUseCase>(
+        () => _i56.MarkOrderAsCollectedUseCase(gh<_i30.OrdersRepository>()));
+    gh.factory<_i57.OrdersCubit>(() => _i57.OrdersCubit(
           gh<_i51.GetOrdersListUseCase>(),
           gh<_i50.GetOrderDetailsUseCase>(),
+          gh<_i56.MarkOrderAsCollectedUseCase>(),
         ));
-    gh.factory<_i57.ProductsCubit>(
-        () => _i57.ProductsCubit(gh<_i52.GetProductDetailsUseCase>()));
-    gh.lazySingleton<_i58.RegisterUseCase>(
-        () => _i58.RegisterUseCase(gh<_i42.AuthRepository>()));
-    gh.factory<_i59.AuthCubit>(() => _i59.AuthCubit(
-          gh<_i58.RegisterUseCase>(),
+    gh.factory<_i58.ProductsCubit>(
+        () => _i58.ProductsCubit(gh<_i52.GetProductDetailsUseCase>()));
+    gh.lazySingleton<_i59.RegisterUseCase>(
+        () => _i59.RegisterUseCase(gh<_i42.AuthRepository>()));
+    gh.factory<_i60.AuthCubit>(() => _i60.AuthCubit(
+          gh<_i59.RegisterUseCase>(),
           gh<_i54.LoginUseCase>(),
           gh<_i55.LogoutUseCase>(),
           gh<_i48.ForgotPasswordUseCase>(),
@@ -243,4 +248,4 @@ extension GetItInjectableX on _i1.GetIt {
   }
 }
 
-class _$AppModule extends _i60.AppModule {}
+class _$AppModule extends _i61.AppModule {}

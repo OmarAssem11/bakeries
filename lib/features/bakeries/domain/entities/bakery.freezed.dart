@@ -20,6 +20,7 @@ mixin _$Bakery {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
+  double get rating => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
   List<Product>? get products => throw _privateConstructorUsedError;
@@ -38,6 +39,7 @@ abstract class $BakeryCopyWith<$Res> {
       String name,
       String description,
       String imageUrl,
+      double rating,
       String? address,
       String? phone,
       List<Product>? products});
@@ -60,6 +62,7 @@ class _$BakeryCopyWithImpl<$Res, $Val extends Bakery>
     Object? name = null,
     Object? description = null,
     Object? imageUrl = null,
+    Object? rating = null,
     Object? address = freezed,
     Object? phone = freezed,
     Object? products = freezed,
@@ -81,6 +84,10 @@ class _$BakeryCopyWithImpl<$Res, $Val extends Bakery>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      rating: null == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as double,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -108,6 +115,7 @@ abstract class _$$_BakeryCopyWith<$Res> implements $BakeryCopyWith<$Res> {
       String name,
       String description,
       String imageUrl,
+      double rating,
       String? address,
       String? phone,
       List<Product>? products});
@@ -127,6 +135,7 @@ class __$$_BakeryCopyWithImpl<$Res>
     Object? name = null,
     Object? description = null,
     Object? imageUrl = null,
+    Object? rating = null,
     Object? address = freezed,
     Object? phone = freezed,
     Object? products = freezed,
@@ -148,6 +157,10 @@ class __$$_BakeryCopyWithImpl<$Res>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      rating: null == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as double,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -172,6 +185,7 @@ class _$_Bakery implements _Bakery {
       required this.name,
       required this.description,
       required this.imageUrl,
+      required this.rating,
       this.address,
       this.phone,
       final List<Product>? products})
@@ -185,6 +199,8 @@ class _$_Bakery implements _Bakery {
   final String description;
   @override
   final String imageUrl;
+  @override
+  final double rating;
   @override
   final String? address;
   @override
@@ -201,7 +217,7 @@ class _$_Bakery implements _Bakery {
 
   @override
   String toString() {
-    return 'Bakery(id: $id, name: $name, description: $description, imageUrl: $imageUrl, address: $address, phone: $phone, products: $products)';
+    return 'Bakery(id: $id, name: $name, description: $description, imageUrl: $imageUrl, rating: $rating, address: $address, phone: $phone, products: $products)';
   }
 
   @override
@@ -215,6 +231,7 @@ class _$_Bakery implements _Bakery {
                 other.description == description) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
+            (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             const DeepCollectionEquality().equals(other._products, _products));
@@ -222,7 +239,7 @@ class _$_Bakery implements _Bakery {
 
   @override
   int get hashCode => Object.hash(runtimeType, id, name, description, imageUrl,
-      address, phone, const DeepCollectionEquality().hash(_products));
+      rating, address, phone, const DeepCollectionEquality().hash(_products));
 
   @JsonKey(ignore: true)
   @override
@@ -237,6 +254,7 @@ abstract class _Bakery implements Bakery {
       required final String name,
       required final String description,
       required final String imageUrl,
+      required final double rating,
       final String? address,
       final String? phone,
       final List<Product>? products}) = _$_Bakery;
@@ -249,6 +267,8 @@ abstract class _Bakery implements Bakery {
   String get description;
   @override
   String get imageUrl;
+  @override
+  double get rating;
   @override
   String? get address;
   @override

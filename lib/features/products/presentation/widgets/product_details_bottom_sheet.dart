@@ -123,8 +123,13 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                           isLoading = false;
                           return CustomElevatedButton(
                             label: S.current.viewBasket,
-                            onPressed: () =>
-                                Navigator.of(context).pushNamed(AppRoutes.cart),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .popUntil((route) => route.isFirst);
+                              Navigator.of(context)
+                                  .pushReplacementNamed(AppRoutes.bakeries);
+                              Navigator.of(context).pushNamed(AppRoutes.cart);
+                            },
                             isLoading: isLoading,
                           );
                         },

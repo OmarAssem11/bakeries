@@ -75,11 +75,14 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Location permissions are permanently denied, we cannot request permissions"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "markAsCollected":
+            MessageLookupByLibrary.simpleMessage("Mark as collected"),
         "myOrders": MessageLookupByLibrary.simpleMessage("My orders"),
         "no": MessageLookupByLibrary.simpleMessage("No"),
         "noPageFound": MessageLookupByLibrary.simpleMessage("No page found!"),
         "orderDetails": MessageLookupByLibrary.simpleMessage("Order details"),
         "orderId": MessageLookupByLibrary.simpleMessage("Order ID"),
+        "orderRating": MessageLookupByLibrary.simpleMessage("Order Rating"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordCanNotBeLessThanEightCharacters":
             MessageLookupByLibrary.simpleMessage(
@@ -95,6 +98,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "Please enable Your Location Service"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "rateYourOrder":
+            MessageLookupByLibrary.simpleMessage("Rate your order"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),

@@ -76,11 +76,14 @@ class MessageLookup extends MessageLookupByLibrary {
                 "تصاريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصاريح"),
         "login": MessageLookupByLibrary.simpleMessage("نسجيل دخول"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
+        "markAsCollected":
+            MessageLookupByLibrary.simpleMessage("أشر انها وصلت"),
         "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
         "no": MessageLookupByLibrary.simpleMessage("لا"),
         "noPageFound": MessageLookupByLibrary.simpleMessage("!لا يوجد صفحة"),
         "orderDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
         "orderId": MessageLookupByLibrary.simpleMessage("رقم الطلب"),
+        "orderRating": MessageLookupByLibrary.simpleMessage("تقييم الطلب"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
         "passwordCanNotBeLessThanEightCharacters":
             MessageLookupByLibrary.simpleMessage(
@@ -95,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "برجاء قم بتفعيل تحديد الموقع"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "rateYourOrder": MessageLookupByLibrary.simpleMessage("قيم طلبك"),
         "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة ضبط كلمة السر"),

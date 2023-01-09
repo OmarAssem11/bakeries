@@ -6,5 +6,9 @@ class FirebasePath {
   static const String cart = 'cart';
   static const String orders = 'orders';
   //Fields
+  static const String id = 'id';
   static const String productId = 'productId';
+  static const String status = 'status';
+  static const String rating = 'rating';
+  static const String numOfOrders = 'numOfOrders';
 }

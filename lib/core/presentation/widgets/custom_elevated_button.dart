@@ -6,7 +6,7 @@ class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     required this.label,
     required this.onPressed,
-    required this.isLoading,
+    this.isLoading = false,
   });
 
   final String label;

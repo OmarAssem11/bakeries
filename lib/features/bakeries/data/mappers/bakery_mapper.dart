@@ -7,5 +7,6 @@ extension BakeryMapper on BakeryModel {
         name: name,
         description: description,
         imageUrl: imageUrl,
+        rating: rating,
       );
 }

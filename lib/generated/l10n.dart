@@ -689,6 +689,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Mark as collected`
+  String get markAsCollected {
+    return Intl.message(
+      'Mark as collected',
+      name: 'markAsCollected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rate your order`
+  String get rateYourOrder {
+    return Intl.message(
+      'Rate your order',
+      name: 'rateYourOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Rating`
+  String get orderRating {
+    return Intl.message(
+      'Order Rating',
+      name: 'orderRating',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

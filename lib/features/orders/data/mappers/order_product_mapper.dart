@@ -3,7 +3,7 @@ import 'package:bakery/features/products/domain/entities/product.dart';
 
 extension OrderProductMapper on OrderProductModel {
   Product get fromModel => Product(
-        id: '',
+        id: id,
         name: name,
         price: price,
         imageUrl: imageUrl,

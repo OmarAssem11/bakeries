@@ -1,7 +1,7 @@
 import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
-import 'package:bakery/features/orders/domain/entities/order.dart';
+import 'package:bakery/features/orders/domain/entities/order/order.dart';
 import 'package:bakery/features/orders/presentation/widgets/order_status_text.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -46,13 +46,13 @@ class _OrderItemState extends State<OrderItem> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Sizes.s4),
                   border: Border.all(
-                    color: Theme.of(context).colorScheme.surface,
+                    color: ColorManager.lightGrey,
                   ),
                 ),
                 child: CachedNetworkImage(
                   imageUrl: widget.order.products[0].bakeryImageUrl!,
                   height: _screenSize.height * 0.11,
-                  width: _screenSize.width * 0.17,
+                  width: _screenSize.width * 0.19,
                   fit: BoxFit.cover,
                 ),
               ),

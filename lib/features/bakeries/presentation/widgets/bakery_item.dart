@@ -1,5 +1,6 @@
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
+import 'package:bakery/core/presentation/widgets/rating_widget.dart';
 import 'package:bakery/features/bakeries/domain/entities/bakery.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -35,9 +36,15 @@ class BakeryItem extends StatelessWidget {
               ),
             ),
             const SizedBox(height: Sizes.s4),
-            Text(
-              bakery.name,
-              style: textTheme.titleLarge,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  bakery.name,
+                  style: textTheme.titleLarge,
+                ),
+                Rating(bakery.rating),
+              ],
             ),
             const SizedBox(height: Sizes.s4),
             Text(

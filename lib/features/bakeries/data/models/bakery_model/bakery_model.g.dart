@@ -11,6 +11,7 @@ BakeryModel _$BakeryModelFromJson(Map<String, dynamic> json) => BakeryModel(
       name: json['name'] as String,
       description: json['description'] as String,
       imageUrl: json['imageUrl'] as String,
+      rating: (json['rating'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$BakeryModelToJson(BakeryModel instance) =>
@@ -19,4 +20,5 @@ Map<String, dynamic> _$BakeryModelToJson(BakeryModel instance) =>
       'name': instance.name,
       'description': instance.description,
       'imageUrl': instance.imageUrl,
+      'rating': instance.rating,
     };

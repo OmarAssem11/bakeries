@@ -11,6 +11,7 @@ extension BakeryDetailsMapper on BakeryDetailsModel {
       name: name,
       description: description,
       imageUrl: imageUrl,
+      rating: rating,
       address: address,
       phone: phone,
       products: productsEntities,
