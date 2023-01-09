@@ -6,6 +6,7 @@ import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_state.dart';
 import 'package:bakery/features/bakeries/presentation/widgets/bakery_item.dart';
+import 'package:bakery/features/bakeries/presentation/widgets/home_drawer.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart ';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,10 +29,6 @@ class _BakeriesScreenState extends State<BakeriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Navigator.of(context).pushNamed(AppRoutes.orders),
-          icon: const Icon(Icons.menu),
-        ),
         title: Text(S.current.bakeries),
         actions: [
           IconButton(
@@ -40,6 +37,7 @@ class _BakeriesScreenState extends State<BakeriesScreen> {
           ),
         ],
       ),
+      drawer: const HomeDrawer(),
       body: BlocBuilder<BakeriesCubit, BakeriesState>(
         builder: (context, state) {
           return state.maybeWhen(

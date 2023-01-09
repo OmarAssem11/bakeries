@@ -36,7 +36,7 @@ class App extends StatelessWidget {
           builder: (ctx, state) {
             final cubit = BlocProvider.of<SettingsCubit>(ctx);
             return MaterialApp(
-              title: 'Hashtag',
+              title: 'Bakery',
               debugShowCheckedModeBanner: false,
               onGenerateRoute: onGenerateRoute,
               theme: getLightTheme(),
