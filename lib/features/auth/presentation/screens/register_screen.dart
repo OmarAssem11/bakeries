@@ -75,11 +75,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     loading: (_) => isLoading = true,
                     error: (_) => showToast(),
                     success: (_) =>
-                        WidgetsBinding.instance.addPostFrameCallback(
-                      (_) => Navigator.of(context).pushReplacementNamed(
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                      Navigator.of(context).popUntil((route) => route.isFirst);
+
+                      Navigator.of(context).pushReplacementNamed(
                         AppRoutes.bakeries,
-                      ),
-                    ),
+                      );
+                    }),
                   );
                   return CustomElevatedButton(
                     label: S.current.register,

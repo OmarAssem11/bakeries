@@ -21,8 +21,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController(text: 'omar@gmail.com');
+  final _passwordController = TextEditingController(text: '12345678');
   late TextTheme _textTheme;
 
   @override
@@ -74,11 +74,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     loading: (_) => isLoading = true,
                     error: (_) => showToast(),
                     success: (_) =>
-                        WidgetsBinding.instance.addPostFrameCallback(
-                      (_) => Navigator.of(context).pushReplacementNamed(
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                      Navigator.of(context).popUntil((route) => route.isFirst);
+                      Navigator.of(context).pushReplacementNamed(
                         AppRoutes.bakeries,
-                      ),
-                    ),
+                      );
+                    }),
                   );
                   return CustomElevatedButton(
                     label: S.current.login,

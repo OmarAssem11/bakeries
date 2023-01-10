@@ -1,6 +1,6 @@
-import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
+import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_state.dart';
 import 'package:bakery/features/bakeries/presentation/widgets/bakeries_list.dart';
@@ -20,6 +20,7 @@ class _BakeriesScreenState extends State<BakeriesScreen> {
   @override
   void initState() {
     super.initState();
+    BlocProvider.of<AuthCubit>(context).isLoggedIn();
     BlocProvider.of<BakeriesCubit>(context).getBakeriesList();
   }
 
@@ -28,12 +29,6 @@ class _BakeriesScreenState extends State<BakeriesScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(S.current.bakeries),
-        actions: [
-          IconButton(
-            onPressed: () => Navigator.of(context).pushNamed(AppRoutes.cart),
-            icon: const Icon(Icons.shopping_basket_rounded),
-          ),
-        ],
       ),
       drawer: const HomeDrawer(),
       body: BlocBuilder<BakeriesCubit, BakeriesState>(

@@ -50,7 +50,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "doNotHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
-        "editProfile": MessageLookupByLibrary.simpleMessage("Edit profile"),
         "egp": MessageLookupByLibrary.simpleMessage("EGP"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email address"),
         "emailCanNotBeEmpty":
@@ -100,7 +99,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "placeOrder": MessageLookupByLibrary.simpleMessage("place order"),
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "Please enable Your Location Service"),
-        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "rateYourOrder":
             MessageLookupByLibrary.simpleMessage("Rate your order"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),

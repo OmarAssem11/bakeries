@@ -11,14 +11,14 @@ class HomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: [
-          BlocProvider(
-            create: (_) => getIt<AuthCubit>(),
-            child: const HomeDrawerHeader(),
-          ),
-          const Expanded(child: HomeDrawerItems()),
-        ],
+      child: BlocProvider(
+        create: (_) => getIt<AuthCubit>(),
+        child: Column(
+          children: const [
+            HomeDrawerHeader(),
+            Expanded(child: HomeDrawerItems()),
+          ],
+        ),
       ),
     );
   }

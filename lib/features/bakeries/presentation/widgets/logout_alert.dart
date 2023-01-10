@@ -1,4 +1,3 @@
-import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +25,7 @@ class LogoutAlertDialog extends StatelessWidget {
         TextButton(
           onPressed: () {
             BlocProvider.of<AuthCubit>(context).logout();
-            Navigator.popUntil(context, (route) => route.isFirst);
-            Navigator.of(context).pushReplacementNamed(AppRoutes.login);
+            Navigator.of(context).pop();
           },
           child: Text(
             S.current.yes,

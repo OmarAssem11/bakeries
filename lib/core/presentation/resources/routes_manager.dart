@@ -3,7 +3,6 @@ import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:bakery/features/auth/presentation/screens/login_screen.dart';
 import 'package:bakery/features/auth/presentation/screens/register_screen.dart';
-import 'package:bakery/features/auth/presentation/screens/starter_screen.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/screens/bakeries_screen.dart';
 import 'package:bakery/features/bakeries/presentation/screens/bakery_details_screen.dart';
@@ -24,13 +23,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRoutes {
-  static const String starter = '/';
+  static const String bakeries = '/';
+  static const String bakeryDetails = '/bakery-details';
   static const String login = '/login';
   static const String register = '/register';
   static const String forgotPassword = '/forgot-password';
   static const String settings = '/settings';
-  static const String bakeries = '/bakeries';
-  static const String bakeryDetails = '/bakery-details';
   static const String categories = '/categories';
   static const String categoryBakeries = '/category-bakeries';
   static const String cart = '/cart';
@@ -42,12 +40,23 @@ class AppRoutes {
 
 Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
   switch (routeSettings.name) {
-    case AppRoutes.starter:
+    case AppRoutes.bakeries:
+      return MaterialPageRoute(
+        builder: (_) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => getIt<BakeriesCubit>()),
+            BlocProvider(create: (_) => getIt<AuthCubit>()),
+          ],
+          child: const BakeriesScreen(),
+        ),
+      );
+    case AppRoutes.bakeryDetails:
       return MaterialPageRoute(
         builder: (_) => BlocProvider(
-          create: (_) => getIt<AuthCubit>(),
-          child: const StarterScreen(),
+          create: (_) => getIt<BakeriesCubit>(),
+          child: const BakeryDetailsScreen(),
         ),
+        settings: routeSettings,
       );
     case AppRoutes.login:
       return MaterialPageRoute(
@@ -73,21 +82,6 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     case AppRoutes.settings:
       return MaterialPageRoute(
         builder: (_) => const SettingsScreen(),
-      );
-    case AppRoutes.bakeries:
-      return MaterialPageRoute(
-        builder: (_) => BlocProvider(
-          create: (_) => getIt<BakeriesCubit>(),
-          child: const BakeriesScreen(),
-        ),
-      );
-    case AppRoutes.bakeryDetails:
-      return MaterialPageRoute(
-        builder: (_) => BlocProvider(
-          create: (_) => getIt<BakeriesCubit>(),
-          child: const BakeryDetailsScreen(),
-        ),
-        settings: routeSettings,
       );
     case AppRoutes.categories:
       return MaterialPageRoute(

@@ -114,13 +114,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   state.mapOrNull(
                     loading: (_) => isLoading = true,
                     error: (_) => showToast(),
-                    success: (successState) {
-                      Navigator.of(context).popUntil((route) => route.isFirst);
-                      Navigator.of(context).pushNamed(
-                        AppRoutes.orderDetails,
-                        arguments: successState.orderId,
-                      );
-                    },
+                    success: (successState) =>
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                      AppRoutes.orderDetails,
+                      (route) => route.isFirst,
+                      arguments: successState.orderId,
+                    ),
                   );
                 },
                 builder: (context, state) {

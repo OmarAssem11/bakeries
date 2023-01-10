@@ -570,26 +570,6 @@ class S {
     );
   }
 
-  /// `Profile`
-  String get profile {
-    return Intl.message(
-      'Profile',
-      name: 'profile',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Edit profile`
-  String get editProfile {
-    return Intl.message(
-      'Edit profile',
-      name: 'editProfile',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Change`
   String get change {
     return Intl.message(

@@ -1,3 +1,4 @@
+import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_state.dart';
@@ -16,7 +17,7 @@ class _HomeDrawerHeaderState extends State<HomeDrawerHeader> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<AuthCubit>(context).getCurrentUser();
+    BlocProvider.of<AuthCubit>(context).isLoggedIn();
   }
 
   @override
@@ -26,27 +27,36 @@ class _HomeDrawerHeaderState extends State<HomeDrawerHeader> {
         top: MediaQuery.of(context).padding.top + Insets.xl,
         bottom: Insets.xl,
       ),
-      child: BlocBuilder<AuthCubit, AuthState>(
-        builder: (context, state) {
-          return state.maybeWhen(
-            currentUser: (user) {
-              return Column(
-                children: [
-                  Text(
-                    S.current.welcome,
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                  const SizedBox(height: Sizes.s16),
-                  Text(
+      child: Column(
+        children: [
+          Text(
+            S.current.welcome,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+          const SizedBox(height: Sizes.s16),
+          BlocConsumer<AuthCubit, AuthState>(
+            listener: (context, state) {
+              if (state is IsLoggedIn) {
+                BlocProvider.of<AuthCubit>(context).getCurrentUser();
+              }
+            },
+            builder: (context, state) {
+              return state.maybeWhen(
+                currentUser: (user) {
+                  return Text(
                     user.name,
                     style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                ],
+                  );
+                },
+                orElse: () => TextButton(
+                  onPressed: () =>
+                      Navigator.of(context).pushNamed(AppRoutes.login),
+                  child: Text(S.current.login),
+                ),
               );
             },
-            orElse: () => const SizedBox.shrink(),
-          );
-        },
+          ),
+        ],
       ),
     );
   }

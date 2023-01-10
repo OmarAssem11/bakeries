@@ -49,8 +49,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "doNotHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
-        "editProfile":
-            MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
         "egp": MessageLookupByLibrary.simpleMessage("جم"),
         "emailAddress":
             MessageLookupByLibrary.simpleMessage("البريد الإكتروني"),
@@ -100,7 +98,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "placeOrder": MessageLookupByLibrary.simpleMessage("تأكيد الطلب"),
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "برجاء قم بتفعيل تحديد الموقع"),
-        "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "rateYourOrder": MessageLookupByLibrary.simpleMessage("قيم طلبك"),
         "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "resetPassword":
