@@ -1,4 +1,5 @@
 import 'package:bakery/core/data/constants/firebase_path.dart';
+import 'package:bakery/core/domain/enums/order_status.dart';
 import 'package:bakery/features/orders/data/models/collect_order_data_model/collect_order_data_model.dart';
 import 'package:bakery/features/orders/data/models/order_model/order_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -37,7 +38,7 @@ class OrdersFirebaseService {
     CollectOrderDataModel collectOrderDataModel,
   ) async {
     await _ordersCollection.doc(collectOrderDataModel.orderId).update({
-      FirebasePath.status: 'Delivered',
+      FirebasePath.status: OrderStatus.delivered.text,
       FirebasePath.rating: collectOrderDataModel.orderRating,
     });
     final querySnapshot = await _bakeriesCollection.get();

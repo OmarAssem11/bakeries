@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Order {
   String get id => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
+  OrderStatus get status => throw _privateConstructorUsedError;
   DateTime get dateTime => throw _privateConstructorUsedError;
   double get deliveryFee => throw _privateConstructorUsedError;
   double get subtotal => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $OrderCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String status,
+      OrderStatus status,
       DateTime dateTime,
       double deliveryFee,
       double subtotal,
@@ -75,7 +75,7 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as OrderStatus,
       dateTime: null == dateTime
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
@@ -112,7 +112,7 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String status,
+      OrderStatus status,
       DateTime dateTime,
       double deliveryFee,
       double subtotal,
@@ -147,7 +147,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as OrderStatus,
       dateTime: null == dateTime
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
@@ -193,7 +193,7 @@ class _$_Order implements _Order {
   @override
   final String id;
   @override
-  final String status;
+  final OrderStatus status;
   @override
   final DateTime dateTime;
   @override
@@ -259,7 +259,7 @@ class _$_Order implements _Order {
 abstract class _Order implements Order {
   const factory _Order(
       {required final String id,
-      required final String status,
+      required final OrderStatus status,
       required final DateTime dateTime,
       required final double deliveryFee,
       required final double subtotal,
@@ -270,7 +270,7 @@ abstract class _Order implements Order {
   @override
   String get id;
   @override
-  String get status;
+  OrderStatus get status;
   @override
   DateTime get dateTime;
   @override

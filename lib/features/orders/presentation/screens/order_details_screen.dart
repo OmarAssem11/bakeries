@@ -1,3 +1,4 @@
+import 'package:bakery/core/domain/enums/order_status.dart';
 import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
@@ -24,6 +25,12 @@ class OrderDetailsScreen extends StatefulWidget {
 
 class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
   late final String _orderId;
+  final _statusLotties = {
+    OrderStatus.pending: Assets.lottie.pending,
+    OrderStatus.preparing: Assets.lottie.preparing,
+    OrderStatus.outForDelivery: Assets.lottie.outForDelivery,
+    OrderStatus.delivered: Assets.lottie.delivered,
+  };
 
   @override
   void initState() {
@@ -57,13 +64,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                     ),
                   ),
                   const SizedBox(height: Sizes.s16),
-                  Lottie.asset(
-                    order.status == 'Pending'
-                        ? Assets.lottie.pending
-                        : order.status == 'Out for Delivery'
-                            ? Assets.lottie.processing
-                            : Assets.lottie.delivered,
-                  ),
+                  Lottie.asset(_statusLotties[order.status]!),
                   const Divider(thickness: Sizes.s1),
                   ListView.separated(
                     itemBuilder: (_, index) => OrderedProductItem(
@@ -83,7 +84,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                     deliveryFee: order.deliveryFee,
                   ),
                   const Divider(thickness: Sizes.s1),
-                  if (order.status == 'Delivered')
+                  if (order.status == OrderStatus.delivered)
                     Row(
                       children: [
                         Text(

@@ -8,7 +8,7 @@ part of 'order_model.dart';
 
 OrderModel _$OrderModelFromJson(Map<String, dynamic> json) => OrderModel(
       id: json['id'] as String,
-      status: json['status'] as String,
+      status: $enumDecode(_$OrderStatusEnumMap, json['status']),
       dateTime: const DateTimeConverter().fromJson(json['dateTime'] as int),
       deliveryFee: (json['deliveryFee'] as num).toDouble(),
       subTotal: (json['subTotal'] as num).toDouble(),
@@ -22,7 +22,7 @@ OrderModel _$OrderModelFromJson(Map<String, dynamic> json) => OrderModel(
 Map<String, dynamic> _$OrderModelToJson(OrderModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'status': instance.status,
+      'status': _$OrderStatusEnumMap[instance.status]!,
       'dateTime': const DateTimeConverter().toJson(instance.dateTime),
       'deliveryFee': instance.deliveryFee,
       'subTotal': instance.subTotal,
@@ -31,3 +31,10 @@ Map<String, dynamic> _$OrderModelToJson(OrderModel instance) =>
           instance.orderProductsModels.map((e) => e.toJson()).toList(),
       'rating': instance.rating,
     };
+
+const _$OrderStatusEnumMap = {
+  OrderStatus.pending: 'pending',
+  OrderStatus.preparing: 'preparing',
+  OrderStatus.outForDelivery: 'outForDelivery',
+  OrderStatus.delivered: 'delivered',
+};

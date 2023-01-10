@@ -1,4 +1,5 @@
 import 'package:bakery/core/data/constants/firebase_path.dart';
+import 'package:bakery/core/domain/enums/order_status.dart';
 import 'package:bakery/features/cart/data/models/cart_product_model/cart_product_model.dart';
 import 'package:bakery/features/checkout/data/models/checkout_data_model.dart';
 import 'package:bakery/features/orders/data/models/order_model/order_model.dart';
@@ -46,7 +47,7 @@ class CheckoutFirebaseService {
     }
     final orderModel = OrderModel(
       id: doc.id,
-      status: 'Pending',
+      status: OrderStatus.pending,
       dateTime: DateTime.now(),
       deliveryFee: deliveryFee,
       subTotal: subtotal,
