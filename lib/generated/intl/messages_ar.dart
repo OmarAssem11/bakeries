@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا يمكن ان يكون فارغ"),
         "cashOnDelivery":
             MessageLookupByLibrary.simpleMessage("الدفع عند الإستلام"),
+        "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
         "change": MessageLookupByLibrary.simpleMessage("تغيير"),
         "checkYourEmail":
             MessageLookupByLibrary.simpleMessage("تفقد بريدك الإكتروني"),
@@ -94,6 +95,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "رقم الهاتف لا يمكن ان يكون فارغ"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "pickYourCategory":
+            MessageLookupByLibrary.simpleMessage("إختر التصنيف"),
         "placeOrder": MessageLookupByLibrary.simpleMessage("تأكيد الطلب"),
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "برجاء قم بتفعيل تحديد الموقع"),

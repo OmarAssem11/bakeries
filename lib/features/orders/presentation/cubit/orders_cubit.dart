@@ -10,22 +10,22 @@ import 'package:injectable/injectable.dart';
 @injectable
 class OrdersCubit extends Cubit<OrdersState> {
   OrdersCubit(
-    this._getOrdersListUseCase,
+    this._getOrdersUseCase,
     this._getOrderDetailsUseCase,
     this._markOrderAsCollectedUseCase,
   ) : super(const OrdersInitial());
 
-  final GetOrdersListUseCase _getOrdersListUseCase;
+  final GetOrdersUseCase _getOrdersUseCase;
   final GetOrderDetailsUseCase _getOrderDetailsUseCase;
   final MarkOrderAsCollectedUseCase _markOrderAsCollectedUseCase;
 
   Future<void> getOrders() async {
-    emit(const GetOrdersListLoading());
-    final result = await _getOrdersListUseCase(const NoParams());
+    emit(const GetOrdersLoading());
+    final result = await _getOrdersUseCase(const NoParams());
     emit(
       result.fold(
-        (failure) => const GetOrdersListError(),
-        (orders) => GetOrdersListSuccess(orders),
+        (failure) => const GetOrdersError(),
+        (orders) => GetOrdersSuccess(orders),
       ),
     );
   }
@@ -33,7 +33,7 @@ class OrdersCubit extends Cubit<OrdersState> {
   Future<void> getOrderDetails(String orderId) async {
     emit(const GetOrderDetailsLoading());
     final result =
-        await _getOrderDetailsUseCase(GetOrderDetailsParams(orderId: orderId));
+        await _getOrderDetailsUseCase(OrderDetailsParams(orderId: orderId));
     emit(
       result.fold(
         (failure) => const GetOrderDetailsError(),
@@ -45,7 +45,7 @@ class OrdersCubit extends Cubit<OrdersState> {
   Future<void> markOrderAsCollected(CollectOrderData collectOrderData) async {
     emit(const MarkOrderAsCollectedLoading());
     final result = await _markOrderAsCollectedUseCase(
-      MarkOrderAsCollectedParams(collectOrderData: collectOrderData),
+      CollectOrderParams(collectOrderData: collectOrderData),
     );
     emit(
       result.fold(

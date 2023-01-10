@@ -9,6 +9,9 @@ import 'package:bakery/features/bakeries/presentation/screens/bakeries_screen.da
 import 'package:bakery/features/bakeries/presentation/screens/bakery_details_screen.dart';
 import 'package:bakery/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:bakery/features/cart/presentation/screens/cart_screen.dart';
+import 'package:bakery/features/categories/presentation/cubit/categories_cubit.dart';
+import 'package:bakery/features/categories/presentation/screens/categories_screen.dart';
+import 'package:bakery/features/categories/presentation/screens/category_bakeries_screen.dart';
 import 'package:bakery/features/checkout/presentation/cubit/checkout_cubit.dart';
 import 'package:bakery/features/checkout/presentation/screens/address_location_screen.dart';
 import 'package:bakery/features/checkout/presentation/screens/checkout_screen.dart';
@@ -28,6 +31,8 @@ class AppRoutes {
   static const String settings = '/settings';
   static const String bakeries = '/bakeries';
   static const String bakeryDetails = '/bakery-details';
+  static const String categories = '/categories';
+  static const String categoryBakeries = '/category-bakeries';
   static const String cart = '/cart';
   static const String addressLocation = '/address-location';
   static const String checkout = '/checkout';
@@ -81,6 +86,21 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
         builder: (_) => BlocProvider(
           create: (_) => getIt<BakeriesCubit>(),
           child: const BakeryDetailsScreen(),
+        ),
+        settings: routeSettings,
+      );
+    case AppRoutes.categories:
+      return MaterialPageRoute(
+        builder: (_) => BlocProvider(
+          create: (_) => getIt<CategoriesCubit>(),
+          child: const CategoriesScreen(),
+        ),
+      );
+    case AppRoutes.categoryBakeries:
+      return MaterialPageRoute(
+        builder: (_) => BlocProvider(
+          create: (_) => getIt<CategoriesCubit>(),
+          child: const CategoryBakeriesScreen(),
         ),
         settings: routeSettings,
       );

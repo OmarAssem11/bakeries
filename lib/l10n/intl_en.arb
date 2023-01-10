@@ -65,5 +65,7 @@
     "youHaveNoOrdersYet": "You have no orders yet!",
     "markAsCollected": "Mark as collected",
     "rateYourOrder": "Rate your order",
-    "orderRating": "Order Rating"
+    "orderRating": "Order Rating",
+    "categories": "Categories",
+    "pickYourCategory": "Pick your category"
 }

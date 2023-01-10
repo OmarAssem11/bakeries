@@ -21,7 +21,7 @@ mixin _$Product {
   double get price => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  String? get category => throw _privateConstructorUsedError;
+  String? get categoryId => throw _privateConstructorUsedError;
   int? get quantity => throw _privateConstructorUsedError;
   String? get bakeryName => throw _privateConstructorUsedError;
   String? get bakeryImageUrl => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $ProductCopyWith<$Res> {
       double price,
       String imageUrl,
       String? description,
-      String? category,
+      String? categoryId,
       int? quantity,
       String? bakeryName,
       String? bakeryImageUrl,
@@ -67,7 +67,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     Object? price = null,
     Object? imageUrl = null,
     Object? description = freezed,
-    Object? category = freezed,
+    Object? categoryId = freezed,
     Object? quantity = freezed,
     Object? bakeryName = freezed,
     Object? bakeryImageUrl = freezed,
@@ -94,9 +94,9 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
               as String?,
       quantity: freezed == quantity
           ? _value.quantity
@@ -131,7 +131,7 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       double price,
       String imageUrl,
       String? description,
-      String? category,
+      String? categoryId,
       int? quantity,
       String? bakeryName,
       String? bakeryImageUrl,
@@ -153,7 +153,7 @@ class __$$_ProductCopyWithImpl<$Res>
     Object? price = null,
     Object? imageUrl = null,
     Object? description = freezed,
-    Object? category = freezed,
+    Object? categoryId = freezed,
     Object? quantity = freezed,
     Object? bakeryName = freezed,
     Object? bakeryImageUrl = freezed,
@@ -180,9 +180,9 @@ class __$$_ProductCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
               as String?,
       quantity: freezed == quantity
           ? _value.quantity
@@ -213,7 +213,7 @@ class _$_Product implements _Product {
       required this.price,
       required this.imageUrl,
       this.description,
-      this.category,
+      this.categoryId,
       this.quantity,
       this.bakeryName,
       this.bakeryImageUrl,
@@ -230,7 +230,7 @@ class _$_Product implements _Product {
   @override
   final String? description;
   @override
-  final String? category;
+  final String? categoryId;
   @override
   final int? quantity;
   @override
@@ -242,7 +242,7 @@ class _$_Product implements _Product {
 
   @override
   String toString() {
-    return 'Product(id: $id, name: $name, price: $price, imageUrl: $imageUrl, description: $description, category: $category, quantity: $quantity, bakeryName: $bakeryName, bakeryImageUrl: $bakeryImageUrl, bakeryAddress: $bakeryAddress)';
+    return 'Product(id: $id, name: $name, price: $price, imageUrl: $imageUrl, description: $description, categoryId: $categoryId, quantity: $quantity, bakeryName: $bakeryName, bakeryImageUrl: $bakeryImageUrl, bakeryAddress: $bakeryAddress)';
   }
 
   @override
@@ -257,8 +257,8 @@ class _$_Product implements _Product {
                 other.imageUrl == imageUrl) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
             (identical(other.bakeryName, bakeryName) ||
@@ -277,7 +277,7 @@ class _$_Product implements _Product {
       price,
       imageUrl,
       description,
-      category,
+      categoryId,
       quantity,
       bakeryName,
       bakeryImageUrl,
@@ -297,7 +297,7 @@ abstract class _Product implements Product {
       required final double price,
       required final String imageUrl,
       final String? description,
-      final String? category,
+      final String? categoryId,
       final int? quantity,
       final String? bakeryName,
       final String? bakeryImageUrl,
@@ -314,7 +314,7 @@ abstract class _Product implements Product {
   @override
   String? get description;
   @override
-  String? get category;
+  String? get categoryId;
   @override
   int? get quantity;
   @override

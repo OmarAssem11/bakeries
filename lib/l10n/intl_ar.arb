@@ -65,5 +65,7 @@
     "youHaveNoOrdersYet": "ليس لديك اي طلبات بعد!",
     "markAsCollected": "أشر انها وصلت",
     "rateYourOrder": "قيم طلبك",
-    "orderRating": "تقييم الطلب"
+    "orderRating": "تقييم الطلب",
+    "categories": "التصنيفات",
+    "pickYourCategory": "إختر التصنيف"
 }

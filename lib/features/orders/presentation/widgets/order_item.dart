@@ -9,9 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class OrderItem extends StatefulWidget {
-  const OrderItem({required this.order});
+  const OrderItem({
+    required this.order,
+    required this.updateOrders,
+  });
 
   final Order order;
+  final VoidCallback updateOrders;
 
   @override
   State<OrderItem> createState() => _OrderItemState();
@@ -32,10 +36,12 @@ class _OrderItemState extends State<OrderItem> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.of(context).pushNamed(
-        AppRoutes.orderDetails,
-        arguments: widget.order.id,
-      ),
+      onTap: () => Navigator.of(context)
+          .pushNamed(
+            AppRoutes.orderDetails,
+            arguments: widget.order.id,
+          )
+          .then((_) => widget.updateOrders()),
       child: Column(
         children: [
           Row(

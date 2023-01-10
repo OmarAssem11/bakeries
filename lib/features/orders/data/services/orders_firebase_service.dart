@@ -23,7 +23,7 @@ class OrdersFirebaseService {
         .toList();
     ordersModels.sort(
       (orderModel, nextOrderModel) =>
-          orderModel.dateTime.compareTo(nextOrderModel.dateTime),
+          nextOrderModel.dateTime.compareTo(orderModel.dateTime),
     );
     return ordersModels;
   }

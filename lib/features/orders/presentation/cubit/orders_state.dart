@@ -7,11 +7,11 @@ part 'orders_state.freezed.dart';
 class OrdersState with _$OrdersState {
   const factory OrdersState.initial() = OrdersInitial;
 
-  const factory OrdersState.getOrdersListLoading() = GetOrdersListLoading;
-  const factory OrdersState.getOrdersListSuccess(
+  const factory OrdersState.getOrdersLoading() = GetOrdersLoading;
+  const factory OrdersState.getOrdersSuccess(
     List<Order> orders,
-  ) = GetOrdersListSuccess;
-  const factory OrdersState.getOrdersListError() = GetOrdersListError;
+  ) = GetOrdersSuccess;
+  const factory OrdersState.getOrdersError() = GetOrdersError;
 
   const factory OrdersState.getOrderDetailsLoading() = GetOrderDetailsLoading;
   const factory OrdersState.getOrderDetailsSuccess(

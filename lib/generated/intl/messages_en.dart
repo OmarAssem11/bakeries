@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Can\'t be empty"),
         "cashOnDelivery":
             MessageLookupByLibrary.simpleMessage("Cash on delivery"),
+        "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "change": MessageLookupByLibrary.simpleMessage("Change"),
         "checkYourEmail":
             MessageLookupByLibrary.simpleMessage("Check your email"),
@@ -94,6 +95,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneCanNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Phone can\'t be empty"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+        "pickYourCategory":
+            MessageLookupByLibrary.simpleMessage("Pick your category"),
         "placeOrder": MessageLookupByLibrary.simpleMessage("place order"),
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "Please enable Your Location Service"),

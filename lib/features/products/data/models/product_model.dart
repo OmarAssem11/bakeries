@@ -9,7 +9,7 @@ class ProductModel {
   final String description;
   final String imageUrl;
   final double price;
-  final String category;
+  final String categoryId;
   final String? bakeryName;
   final String? bakeryImageUrl;
   final String? bakeryAddress;
@@ -20,7 +20,7 @@ class ProductModel {
     required this.description,
     required this.imageUrl,
     required this.price,
-    required this.category,
+    required this.categoryId,
     this.bakeryName,
     this.bakeryImageUrl,
     this.bakeryAddress,

@@ -8,7 +8,7 @@ extension ProductMapper on ProductModel {
         description: description,
         imageUrl: imageUrl,
         price: price,
-        category: category,
+        categoryId: categoryId,
         bakeryName: bakeryName,
         bakeryImageUrl: bakeryImageUrl,
         bakeryAddress: bakeryAddress,

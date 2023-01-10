@@ -7,22 +7,22 @@ import 'package:dartz/dartz.dart' hide Order;
 import 'package:injectable/injectable.dart' hide Order;
 
 @lazySingleton
-class GetOrderDetailsUseCase implements UseCase<Order, GetOrderDetailsParams> {
+class GetOrderDetailsUseCase implements UseCase<Order, OrderDetailsParams> {
   final OrdersRepository _ordersRepository;
 
   const GetOrderDetailsUseCase(this._ordersRepository);
 
   @override
   Future<Either<Failure, Order>> call(
-    GetOrderDetailsParams getOrderDetailsParams,
+    OrderDetailsParams orderDetailsParams,
   ) =>
-      _ordersRepository.getOrderDetails(getOrderDetailsParams.orderId);
+      _ordersRepository.getOrderDetails(orderDetailsParams.orderId);
 }
 
-class GetOrderDetailsParams extends AppParams {
+class OrderDetailsParams extends AppParams {
   final String orderId;
 
-  GetOrderDetailsParams({required this.orderId});
+  OrderDetailsParams({required this.orderId});
 
   @override
   List<Object?> get props => [orderId];

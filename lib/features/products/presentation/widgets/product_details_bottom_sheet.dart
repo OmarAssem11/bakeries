@@ -126,8 +126,6 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                             onPressed: () {
                               Navigator.of(context)
                                   .popUntil((route) => route.isFirst);
-                              Navigator.of(context)
-                                  .pushReplacementNamed(AppRoutes.bakeries);
                               Navigator.of(context).pushNamed(AppRoutes.cart);
                             },
                             isLoading: isLoading,

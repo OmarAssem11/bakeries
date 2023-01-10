@@ -7,25 +7,24 @@ import 'package:dartz/dartz.dart' hide Order;
 import 'package:injectable/injectable.dart' hide Order;
 
 @lazySingleton
-class MarkOrderAsCollectedUseCase
-    implements UseCase<Unit, MarkOrderAsCollectedParams> {
+class MarkOrderAsCollectedUseCase implements UseCase<Unit, CollectOrderParams> {
   final OrdersRepository _ordersRepository;
 
   const MarkOrderAsCollectedUseCase(this._ordersRepository);
 
   @override
   Future<Either<Failure, Unit>> call(
-    MarkOrderAsCollectedParams markOrderAsCollectedParams,
+    CollectOrderParams collectOrderParams,
   ) =>
       _ordersRepository.markOrderAsCollected(
-        markOrderAsCollectedParams.collectOrderData,
+        collectOrderParams.collectOrderData,
       );
 }
 
-class MarkOrderAsCollectedParams extends AppParams {
+class CollectOrderParams extends AppParams {
   final CollectOrderData collectOrderData;
 
-  MarkOrderAsCollectedParams({required this.collectOrderData});
+  CollectOrderParams({required this.collectOrderData});
 
   @override
   List<Object?> get props => [collectOrderData];

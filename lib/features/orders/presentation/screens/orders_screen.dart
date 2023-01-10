@@ -33,9 +33,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
       body: BlocBuilder<OrdersCubit, OrdersState>(
         builder: (context, state) {
           return state.maybeWhen(
-            getOrdersListLoading: () => const LoadingIndicator(),
-            getOrdersListError: () => const ErrorIndicator(),
-            getOrdersListSuccess: (orders) => orders.isEmpty
+            getOrdersLoading: () => const LoadingIndicator(),
+            getOrdersError: () => const ErrorIndicator(),
+            getOrdersSuccess: (orders) => orders.isEmpty
                 ? const NoOrders()
                 : ListView.separated(
                     itemBuilder: (_, index) => Padding(
@@ -44,6 +44,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                         padding: const EdgeInsets.all(Insets.xs),
                         child: OrderItem(
                           order: orders[index],
+                          updateOrders: updateOrders,
                         ),
                       ),
                     ),
@@ -59,5 +60,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
         },
       ),
     );
+  }
+
+  void updateOrders() {
+    BlocProvider.of<OrdersCubit>(context).getOrders();
+    setState(() {});
   }
 }

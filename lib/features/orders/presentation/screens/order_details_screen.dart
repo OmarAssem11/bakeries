@@ -23,7 +23,7 @@ class OrderDetailsScreen extends StatefulWidget {
 }
 
 class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
-  late String _orderId;
+  late final String _orderId;
 
   @override
   void initState() {

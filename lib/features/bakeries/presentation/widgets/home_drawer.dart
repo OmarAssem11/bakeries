@@ -21,6 +21,11 @@ class HomeDrawer extends StatelessWidget {
             onTap: () => Navigator.of(context).pop(),
           ),
           ListTile(
+            leading: const Icon(Icons.bakery_dining_rounded),
+            title: Text(S.current.categories),
+            onTap: () => Navigator.of(context).pushNamed(AppRoutes.categories),
+          ),
+          ListTile(
             leading: const Icon(Icons.pending_outlined),
             title: Text(S.current.myOrders),
             onTap: () => Navigator.of(context).pushNamed(AppRoutes.orders),

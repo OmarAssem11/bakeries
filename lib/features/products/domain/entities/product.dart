@@ -10,7 +10,7 @@ class Product with _$Product {
     required double price,
     required String imageUrl,
     String? description,
-    String? category,
+    String? categoryId,
     int? quantity,
     String? bakeryName,
     String? bakeryImageUrl,
