@@ -13,14 +13,14 @@ class LogoutAlertDialog extends StatelessWidget {
     return AlertDialog(
       title: Text(
         S.current.areYouSureYouWantToLogout,
-        style: textTheme.subtitle2,
+        style: textTheme.bodyMedium,
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
           child: Text(
             S.current.no,
-            style: textTheme.subtitle1,
+            style: textTheme.bodyLarge,
           ),
         ),
         TextButton(
@@ -31,7 +31,7 @@ class LogoutAlertDialog extends StatelessWidget {
           },
           child: Text(
             S.current.yes,
-            style: textTheme.subtitle1,
+            style: textTheme.bodyLarge,
           ),
         ),
       ],

@@ -113,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "subtotal": MessageLookupByLibrary.simpleMessage("المجموع"),
         "totalAmount": MessageLookupByLibrary.simpleMessage("الإجمالي"),
         "viewBasket": MessageLookupByLibrary.simpleMessage("عرض السلة"),
+        "welcome": MessageLookupByLibrary.simpleMessage("مرحبا"),
         "yes": MessageLookupByLibrary.simpleMessage("نعم"),
         "youHaveNoOrdersYet":
             MessageLookupByLibrary.simpleMessage("ليس لديك اي طلبات بعد!"),

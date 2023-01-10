@@ -115,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
         "totalAmount": MessageLookupByLibrary.simpleMessage("Total amount"),
         "viewBasket": MessageLookupByLibrary.simpleMessage("View basket"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "youHaveNoOrdersYet":
             MessageLookupByLibrary.simpleMessage("You have no orders yet!"),
