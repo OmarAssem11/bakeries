@@ -1,8 +1,8 @@
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
+import 'package:bakery/core/presentation/widgets/logout_alert.dart';
 import 'package:bakery/di/injector.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_state.dart';
-import 'package:bakery/features/bakeries/presentation/widgets/logout_alert.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -70,7 +70,10 @@ class _HomeDrawerItemsState extends State<HomeDrawerItems> {
                     context: context,
                     builder: (_) => BlocProvider(
                       create: (_) => getIt<AuthCubit>(),
-                      child: const LogoutAlertDialog(),
+                      child: QuestionDialog(
+                        question: S.current.areYouSureYouWantToLogout,
+                        onSubmit: BlocProvider.of<AuthCubit>(context).logout,
+                      ),
                     ),
                   );
                 },

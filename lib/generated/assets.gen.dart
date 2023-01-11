@@ -23,6 +23,9 @@ class $AssetsImagesGen {
 class $AssetsLottieGen {
   const $AssetsLottieGen();
 
+  /// File path: assets/lottie/cancelled.json
+  String get cancelled => 'assets/lottie/cancelled.json';
+
   /// File path: assets/lottie/cart.json
   String get cart => 'assets/lottie/cart.json';
 
@@ -43,7 +46,7 @@ class $AssetsLottieGen {
 
   /// List of all assets
   List<String> get values =>
-      [cart, delivered, loading, outForDelivery, pending, preparing];
+      [cancelled, cart, delivered, loading, outForDelivery, pending, preparing];
 }
 
 class Assets {

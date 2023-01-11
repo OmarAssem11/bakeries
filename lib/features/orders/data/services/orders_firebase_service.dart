@@ -64,4 +64,11 @@ class OrdersFirebaseService {
     });
     return unit;
   }
+
+  Future<Unit> cancelOrder(String orderId) async {
+    await _ordersCollection.doc(orderId).update({
+      FirebasePath.status: OrderStatus.cancelled.text,
+    });
+    return unit;
+  }
 }

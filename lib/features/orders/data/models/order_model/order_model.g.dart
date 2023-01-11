@@ -37,4 +37,5 @@ const _$OrderStatusEnumMap = {
   OrderStatus.preparing: 'preparing',
   OrderStatus.outForDelivery: 'outForDelivery',
   OrderStatus.delivered: 'delivered',
+  OrderStatus.cancelled: 'cancelled',
 };

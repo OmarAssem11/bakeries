@@ -41,4 +41,13 @@ class OrdersRemoteDataSourceImpl implements OrdersRemoteDataSource {
       throw returnRemoteAppException(exception);
     }
   }
+
+  @override
+  Future<Unit> cancelOrder(String orderId) async {
+    try {
+      return await _ordersFirebaseService.cancelOrder(orderId);
+    } catch (exception) {
+      throw returnRemoteAppException(exception);
+    }
+  }
 }

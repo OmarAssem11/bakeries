@@ -1,3 +1,4 @@
+import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/toast.dart';
@@ -44,7 +45,6 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
               _locatePosition();
               setState(() {});
             },
-            myLocationEnabled: true,
             onTap: (newPosition) {
               _currentPosition = newPosition;
               _addMarker(newPosition);
@@ -54,21 +54,28 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
             },
           ),
           Align(
-            alignment: Alignment.bottomRight,
-            child: FloatingActionButton(
-              onPressed: () async {
-                _addMarker(await _locatePosition());
-              },
-              child: const Icon(Icons.share_location_sharp),
+            alignment: Alignment.bottomLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: Insets.xxl),
+              child: FloatingActionButton(
+                onPressed: () async {
+                  _addMarker(await _locatePosition());
+                },
+                backgroundColor: ColorManager.white.withOpacity(.7),
+                child: const Icon(
+                  Icons.my_location_outlined,
+                  color: ColorManager.black,
+                ),
+              ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              margin: const EdgeInsets.only(bottom: Insets.xl),
-              child: SizedBox(
+          if (_currentPosition != null)
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
                 height: Sizes.s40,
                 width: MediaQuery.of(context).size.width * 0.52,
+                margin: const EdgeInsets.only(bottom: Insets.xl),
                 child: CustomElevatedButton(
                   onPressed: () async {
                     Navigator.of(context).pushNamed(
@@ -84,7 +91,6 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
                 ),
               ),
             ),
-          ),
         ],
       ),
     );

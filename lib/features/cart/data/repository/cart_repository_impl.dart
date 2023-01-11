@@ -19,8 +19,8 @@ class CartRepositoryImpl implements CartRepository {
   @override
   Future<Either<Failure, Unit>> addToCart(CartOrder cartOrder) async {
     try {
-      final a = await _cartRemoteDataSource.addToCart(cartOrder.toModel);
-      return right(a);
+      await _cartRemoteDataSource.addToCart(cartOrder.toModel);
+      return right(unit);
     } on AppException catch (appException) {
       return left(returnFailure(appException));
     }

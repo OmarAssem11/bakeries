@@ -680,6 +680,26 @@ class S {
     );
   }
 
+  /// `Cancel order`
+  String get cancelOrder {
+    return Intl.message(
+      'Cancel order',
+      name: 'cancelOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to cancel this order?`
+  String get areYouSureYouWantToCancelThisOrder {
+    return Intl.message(
+      'Are you sure you want to cancel this order?',
+      name: 'areYouSureYouWantToCancelThisOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Rate your order`
   String get rateYourOrder {
     return Intl.message(

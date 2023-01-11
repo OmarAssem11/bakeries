@@ -50,4 +50,14 @@ class OrdersRepositoryImpl implements OrdersRepository {
       return left(returnFailure(appException));
     }
   }
+
+  @override
+  Future<Either<Failure, Unit>> cancelOrder(String orderId) async {
+    try {
+      await _ordersRemoteDataSource.cancelOrder(orderId);
+      return right(unit);
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
+    }
+  }
 }

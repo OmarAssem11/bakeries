@@ -10,4 +10,6 @@ abstract class OrdersRemoteDataSource {
   Future<Unit> markOrderAsCollected(
     CollectOrderDataModel collectOrderDataModel,
   );
+
+  Future<Unit> cancelOrder(String orderId);
 }

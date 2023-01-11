@@ -1,17 +1,21 @@
-import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LogoutAlertDialog extends StatelessWidget {
-  const LogoutAlertDialog();
+class QuestionDialog extends StatelessWidget {
+  const QuestionDialog({
+    required this.question,
+    required this.onSubmit,
+  });
+
+  final String question;
+  final Function() onSubmit;
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return AlertDialog(
       title: Text(
-        S.current.areYouSureYouWantToLogout,
+        question,
         style: textTheme.bodyMedium,
       ),
       actions: [
@@ -24,7 +28,7 @@ class LogoutAlertDialog extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            BlocProvider.of<AuthCubit>(context).logout();
+            onSubmit();
             Navigator.of(context).pop();
           },
           child: Text(

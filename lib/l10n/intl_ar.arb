@@ -62,6 +62,8 @@
     "retry": "أعد المحاولة",
     "youHaveNoOrdersYet": "ليس لديك اي طلبات بعد!",
     "markAsCollected": "أشر انها وصلت",
+    "cancelOrder": "إلغاء الطلب",
+    "areYouSureYouWantToCancelThisOrder": "هل أنت متأكد انك تريد إلغاء الطلب؟",
     "rateYourOrder": "قيم طلبك",
     "orderRating": "تقييم الطلب",
     "categories": "التصنيفات",

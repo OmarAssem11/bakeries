@@ -30,12 +30,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "anythingElseWeNeedToKnow": MessageLookupByLibrary.simpleMessage(
             "Anything else we need to know?"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+        "areYouSureYouWantToCancelThisOrder":
+            MessageLookupByLibrary.simpleMessage(
+                "Are you sure you want to cancel this order?"),
         "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to logout?"),
         "bakeries": MessageLookupByLibrary.simpleMessage("Bakeries"),
         "basket": MessageLookupByLibrary.simpleMessage("Basket"),
         "canNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Can\'t be empty"),
+        "cancelOrder": MessageLookupByLibrary.simpleMessage("Cancel order"),
         "cashOnDelivery":
             MessageLookupByLibrary.simpleMessage("Cash on delivery"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),

@@ -31,4 +31,5 @@ final _statusColors = {
   OrderStatus.preparing: ColorManager.lightBlue,
   OrderStatus.outForDelivery: ColorManager.blueGray,
   OrderStatus.delivered: ColorManager.done,
+  OrderStatus.cancelled: ColorManager.error,
 };

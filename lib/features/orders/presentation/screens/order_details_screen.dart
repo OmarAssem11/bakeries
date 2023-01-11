@@ -3,6 +3,7 @@ import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
+import 'package:bakery/core/presentation/widgets/logout_alert.dart';
 import 'package:bakery/core/presentation/widgets/rating_widget.dart';
 import 'package:bakery/di/injector.dart';
 import 'package:bakery/features/cart/presentation/widgets/payment_summery.dart';
@@ -30,6 +31,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
     OrderStatus.preparing: Assets.lottie.preparing,
     OrderStatus.outForDelivery: Assets.lottie.outForDelivery,
     OrderStatus.delivered: Assets.lottie.delivered,
+    OrderStatus.cancelled: Assets.lottie.cancelled,
   };
 
   @override
@@ -95,29 +97,61 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         Rating(order.rating!),
                       ],
                     )
-                  else
-                    TextButton.icon(
-                      onPressed: () => showDialog(
-                        context: context,
-                        builder: (_) => BlocProvider(
-                          create: (_) => getIt<OrdersCubit>(),
-                          child: OrderRatingDialog(
-                            orderId: _orderId,
-                            productId: order.products[0].id,
+                  else if (order.status != OrderStatus.cancelled)
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton.icon(
+                          onPressed: () => showDialog(
+                            context: context,
+                            builder: (_) => BlocProvider(
+                              create: (_) => getIt<OrdersCubit>(),
+                              child: QuestionDialog(
+                                question: S
+                                    .current.areYouSureYouWantToCancelThisOrder,
+                                onSubmit: () {
+                                  BlocProvider.of<OrdersCubit>(context)
+                                      .cancelOrder(_orderId);
+                                },
+                              ),
+                            ),
+                          ).then(
+                            (_) => BlocProvider.of<OrdersCubit>(context)
+                                .getOrderDetails(_orderId),
+                          ),
+                          icon: const Icon(
+                            Icons.cancel_outlined,
+                            color: ColorManager.error,
+                          ),
+                          label: Text(
+                            S.current.cancelOrder,
+                            style: const TextStyle(color: ColorManager.error),
                           ),
                         ),
-                      ).then(
-                        (_) => BlocProvider.of<OrdersCubit>(context)
-                            .getOrderDetails(_orderId),
-                      ),
-                      icon: const Icon(
-                        Icons.done,
-                        color: ColorManager.done,
-                      ),
-                      label: Text(
-                        S.current.markAsCollected,
-                        style: const TextStyle(color: ColorManager.done),
-                      ),
+                        TextButton.icon(
+                          onPressed: () => showDialog(
+                            context: context,
+                            builder: (_) => BlocProvider(
+                              create: (_) => getIt<OrdersCubit>(),
+                              child: OrderRatingDialog(
+                                orderId: _orderId,
+                                productId: order.products[0].id,
+                              ),
+                            ),
+                          ).then(
+                            (_) => BlocProvider.of<OrdersCubit>(context)
+                                .getOrderDetails(_orderId),
+                          ),
+                          icon: const Icon(
+                            Icons.done,
+                            color: ColorManager.done,
+                          ),
+                          label: Text(
+                            S.current.markAsCollected,
+                            style: const TextStyle(color: ColorManager.done),
+                          ),
+                        ),
+                      ],
                     ),
                 ],
               ),

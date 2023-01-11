@@ -30,12 +30,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "anythingElseWeNeedToKnow":
             MessageLookupByLibrary.simpleMessage("اي شئ آخر يجب ان نعرفه؟"),
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "areYouSureYouWantToCancelThisOrder":
+            MessageLookupByLibrary.simpleMessage(
+                "هل أنت متأكد انك تريد إلغاء الطلب؟"),
         "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد انك تريد تسجيل خروج؟"),
         "bakeries": MessageLookupByLibrary.simpleMessage("مخابز"),
         "basket": MessageLookupByLibrary.simpleMessage("السلة"),
         "canNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("لا يمكن ان يكون فارغ"),
+        "cancelOrder": MessageLookupByLibrary.simpleMessage("إلغاء الطلب"),
         "cashOnDelivery":
             MessageLookupByLibrary.simpleMessage("الدفع عند الإستلام"),
         "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),

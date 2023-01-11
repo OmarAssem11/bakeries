@@ -25,4 +25,8 @@ class OrdersState with _$OrdersState {
       MarkOrderAsCollectedSuccess;
   const factory OrdersState.markOrderAsCollectedError() =
       MarkOrderAsCollectedError;
+
+  const factory OrdersState.cancelOrderLoading() = CancelOrderLoading;
+  const factory OrdersState.cancelOrderSuccess() = CancelOrderSuccess;
+  const factory OrdersState.cancelOrderError() = CancelOrderError;
 }

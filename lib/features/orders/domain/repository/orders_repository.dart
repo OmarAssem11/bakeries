@@ -11,4 +11,6 @@ abstract class OrdersRepository {
   Future<Either<Failure, Unit>> markOrderAsCollected(
     CollectOrderData collectOrderData,
   );
+
+  Future<Either<Failure, Unit>> cancelOrder(String orderId);
 }

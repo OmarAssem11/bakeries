@@ -20,9 +20,7 @@ class CheckoutUseCase implements UseCase<String, CheckoutParams> {
 class CheckoutParams extends AppParams {
   final CheckoutData checkoutData;
 
-  CheckoutParams({
-    required this.checkoutData,
-  });
+  CheckoutParams({required this.checkoutData});
 
   @override
   List<Object?> get props => [checkoutData];
