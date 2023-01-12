@@ -40,9 +40,9 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
               target: LatLng(31.205753, 29.924526),
               zoom: 14.4746,
             ),
-            onMapCreated: (mapController) {
+            onMapCreated: (mapController) async {
               _controller = mapController;
-              _locatePosition();
+              await _locatePosition();
               setState(() {});
             },
             onTap: (newPosition) {
@@ -106,7 +106,6 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
     setState(() {
       final CameraPosition cameraPosition =
           CameraPosition(target: pos!, zoom: 14);
-
       _controller.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
       _origin = Marker(
         markerId: const MarkerId("o"),

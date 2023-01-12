@@ -1,4 +1,5 @@
 import 'package:bakery/core/presentation/bloc/app_bloc_observer.dart';
+import 'package:bakery/core/presentation/notifications/notifications_helper.dart';
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/theme_manager.dart';
 import 'package:bakery/di/injector.dart';
@@ -17,6 +18,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await NotificationsHelper().listenOnMessages();
   Bloc.observer = AppBlocObserver();
   runApp(const App());
 }

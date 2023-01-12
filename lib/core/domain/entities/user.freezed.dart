@@ -16,7 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$User {
-  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
@@ -30,7 +29,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String id, String name, String email, String password});
+  $Res call({String name, String email, String password});
 }
 
 /// @nodoc
@@ -46,16 +45,11 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? name = null,
     Object? email = null,
     Object? password = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -78,7 +72,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$_UserCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String email, String password});
+  $Res call({String name, String email, String password});
 }
 
 /// @nodoc
@@ -90,16 +84,11 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? name = null,
     Object? email = null,
     Object? password = null,
   }) {
     return _then(_$_User(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -120,14 +109,8 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 
 class _$_User implements _User {
   const _$_User(
-      {this.id = '',
-      required this.name,
-      required this.email,
-      required this.password});
+      {required this.name, required this.email, required this.password});
 
-  @override
-  @JsonKey()
-  final String id;
   @override
   final String name;
   @override
@@ -137,7 +120,7 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, email: $email, password: $password)';
+    return 'User(name: $name, email: $email, password: $password)';
   }
 
   @override
@@ -145,7 +128,6 @@ class _$_User implements _User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_User &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
@@ -153,7 +135,7 @@ class _$_User implements _User {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, email, password);
+  int get hashCode => Object.hash(runtimeType, name, email, password);
 
   @JsonKey(ignore: true)
   @override
@@ -164,13 +146,10 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {final String id,
-      required final String name,
+      {required final String name,
       required final String email,
       required final String password}) = _$_User;
 
-  @override
-  String get id;
   @override
   String get name;
   @override

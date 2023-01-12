@@ -98,60 +98,59 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       ],
                     )
                   else if (order.status != OrderStatus.cancelled)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        TextButton.icon(
-                          onPressed: () => showDialog(
-                            context: context,
-                            builder: (_) => BlocProvider(
-                              create: (_) => getIt<OrdersCubit>(),
-                              child: QuestionDialog(
+                    BlocProvider(
+                      create: (_) => getIt<OrdersCubit>(),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          TextButton.icon(
+                            onPressed: () => showDialog(
+                              context: context,
+                              builder: (_) => QuestionDialog(
                                 question: S
                                     .current.areYouSureYouWantToCancelThisOrder,
                                 onSubmit: () {
                                   BlocProvider.of<OrdersCubit>(context)
-                                      .cancelOrder(_orderId);
+                                      .cancelOrder(_orderId)
+                                      .then(
+                                        (_) => BlocProvider.of<OrdersCubit>(
+                                          context,
+                                        ).getOrderDetails(_orderId),
+                                      );
                                 },
                               ),
                             ),
-                          ).then(
-                            (_) => BlocProvider.of<OrdersCubit>(context)
-                                .getOrderDetails(_orderId),
+                            icon: const Icon(
+                              Icons.cancel_outlined,
+                              color: ColorManager.error,
+                            ),
+                            label: Text(
+                              S.current.cancelOrder,
+                              style: const TextStyle(color: ColorManager.error),
+                            ),
                           ),
-                          icon: const Icon(
-                            Icons.cancel_outlined,
-                            color: ColorManager.error,
-                          ),
-                          label: Text(
-                            S.current.cancelOrder,
-                            style: const TextStyle(color: ColorManager.error),
-                          ),
-                        ),
-                        TextButton.icon(
-                          onPressed: () => showDialog(
-                            context: context,
-                            builder: (_) => BlocProvider(
-                              create: (_) => getIt<OrdersCubit>(),
-                              child: OrderRatingDialog(
+                          TextButton.icon(
+                            onPressed: () => showDialog(
+                              context: context,
+                              builder: (_) => OrderRatingDialog(
                                 orderId: _orderId,
                                 productId: order.products[0].id,
                               ),
+                            ).then(
+                              (_) => BlocProvider.of<OrdersCubit>(context)
+                                  .getOrderDetails(_orderId),
                             ),
-                          ).then(
-                            (_) => BlocProvider.of<OrdersCubit>(context)
-                                .getOrderDetails(_orderId),
+                            icon: const Icon(
+                              Icons.done,
+                              color: ColorManager.done,
+                            ),
+                            label: Text(
+                              S.current.markAsCollected,
+                              style: const TextStyle(color: ColorManager.done),
+                            ),
                           ),
-                          icon: const Icon(
-                            Icons.done,
-                            color: ColorManager.done,
-                          ),
-                          label: Text(
-                            S.current.markAsCollected,
-                            style: const TextStyle(color: ColorManager.done),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                 ],
               ),

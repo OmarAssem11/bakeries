@@ -4,6 +4,7 @@ import 'package:bakery/features/auth/data/models/login_data_model/login_data_mod
 import 'package:bakery/features/auth/data/models/register_data_model/register_data_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
@@ -18,11 +19,13 @@ class AuthFirebaseService {
       password: registerModel.password,
     );
     final uId = userCredential.user!.uid;
+    final fcmToken = await FirebaseMessaging.instance.getToken();
     final userModel = UserModel(
       id: uId,
       name: registerModel.name,
       email: registerModel.email,
       password: registerModel.password,
+      fcmToken: fcmToken,
     );
     await _usersCollection.doc(uId).set(userModel.toJson());
     return userModel;
@@ -35,6 +38,10 @@ class AuthFirebaseService {
       password: loginModel.password,
     );
     final uId = userCredential.user!.uid;
+    final fcmToken = await FirebaseMessaging.instance.getToken();
+    await _usersCollection.doc(uId).update({
+      FirebasePath.fcmToken: fcmToken,
+    });
     final docSnapShot = await _usersCollection.doc(uId).get();
     final userModel = UserModel.fromJson(docSnapShot.data()!);
     return userModel;
