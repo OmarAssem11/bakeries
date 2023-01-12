@@ -70,7 +70,7 @@ class _CartScreenState extends State<CartScreen> {
                         children: [
                           Text(S.current.basket),
                           Text(
-                            '${products[0].name} - ${products[0].bakeryAddress}',
+                            '${products.first.name} - ${products.first.bakeryAddress}',
                             style: _textTheme.bodySmall,
                           ),
                         ],

@@ -134,7 +134,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                               context: context,
                               builder: (_) => OrderRatingDialog(
                                 orderId: _orderId,
-                                productId: order.products[0].id,
+                                productId: order.products.first.id,
                               ),
                             ).then(
                               (_) => BlocProvider.of<OrdersCubit>(context)

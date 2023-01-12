@@ -9,7 +9,8 @@ part of 'order_model.dart';
 OrderModel _$OrderModelFromJson(Map<String, dynamic> json) => OrderModel(
       id: json['id'] as String,
       status: $enumDecode(_$OrderStatusEnumMap, json['status']),
-      dateTime: const DateTimeConverter().fromJson(json['dateTime'] as int),
+      dateTime:
+          const DateTimeConverter().fromJson(json['dateTime'] as Timestamp),
       deliveryFee: (json['deliveryFee'] as num).toDouble(),
       subTotal: (json['subTotal'] as num).toDouble(),
       totalPrice: (json['totalPrice'] as num).toDouble(),

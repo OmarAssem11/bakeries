@@ -72,11 +72,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "itemAddedToYourBasket":
             MessageLookupByLibrary.simpleMessage("Item added to your basket"),
         "localeName": MessageLookupByLibrary.simpleMessage("en"),
-        "locationPermissionsDenied": MessageLookupByLibrary.simpleMessage(
-            "Location permissions are denied"),
-        "locationPermissionsPermanentlyDenied":
-            MessageLookupByLibrary.simpleMessage(
-                "Location permissions are permanently denied, we cannot request permissions"),
+        "locationPermissionDenied": MessageLookupByLibrary.simpleMessage(
+            "Location permission are denied"),
+        "locationPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
+            "Location permission are permanently denied, we cannot request permission"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "markAsCollected":

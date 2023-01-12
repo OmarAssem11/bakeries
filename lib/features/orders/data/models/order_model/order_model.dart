@@ -1,6 +1,7 @@
 import 'package:bakery/core/data/json_converters/date_time_converter.dart';
 import 'package:bakery/core/domain/enums/order_status.dart';
 import 'package:bakery/features/orders/data/models/order_product_model/order_product_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'order_model.g.dart';

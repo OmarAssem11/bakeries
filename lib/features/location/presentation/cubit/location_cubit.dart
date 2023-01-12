@@ -1,4 +1,6 @@
 import 'package:bakery/features/location/presentation/cubit/location_state.dart';
+import 'package:bakery/generated/assets.gen.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -12,7 +14,7 @@ class LocationCubit extends Cubit<LocationState> {
   late GoogleMapController _mapController;
   late LatLng _currentPosition;
 
-  Future<void> getLocationPermission() async {
+  Future<void> getLocationPermission(GoogleMapController controller) async {
     emit(const LocationLoading());
     final isServiceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!isServiceEnabled) {
@@ -23,23 +25,23 @@ class LocationCubit extends Cubit<LocationState> {
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        emit(const LocationPermissionsDenied());
+        emit(const LocationPermissionDenied());
       }
     }
     if (permission == LocationPermission.deniedForever) {
-      emit(const LocationPermissionsPermanentlyDenied());
+      emit(const LocationPermissionPermanentlyDenied());
     }
+    _mapController = controller;
+    emit(const LocationPermissionGranted());
   }
 
-  Future<void> locatePosition([GoogleMapController? controller]) async {
+  Future<void> locatePosition() async {
     emit(const LocationLoading());
-    await getLocationPermission();
     final position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high,
     );
     final latLng = LatLng(position.latitude, position.longitude);
     final cameraPosition = CameraPosition(target: latLng, zoom: 14);
-    if (controller != null) _mapController = controller;
     _mapController
         .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
     _currentPosition = latLng;
@@ -52,22 +54,39 @@ class LocationCubit extends Cubit<LocationState> {
       _currentPosition.latitude,
       _currentPosition.longitude,
     );
-    final place = placemarks[0];
+    final place = placemarks.first;
     final address =
         '${place.street}, ${place.subLocality}, ${place.locality}, ${place.country}';
     emit(AddressFromLatLng(address));
   }
 
-  void addMarker(LatLng latLng) {
+  void addOriginMarker(LatLng latLng) {
     _currentPosition = latLng;
     final cameraPosition = CameraPosition(target: latLng, zoom: 14);
     _mapController
         .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
     final marker = Marker(
-      markerId: const MarkerId("o"),
+      markerId: const MarkerId("origin"),
       position: latLng,
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
     );
-    emit(MarkerAdded(marker));
+    emit(OriginMarkerAdded(marker));
+  }
+
+  Future<void> addBakeriesMarkers(List<LatLng> latLngList) async {
+    emit(const LocationLoading());
+    final List<Marker> markers = [];
+    for (final latLng in latLngList) {
+      final marker = Marker(
+        markerId: const MarkerId("bakery"),
+        position: latLng,
+        icon: await BitmapDescriptor.fromAssetImage(
+          ImageConfiguration.empty,
+          Assets.images.bakery.path,
+        ),
+      );
+      markers.add(marker);
+    }
+    emit(MarkersAdded(markers));
   }
 }

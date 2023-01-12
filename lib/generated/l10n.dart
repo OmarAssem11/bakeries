@@ -630,21 +630,21 @@ class S {
     );
   }
 
-  /// `Location permissions are denied`
-  String get locationPermissionsDenied {
+  /// `Location permission are denied`
+  String get locationPermissionDenied {
     return Intl.message(
-      'Location permissions are denied',
-      name: 'locationPermissionsDenied',
+      'Location permission are denied',
+      name: 'locationPermissionDenied',
       desc: '',
       args: [],
     );
   }
 
-  /// `Location permissions are permanently denied, we cannot request permissions`
-  String get locationPermissionsPermanentlyDenied {
+  /// `Location permission are permanently denied, we cannot request permission`
+  String get locationPermissionPermanentlyDenied {
     return Intl.message(
-      'Location permissions are permanently denied, we cannot request permissions',
-      name: 'locationPermissionsPermanentlyDenied',
+      'Location permission are permanently denied, we cannot request permission',
+      name: 'locationPermissionPermanentlyDenied',
       desc: '',
       args: [],
     );

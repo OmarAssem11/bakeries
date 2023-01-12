@@ -23,6 +23,7 @@ mixin _$Bakery {
   double get rating => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
+  LatLng? get location => throw _privateConstructorUsedError;
   List<Product>? get products => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -42,6 +43,7 @@ abstract class $BakeryCopyWith<$Res> {
       double rating,
       String? address,
       String? phone,
+      LatLng? location,
       List<Product>? products});
 }
 
@@ -65,6 +67,7 @@ class _$BakeryCopyWithImpl<$Res, $Val extends Bakery>
     Object? rating = null,
     Object? address = freezed,
     Object? phone = freezed,
+    Object? location = freezed,
     Object? products = freezed,
   }) {
     return _then(_value.copyWith(
@@ -96,6 +99,10 @@ class _$BakeryCopyWithImpl<$Res, $Val extends Bakery>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as LatLng?,
       products: freezed == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
@@ -118,6 +125,7 @@ abstract class _$$_BakeryCopyWith<$Res> implements $BakeryCopyWith<$Res> {
       double rating,
       String? address,
       String? phone,
+      LatLng? location,
       List<Product>? products});
 }
 
@@ -138,6 +146,7 @@ class __$$_BakeryCopyWithImpl<$Res>
     Object? rating = null,
     Object? address = freezed,
     Object? phone = freezed,
+    Object? location = freezed,
     Object? products = freezed,
   }) {
     return _then(_$_Bakery(
@@ -169,6 +178,10 @@ class __$$_BakeryCopyWithImpl<$Res>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as LatLng?,
       products: freezed == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
@@ -188,6 +201,7 @@ class _$_Bakery implements _Bakery {
       required this.rating,
       this.address,
       this.phone,
+      this.location,
       final List<Product>? products})
       : _products = products;
 
@@ -205,6 +219,8 @@ class _$_Bakery implements _Bakery {
   final String? address;
   @override
   final String? phone;
+  @override
+  final LatLng? location;
   final List<Product>? _products;
   @override
   List<Product>? get products {
@@ -217,7 +233,7 @@ class _$_Bakery implements _Bakery {
 
   @override
   String toString() {
-    return 'Bakery(id: $id, name: $name, description: $description, imageUrl: $imageUrl, rating: $rating, address: $address, phone: $phone, products: $products)';
+    return 'Bakery(id: $id, name: $name, description: $description, imageUrl: $imageUrl, rating: $rating, address: $address, phone: $phone, location: $location, products: $products)';
   }
 
   @override
@@ -234,12 +250,23 @@ class _$_Bakery implements _Bakery {
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.location, location) ||
+                other.location == location) &&
             const DeepCollectionEquality().equals(other._products, _products));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description, imageUrl,
-      rating, address, phone, const DeepCollectionEquality().hash(_products));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      description,
+      imageUrl,
+      rating,
+      address,
+      phone,
+      location,
+      const DeepCollectionEquality().hash(_products));
 
   @JsonKey(ignore: true)
   @override
@@ -257,6 +284,7 @@ abstract class _Bakery implements Bakery {
       required final double rating,
       final String? address,
       final String? phone,
+      final LatLng? location,
       final List<Product>? products}) = _$_Bakery;
 
   @override
@@ -273,6 +301,8 @@ abstract class _Bakery implements Bakery {
   String? get address;
   @override
   String? get phone;
+  @override
+  LatLng? get location;
   @override
   List<Product>? get products;
   @override

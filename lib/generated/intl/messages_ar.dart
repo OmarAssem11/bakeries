@@ -72,11 +72,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "itemAddedToYourBasket":
             MessageLookupByLibrary.simpleMessage("تم إضافة العنصر إلي السلة"),
         "localeName": MessageLookupByLibrary.simpleMessage("ar"),
-        "locationPermissionsDenied": MessageLookupByLibrary.simpleMessage(
-            "تصاريح الوصول إلي موقع الهاتف مرفوضة"),
-        "locationPermissionsPermanentlyDenied":
-            MessageLookupByLibrary.simpleMessage(
-                "تصاريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصاريح"),
+        "locationPermissionDenied": MessageLookupByLibrary.simpleMessage(
+            "تصريح الوصول إلي موقع الهاتف مرفوضة"),
+        "locationPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
+            "تصريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصريح"),
         "login": MessageLookupByLibrary.simpleMessage("نسجيل دخول"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
         "markAsCollected":

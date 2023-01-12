@@ -56,7 +56,7 @@ class _OrderItemState extends State<OrderItem> {
                   ),
                 ),
                 child: CachedNetworkImage(
-                  imageUrl: widget.order.products[0].bakeryImageUrl!,
+                  imageUrl: widget.order.products.first.bakeryImageUrl!,
                   height: _screenSize.height * 0.11,
                   width: _screenSize.width * 0.19,
                   fit: BoxFit.cover,
@@ -67,7 +67,7 @@ class _OrderItemState extends State<OrderItem> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.order.products[0].bakeryName!,
+                    widget.order.products.first.bakeryName!,
                     style: _textTheme.titleLarge,
                   ),
                   const SizedBox(height: Sizes.s8),

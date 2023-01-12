@@ -9,16 +9,20 @@ class LocationState with _$LocationState {
   const factory LocationState.loading() = LocationLoading;
 
   const factory LocationState.serviceDisabled() = ServiceDisabled;
-  const factory LocationState.locationPermissionsDenied() =
-      LocationPermissionsDenied;
-  const factory LocationState.locationPermissionsPermanentlyDenied() =
-      LocationPermissionsPermanentlyDenied;
-  const factory LocationState.permissionGranted() = LocationPermissionGranted;
+  const factory LocationState.locationPermissionDenied() =
+      LocationPermissionDenied;
+  const factory LocationState.locationPermissionPermanentlyDenied() =
+      LocationPermissionPermanentlyDenied;
+  const factory LocationState.locationPermissionGranted() =
+      LocationPermissionGranted;
 
   const factory LocationState.locatePosition(LatLng latLng) = LocatePosition;
 
   const factory LocationState.addressFromLatLng(String address) =
       AddressFromLatLng;
 
-  const factory LocationState.markerAdded(Marker marker) = MarkerAdded;
+  const factory LocationState.originMarkerAdded(Marker marker) =
+      OriginMarkerAdded;
+
+  const factory LocationState.markersAdded(List<Marker> markers) = MarkersAdded;
 }

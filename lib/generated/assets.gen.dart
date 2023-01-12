@@ -12,12 +12,15 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/bakery.png
+  AssetGenImage get bakery => const AssetGenImage('assets/images/bakery.png');
+
   /// File path: assets/images/no_orders.png
   AssetGenImage get noOrders =>
       const AssetGenImage('assets/images/no_orders.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [noOrders];
+  List<AssetGenImage> get values => [bakery, noOrders];
 }
 
 class $AssetsLottieGen {

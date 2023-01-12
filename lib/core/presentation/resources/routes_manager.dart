@@ -15,6 +15,7 @@ import 'package:bakery/features/checkout/presentation/cubit/checkout_cubit.dart'
 import 'package:bakery/features/checkout/presentation/screens/checkout_screen.dart';
 import 'package:bakery/features/location/presentation/cubit/location_cubit.dart';
 import 'package:bakery/features/location/presentation/screens/address_location_screen.dart';
+import 'package:bakery/features/location/presentation/screens/bakeries_locations_screen.dart';
 import 'package:bakery/features/orders/presentation/cubit/orders_cubit.dart';
 import 'package:bakery/features/orders/presentation/screens/order_details_screen.dart';
 import 'package:bakery/features/orders/presentation/screens/orders_screen.dart';
@@ -25,6 +26,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRoutes {
   static const String bakeries = '/';
+  static const String bakeriesLocations = '/bakeries-locations';
   static const String bakeryDetails = '/bakery-details';
   static const String login = '/login';
   static const String register = '/register';
@@ -49,6 +51,16 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
             BlocProvider(create: (_) => getIt<AuthCubit>()),
           ],
           child: const BakeriesScreen(),
+        ),
+      );
+    case AppRoutes.bakeriesLocations:
+      return MaterialPageRoute(
+        builder: (_) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => getIt<LocationCubit>()),
+            BlocProvider(create: (_) => getIt<BakeriesCubit>()),
+          ],
+          child: const BakeriesLocationScreen(),
         ),
       );
     case AppRoutes.bakeryDetails:

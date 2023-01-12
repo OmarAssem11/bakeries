@@ -12,6 +12,7 @@ BakeryModel _$BakeryModelFromJson(Map<String, dynamic> json) => BakeryModel(
       description: json['description'] as String,
       imageUrl: json['imageUrl'] as String,
       rating: (json['rating'] as num).toDouble(),
+      location: const LatLngConverter().fromJson(json['location'] as GeoPoint),
     );
 
 Map<String, dynamic> _$BakeryModelToJson(BakeryModel instance) =>
@@ -21,4 +22,5 @@ Map<String, dynamic> _$BakeryModelToJson(BakeryModel instance) =>
       'description': instance.description,
       'imageUrl': instance.imageUrl,
       'rating': instance.rating,
+      'location': const LatLngConverter().toJson(instance.location),
     };

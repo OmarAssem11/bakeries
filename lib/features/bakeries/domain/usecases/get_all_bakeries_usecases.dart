@@ -7,10 +7,10 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-class GetBakeriesListUseCase implements UseCase<List<Bakery>, NoParams> {
+class GetAllBakeriesUseCase implements UseCase<List<Bakery>, NoParams> {
   final BakeriesRepository _bakeriesRepository;
 
-  const GetBakeriesListUseCase(this._bakeriesRepository);
+  const GetAllBakeriesUseCase(this._bakeriesRepository);
 
   @override
   Future<Either<Failure, List<Bakery>>> call(NoParams noParams) =>

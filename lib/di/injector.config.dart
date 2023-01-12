@@ -45,8 +45,8 @@ import 'package:bakery/features/bakeries/data/services/bakeries_firebase_service
     as _i6;
 import 'package:bakery/features/bakeries/domain/repository/bakeries_repository.dart'
     as _i9;
-import 'package:bakery/features/bakeries/domain/usecases/get_bakeries_list_usecases.dart'
-    as _i30;
+import 'package:bakery/features/bakeries/domain/usecases/get_all_bakeries_usecases.dart'
+    as _i29;
 import 'package:bakery/features/bakeries/domain/usecases/get_bakery_details_usecase.dart'
     as _i31;
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart'
@@ -82,7 +82,7 @@ import 'package:bakery/features/categories/data/services/categories_firebase_ser
 import 'package:bakery/features/categories/domain/repository/categories_repository.dart'
     as _i19;
 import 'package:bakery/features/categories/domain/usecases/get_all_categories_usecase.dart'
-    as _i29;
+    as _i30;
 import 'package:bakery/features/categories/domain/usecases/get_category_bakeries_usecase.dart'
     as _i33;
 import 'package:bakery/features/categories/presentation/cubit/categories_cubit.dart'
@@ -191,10 +191,10 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i27.DeleteFromCartUseCase(gh<_i14.CartRepository>()));
     gh.lazySingleton<_i28.EditCartUseCase>(
         () => _i28.EditCartUseCase(gh<_i14.CartRepository>()));
-    gh.lazySingleton<_i29.GetAllCategoriesUseCase>(
-        () => _i29.GetAllCategoriesUseCase(gh<_i19.CategoriesRepository>()));
-    gh.lazySingleton<_i30.GetBakeriesListUseCase>(
-        () => _i30.GetBakeriesListUseCase(gh<_i9.BakeriesRepository>()));
+    gh.lazySingleton<_i29.GetAllBakeriesUseCase>(
+        () => _i29.GetAllBakeriesUseCase(gh<_i9.BakeriesRepository>()));
+    gh.lazySingleton<_i30.GetAllCategoriesUseCase>(
+        () => _i30.GetAllCategoriesUseCase(gh<_i19.CategoriesRepository>()));
     gh.lazySingleton<_i31.GetBakeryDetailsUseCase>(
         () => _i31.GetBakeryDetailsUseCase(gh<_i9.BakeriesRepository>()));
     gh.lazySingleton<_i32.GetCartUseCase>(
@@ -228,7 +228,7 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i4.AuthRemoteDataSource>(),
         ));
     gh.factory<_i52.BakeriesCubit>(() => _i52.BakeriesCubit(
-          gh<_i30.GetBakeriesListUseCase>(),
+          gh<_i29.GetAllBakeriesUseCase>(),
           gh<_i31.GetBakeryDetailsUseCase>(),
         ));
     gh.singleton<_i53.CacheHelper>(
@@ -242,7 +242,7 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i27.DeleteFromCartUseCase>(),
         ));
     gh.factory<_i56.CategoriesCubit>(() => _i56.CategoriesCubit(
-          gh<_i29.GetAllCategoriesUseCase>(),
+          gh<_i30.GetAllCategoriesUseCase>(),
           gh<_i33.GetCategoryBakeriesUseCase>(),
         ));
     gh.factory<_i57.CheckoutCubit>(

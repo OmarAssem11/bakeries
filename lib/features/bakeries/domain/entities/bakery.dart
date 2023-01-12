@@ -1,5 +1,6 @@
 import 'package:bakery/features/products/domain/entities/product.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 part 'bakery.freezed.dart';
 
@@ -13,6 +14,7 @@ class Bakery with _$Bakery {
     required double rating,
     String? address,
     String? phone,
+    LatLng? location,
     List<Product>? products,
   }) = _Bakery;
 }

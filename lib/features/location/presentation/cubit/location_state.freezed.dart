@@ -21,12 +21,13 @@ mixin _$LocationState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,12 +35,13 @@ mixin _$LocationState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,12 +49,13 @@ mixin _$LocationState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,15 +64,16 @@ mixin _$LocationState {
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,14 +81,15 @@ mixin _$LocationState {
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,14 +97,15 @@ mixin _$LocationState {
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -164,12 +170,13 @@ class _$LocationInitial implements LocationInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) {
     return initial();
   }
@@ -180,12 +187,13 @@ class _$LocationInitial implements LocationInitial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) {
     return initial?.call();
   }
@@ -196,12 +204,13 @@ class _$LocationInitial implements LocationInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -216,15 +225,16 @@ class _$LocationInitial implements LocationInitial {
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) {
     return initial(this);
   }
@@ -235,14 +245,15 @@ class _$LocationInitial implements LocationInitial {
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) {
     return initial?.call(this);
   }
@@ -253,14 +264,15 @@ class _$LocationInitial implements LocationInitial {
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -315,12 +327,13 @@ class _$LocationLoading implements LocationLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) {
     return loading();
   }
@@ -331,12 +344,13 @@ class _$LocationLoading implements LocationLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) {
     return loading?.call();
   }
@@ -347,12 +361,13 @@ class _$LocationLoading implements LocationLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -367,15 +382,16 @@ class _$LocationLoading implements LocationLoading {
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) {
     return loading(this);
   }
@@ -386,14 +402,15 @@ class _$LocationLoading implements LocationLoading {
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) {
     return loading?.call(this);
   }
@@ -404,14 +421,15 @@ class _$LocationLoading implements LocationLoading {
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -466,12 +484,13 @@ class _$ServiceDisabled implements ServiceDisabled {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) {
     return serviceDisabled();
   }
@@ -482,12 +501,13 @@ class _$ServiceDisabled implements ServiceDisabled {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) {
     return serviceDisabled?.call();
   }
@@ -498,12 +518,13 @@ class _$ServiceDisabled implements ServiceDisabled {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) {
     if (serviceDisabled != null) {
@@ -518,15 +539,16 @@ class _$ServiceDisabled implements ServiceDisabled {
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) {
     return serviceDisabled(this);
   }
@@ -537,14 +559,15 @@ class _$ServiceDisabled implements ServiceDisabled {
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) {
     return serviceDisabled?.call(this);
   }
@@ -555,14 +578,15 @@ class _$ServiceDisabled implements ServiceDisabled {
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) {
     if (serviceDisabled != null) {
@@ -577,37 +601,36 @@ abstract class ServiceDisabled implements LocationState {
 }
 
 /// @nodoc
-abstract class _$$LocationPermissionsDeniedCopyWith<$Res> {
-  factory _$$LocationPermissionsDeniedCopyWith(
-          _$LocationPermissionsDenied value,
-          $Res Function(_$LocationPermissionsDenied) then) =
-      __$$LocationPermissionsDeniedCopyWithImpl<$Res>;
+abstract class _$$LocationPermissionDeniedCopyWith<$Res> {
+  factory _$$LocationPermissionDeniedCopyWith(_$LocationPermissionDenied value,
+          $Res Function(_$LocationPermissionDenied) then) =
+      __$$LocationPermissionDeniedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LocationPermissionsDeniedCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$LocationPermissionsDenied>
-    implements _$$LocationPermissionsDeniedCopyWith<$Res> {
-  __$$LocationPermissionsDeniedCopyWithImpl(_$LocationPermissionsDenied _value,
-      $Res Function(_$LocationPermissionsDenied) _then)
+class __$$LocationPermissionDeniedCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LocationPermissionDenied>
+    implements _$$LocationPermissionDeniedCopyWith<$Res> {
+  __$$LocationPermissionDeniedCopyWithImpl(_$LocationPermissionDenied _value,
+      $Res Function(_$LocationPermissionDenied) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LocationPermissionsDenied implements LocationPermissionsDenied {
-  const _$LocationPermissionsDenied();
+class _$LocationPermissionDenied implements LocationPermissionDenied {
+  const _$LocationPermissionDenied();
 
   @override
   String toString() {
-    return 'LocationState.locationPermissionsDenied()';
+    return 'LocationState.locationPermissionDenied()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LocationPermissionsDenied);
+            other is _$LocationPermissionDenied);
   }
 
   @override
@@ -619,14 +642,15 @@ class _$LocationPermissionsDenied implements LocationPermissionsDenied {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) {
-    return locationPermissionsDenied();
+    return locationPermissionDenied();
   }
 
   @override
@@ -635,14 +659,15 @@ class _$LocationPermissionsDenied implements LocationPermissionsDenied {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) {
-    return locationPermissionsDenied?.call();
+    return locationPermissionDenied?.call();
   }
 
   @override
@@ -651,16 +676,17 @@ class _$LocationPermissionsDenied implements LocationPermissionsDenied {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) {
-    if (locationPermissionsDenied != null) {
-      return locationPermissionsDenied();
+    if (locationPermissionDenied != null) {
+      return locationPermissionDenied();
     }
     return orElse();
   }
@@ -671,17 +697,18 @@ class _$LocationPermissionsDenied implements LocationPermissionsDenied {
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) {
-    return locationPermissionsDenied(this);
+    return locationPermissionDenied(this);
   }
 
   @override
@@ -690,16 +717,17 @@ class _$LocationPermissionsDenied implements LocationPermissionsDenied {
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) {
-    return locationPermissionsDenied?.call(this);
+    return locationPermissionDenied?.call(this);
   }
 
   @override
@@ -708,62 +736,63 @@ class _$LocationPermissionsDenied implements LocationPermissionsDenied {
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) {
-    if (locationPermissionsDenied != null) {
-      return locationPermissionsDenied(this);
+    if (locationPermissionDenied != null) {
+      return locationPermissionDenied(this);
     }
     return orElse();
   }
 }
 
-abstract class LocationPermissionsDenied implements LocationState {
-  const factory LocationPermissionsDenied() = _$LocationPermissionsDenied;
+abstract class LocationPermissionDenied implements LocationState {
+  const factory LocationPermissionDenied() = _$LocationPermissionDenied;
 }
 
 /// @nodoc
-abstract class _$$LocationPermissionsPermanentlyDeniedCopyWith<$Res> {
-  factory _$$LocationPermissionsPermanentlyDeniedCopyWith(
-          _$LocationPermissionsPermanentlyDenied value,
-          $Res Function(_$LocationPermissionsPermanentlyDenied) then) =
-      __$$LocationPermissionsPermanentlyDeniedCopyWithImpl<$Res>;
+abstract class _$$LocationPermissionPermanentlyDeniedCopyWith<$Res> {
+  factory _$$LocationPermissionPermanentlyDeniedCopyWith(
+          _$LocationPermissionPermanentlyDenied value,
+          $Res Function(_$LocationPermissionPermanentlyDenied) then) =
+      __$$LocationPermissionPermanentlyDeniedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LocationPermissionsPermanentlyDeniedCopyWithImpl<$Res>
+class __$$LocationPermissionPermanentlyDeniedCopyWithImpl<$Res>
     extends _$LocationStateCopyWithImpl<$Res,
-        _$LocationPermissionsPermanentlyDenied>
-    implements _$$LocationPermissionsPermanentlyDeniedCopyWith<$Res> {
-  __$$LocationPermissionsPermanentlyDeniedCopyWithImpl(
-      _$LocationPermissionsPermanentlyDenied _value,
-      $Res Function(_$LocationPermissionsPermanentlyDenied) _then)
+        _$LocationPermissionPermanentlyDenied>
+    implements _$$LocationPermissionPermanentlyDeniedCopyWith<$Res> {
+  __$$LocationPermissionPermanentlyDeniedCopyWithImpl(
+      _$LocationPermissionPermanentlyDenied _value,
+      $Res Function(_$LocationPermissionPermanentlyDenied) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LocationPermissionsPermanentlyDenied
-    implements LocationPermissionsPermanentlyDenied {
-  const _$LocationPermissionsPermanentlyDenied();
+class _$LocationPermissionPermanentlyDenied
+    implements LocationPermissionPermanentlyDenied {
+  const _$LocationPermissionPermanentlyDenied();
 
   @override
   String toString() {
-    return 'LocationState.locationPermissionsPermanentlyDenied()';
+    return 'LocationState.locationPermissionPermanentlyDenied()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LocationPermissionsPermanentlyDenied);
+            other is _$LocationPermissionPermanentlyDenied);
   }
 
   @override
@@ -775,14 +804,15 @@ class _$LocationPermissionsPermanentlyDenied
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) {
-    return locationPermissionsPermanentlyDenied();
+    return locationPermissionPermanentlyDenied();
   }
 
   @override
@@ -791,14 +821,15 @@ class _$LocationPermissionsPermanentlyDenied
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) {
-    return locationPermissionsPermanentlyDenied?.call();
+    return locationPermissionPermanentlyDenied?.call();
   }
 
   @override
@@ -807,16 +838,17 @@ class _$LocationPermissionsPermanentlyDenied
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) {
-    if (locationPermissionsPermanentlyDenied != null) {
-      return locationPermissionsPermanentlyDenied();
+    if (locationPermissionPermanentlyDenied != null) {
+      return locationPermissionPermanentlyDenied();
     }
     return orElse();
   }
@@ -827,17 +859,18 @@ class _$LocationPermissionsPermanentlyDenied
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) {
-    return locationPermissionsPermanentlyDenied(this);
+    return locationPermissionPermanentlyDenied(this);
   }
 
   @override
@@ -846,16 +879,17 @@ class _$LocationPermissionsPermanentlyDenied
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) {
-    return locationPermissionsPermanentlyDenied?.call(this);
+    return locationPermissionPermanentlyDenied?.call(this);
   }
 
   @override
@@ -864,26 +898,27 @@ class _$LocationPermissionsPermanentlyDenied
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) {
-    if (locationPermissionsPermanentlyDenied != null) {
-      return locationPermissionsPermanentlyDenied(this);
+    if (locationPermissionPermanentlyDenied != null) {
+      return locationPermissionPermanentlyDenied(this);
     }
     return orElse();
   }
 }
 
-abstract class LocationPermissionsPermanentlyDenied implements LocationState {
-  const factory LocationPermissionsPermanentlyDenied() =
-      _$LocationPermissionsPermanentlyDenied;
+abstract class LocationPermissionPermanentlyDenied implements LocationState {
+  const factory LocationPermissionPermanentlyDenied() =
+      _$LocationPermissionPermanentlyDenied;
 }
 
 /// @nodoc
@@ -910,7 +945,7 @@ class _$LocationPermissionGranted implements LocationPermissionGranted {
 
   @override
   String toString() {
-    return 'LocationState.permissionGranted()';
+    return 'LocationState.locationPermissionGranted()';
   }
 
   @override
@@ -929,14 +964,15 @@ class _$LocationPermissionGranted implements LocationPermissionGranted {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) {
-    return permissionGranted();
+    return locationPermissionGranted();
   }
 
   @override
@@ -945,14 +981,15 @@ class _$LocationPermissionGranted implements LocationPermissionGranted {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) {
-    return permissionGranted?.call();
+    return locationPermissionGranted?.call();
   }
 
   @override
@@ -961,16 +998,17 @@ class _$LocationPermissionGranted implements LocationPermissionGranted {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) {
-    if (permissionGranted != null) {
-      return permissionGranted();
+    if (locationPermissionGranted != null) {
+      return locationPermissionGranted();
     }
     return orElse();
   }
@@ -981,17 +1019,18 @@ class _$LocationPermissionGranted implements LocationPermissionGranted {
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) {
-    return permissionGranted(this);
+    return locationPermissionGranted(this);
   }
 
   @override
@@ -1000,16 +1039,17 @@ class _$LocationPermissionGranted implements LocationPermissionGranted {
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) {
-    return permissionGranted?.call(this);
+    return locationPermissionGranted?.call(this);
   }
 
   @override
@@ -1018,18 +1058,19 @@ class _$LocationPermissionGranted implements LocationPermissionGranted {
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) {
-    if (permissionGranted != null) {
-      return permissionGranted(this);
+    if (locationPermissionGranted != null) {
+      return locationPermissionGranted(this);
     }
     return orElse();
   }
@@ -1106,12 +1147,13 @@ class _$LocatePosition implements LocatePosition {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) {
     return locatePosition(latLng);
   }
@@ -1122,12 +1164,13 @@ class _$LocatePosition implements LocatePosition {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) {
     return locatePosition?.call(latLng);
   }
@@ -1138,12 +1181,13 @@ class _$LocatePosition implements LocatePosition {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) {
     if (locatePosition != null) {
@@ -1158,15 +1202,16 @@ class _$LocatePosition implements LocatePosition {
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) {
     return locatePosition(this);
   }
@@ -1177,14 +1222,15 @@ class _$LocatePosition implements LocatePosition {
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) {
     return locatePosition?.call(this);
   }
@@ -1195,14 +1241,15 @@ class _$LocatePosition implements LocatePosition {
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) {
     if (locatePosition != null) {
@@ -1288,12 +1335,13 @@ class _$AddressFromLatLng implements AddressFromLatLng {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) {
     return addressFromLatLng(address);
   }
@@ -1304,12 +1352,13 @@ class _$AddressFromLatLng implements AddressFromLatLng {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) {
     return addressFromLatLng?.call(address);
   }
@@ -1320,12 +1369,13 @@ class _$AddressFromLatLng implements AddressFromLatLng {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) {
     if (addressFromLatLng != null) {
@@ -1340,15 +1390,16 @@ class _$AddressFromLatLng implements AddressFromLatLng {
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) {
     return addressFromLatLng(this);
   }
@@ -1359,14 +1410,15 @@ class _$AddressFromLatLng implements AddressFromLatLng {
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) {
     return addressFromLatLng?.call(this);
   }
@@ -1377,14 +1429,15 @@ class _$AddressFromLatLng implements AddressFromLatLng {
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) {
     if (addressFromLatLng != null) {
@@ -1404,20 +1457,20 @@ abstract class AddressFromLatLng implements LocationState {
 }
 
 /// @nodoc
-abstract class _$$MarkerAddedCopyWith<$Res> {
-  factory _$$MarkerAddedCopyWith(
-          _$MarkerAdded value, $Res Function(_$MarkerAdded) then) =
-      __$$MarkerAddedCopyWithImpl<$Res>;
+abstract class _$$OriginMarkerAddedCopyWith<$Res> {
+  factory _$$OriginMarkerAddedCopyWith(
+          _$OriginMarkerAdded value, $Res Function(_$OriginMarkerAdded) then) =
+      __$$OriginMarkerAddedCopyWithImpl<$Res>;
   @useResult
   $Res call({Marker marker});
 }
 
 /// @nodoc
-class __$$MarkerAddedCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$MarkerAdded>
-    implements _$$MarkerAddedCopyWith<$Res> {
-  __$$MarkerAddedCopyWithImpl(
-      _$MarkerAdded _value, $Res Function(_$MarkerAdded) _then)
+class __$$OriginMarkerAddedCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$OriginMarkerAdded>
+    implements _$$OriginMarkerAddedCopyWith<$Res> {
+  __$$OriginMarkerAddedCopyWithImpl(
+      _$OriginMarkerAdded _value, $Res Function(_$OriginMarkerAdded) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1425,7 +1478,7 @@ class __$$MarkerAddedCopyWithImpl<$Res>
   $Res call({
     Object? marker = null,
   }) {
-    return _then(_$MarkerAdded(
+    return _then(_$OriginMarkerAdded(
       null == marker
           ? _value.marker
           : marker // ignore: cast_nullable_to_non_nullable
@@ -1436,22 +1489,22 @@ class __$$MarkerAddedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MarkerAdded implements MarkerAdded {
-  const _$MarkerAdded(this.marker);
+class _$OriginMarkerAdded implements OriginMarkerAdded {
+  const _$OriginMarkerAdded(this.marker);
 
   @override
   final Marker marker;
 
   @override
   String toString() {
-    return 'LocationState.markerAdded(marker: $marker)';
+    return 'LocationState.originMarkerAdded(marker: $marker)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MarkerAdded &&
+            other is _$OriginMarkerAdded &&
             (identical(other.marker, marker) || other.marker == marker));
   }
 
@@ -1461,8 +1514,8 @@ class _$MarkerAdded implements MarkerAdded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MarkerAddedCopyWith<_$MarkerAdded> get copyWith =>
-      __$$MarkerAddedCopyWithImpl<_$MarkerAdded>(this, _$identity);
+  _$$OriginMarkerAddedCopyWith<_$OriginMarkerAdded> get copyWith =>
+      __$$OriginMarkerAddedCopyWithImpl<_$OriginMarkerAdded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1470,14 +1523,15 @@ class _$MarkerAdded implements MarkerAdded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() serviceDisabled,
-    required TResult Function() locationPermissionsDenied,
-    required TResult Function() locationPermissionsPermanentlyDenied,
-    required TResult Function() permissionGranted,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
     required TResult Function(LatLng latLng) locatePosition,
     required TResult Function(String address) addressFromLatLng,
-    required TResult Function(Marker marker) markerAdded,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
   }) {
-    return markerAdded(marker);
+    return originMarkerAdded(marker);
   }
 
   @override
@@ -1486,14 +1540,15 @@ class _$MarkerAdded implements MarkerAdded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? serviceDisabled,
-    TResult? Function()? locationPermissionsDenied,
-    TResult? Function()? locationPermissionsPermanentlyDenied,
-    TResult? Function()? permissionGranted,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
     TResult? Function(LatLng latLng)? locatePosition,
     TResult? Function(String address)? addressFromLatLng,
-    TResult? Function(Marker marker)? markerAdded,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
   }) {
-    return markerAdded?.call(marker);
+    return originMarkerAdded?.call(marker);
   }
 
   @override
@@ -1502,16 +1557,17 @@ class _$MarkerAdded implements MarkerAdded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? serviceDisabled,
-    TResult Function()? locationPermissionsDenied,
-    TResult Function()? locationPermissionsPermanentlyDenied,
-    TResult Function()? permissionGranted,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
     TResult Function(LatLng latLng)? locatePosition,
     TResult Function(String address)? addressFromLatLng,
-    TResult Function(Marker marker)? markerAdded,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
     required TResult orElse(),
   }) {
-    if (markerAdded != null) {
-      return markerAdded(marker);
+    if (originMarkerAdded != null) {
+      return originMarkerAdded(marker);
     }
     return orElse();
   }
@@ -1522,17 +1578,18 @@ class _$MarkerAdded implements MarkerAdded {
     required TResult Function(LocationInitial value) initial,
     required TResult Function(LocationLoading value) loading,
     required TResult Function(ServiceDisabled value) serviceDisabled,
-    required TResult Function(LocationPermissionsDenied value)
-        locationPermissionsDenied,
-    required TResult Function(LocationPermissionsPermanentlyDenied value)
-        locationPermissionsPermanentlyDenied,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
     required TResult Function(LocationPermissionGranted value)
-        permissionGranted,
+        locationPermissionGranted,
     required TResult Function(LocatePosition value) locatePosition,
     required TResult Function(AddressFromLatLng value) addressFromLatLng,
-    required TResult Function(MarkerAdded value) markerAdded,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
   }) {
-    return markerAdded(this);
+    return originMarkerAdded(this);
   }
 
   @override
@@ -1541,16 +1598,17 @@ class _$MarkerAdded implements MarkerAdded {
     TResult? Function(LocationInitial value)? initial,
     TResult? Function(LocationLoading value)? loading,
     TResult? Function(ServiceDisabled value)? serviceDisabled,
-    TResult? Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult? Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult? Function(LocationPermissionGranted value)? permissionGranted,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult? Function(LocatePosition value)? locatePosition,
     TResult? Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult? Function(MarkerAdded value)? markerAdded,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
   }) {
-    return markerAdded?.call(this);
+    return originMarkerAdded?.call(this);
   }
 
   @override
@@ -1559,28 +1617,223 @@ class _$MarkerAdded implements MarkerAdded {
     TResult Function(LocationInitial value)? initial,
     TResult Function(LocationLoading value)? loading,
     TResult Function(ServiceDisabled value)? serviceDisabled,
-    TResult Function(LocationPermissionsDenied value)?
-        locationPermissionsDenied,
-    TResult Function(LocationPermissionsPermanentlyDenied value)?
-        locationPermissionsPermanentlyDenied,
-    TResult Function(LocationPermissionGranted value)? permissionGranted,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
     TResult Function(LocatePosition value)? locatePosition,
     TResult Function(AddressFromLatLng value)? addressFromLatLng,
-    TResult Function(MarkerAdded value)? markerAdded,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
     required TResult orElse(),
   }) {
-    if (markerAdded != null) {
-      return markerAdded(this);
+    if (originMarkerAdded != null) {
+      return originMarkerAdded(this);
     }
     return orElse();
   }
 }
 
-abstract class MarkerAdded implements LocationState {
-  const factory MarkerAdded(final Marker marker) = _$MarkerAdded;
+abstract class OriginMarkerAdded implements LocationState {
+  const factory OriginMarkerAdded(final Marker marker) = _$OriginMarkerAdded;
 
   Marker get marker;
   @JsonKey(ignore: true)
-  _$$MarkerAddedCopyWith<_$MarkerAdded> get copyWith =>
+  _$$OriginMarkerAddedCopyWith<_$OriginMarkerAdded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MarkersAddedCopyWith<$Res> {
+  factory _$$MarkersAddedCopyWith(
+          _$MarkersAdded value, $Res Function(_$MarkersAdded) then) =
+      __$$MarkersAddedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Marker> markers});
+}
+
+/// @nodoc
+class __$$MarkersAddedCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$MarkersAdded>
+    implements _$$MarkersAddedCopyWith<$Res> {
+  __$$MarkersAddedCopyWithImpl(
+      _$MarkersAdded _value, $Res Function(_$MarkersAdded) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? markers = null,
+  }) {
+    return _then(_$MarkersAdded(
+      null == markers
+          ? _value._markers
+          : markers // ignore: cast_nullable_to_non_nullable
+              as List<Marker>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MarkersAdded implements MarkersAdded {
+  const _$MarkersAdded(final List<Marker> markers) : _markers = markers;
+
+  final List<Marker> _markers;
+  @override
+  List<Marker> get markers {
+    if (_markers is EqualUnmodifiableListView) return _markers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_markers);
+  }
+
+  @override
+  String toString() {
+    return 'LocationState.markersAdded(markers: $markers)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkersAdded &&
+            const DeepCollectionEquality().equals(other._markers, _markers));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_markers));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MarkersAddedCopyWith<_$MarkersAdded> get copyWith =>
+      __$$MarkersAddedCopyWithImpl<_$MarkersAdded>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() serviceDisabled,
+    required TResult Function() locationPermissionDenied,
+    required TResult Function() locationPermissionPermanentlyDenied,
+    required TResult Function() locationPermissionGranted,
+    required TResult Function(LatLng latLng) locatePosition,
+    required TResult Function(String address) addressFromLatLng,
+    required TResult Function(Marker marker) originMarkerAdded,
+    required TResult Function(List<Marker> markers) markersAdded,
+  }) {
+    return markersAdded(markers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? serviceDisabled,
+    TResult? Function()? locationPermissionDenied,
+    TResult? Function()? locationPermissionPermanentlyDenied,
+    TResult? Function()? locationPermissionGranted,
+    TResult? Function(LatLng latLng)? locatePosition,
+    TResult? Function(String address)? addressFromLatLng,
+    TResult? Function(Marker marker)? originMarkerAdded,
+    TResult? Function(List<Marker> markers)? markersAdded,
+  }) {
+    return markersAdded?.call(markers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? serviceDisabled,
+    TResult Function()? locationPermissionDenied,
+    TResult Function()? locationPermissionPermanentlyDenied,
+    TResult Function()? locationPermissionGranted,
+    TResult Function(LatLng latLng)? locatePosition,
+    TResult Function(String address)? addressFromLatLng,
+    TResult Function(Marker marker)? originMarkerAdded,
+    TResult Function(List<Marker> markers)? markersAdded,
+    required TResult orElse(),
+  }) {
+    if (markersAdded != null) {
+      return markersAdded(markers);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LocationInitial value) initial,
+    required TResult Function(LocationLoading value) loading,
+    required TResult Function(ServiceDisabled value) serviceDisabled,
+    required TResult Function(LocationPermissionDenied value)
+        locationPermissionDenied,
+    required TResult Function(LocationPermissionPermanentlyDenied value)
+        locationPermissionPermanentlyDenied,
+    required TResult Function(LocationPermissionGranted value)
+        locationPermissionGranted,
+    required TResult Function(LocatePosition value) locatePosition,
+    required TResult Function(AddressFromLatLng value) addressFromLatLng,
+    required TResult Function(OriginMarkerAdded value) originMarkerAdded,
+    required TResult Function(MarkersAdded value) markersAdded,
+  }) {
+    return markersAdded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LocationInitial value)? initial,
+    TResult? Function(LocationLoading value)? loading,
+    TResult? Function(ServiceDisabled value)? serviceDisabled,
+    TResult? Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult? Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult? Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
+    TResult? Function(LocatePosition value)? locatePosition,
+    TResult? Function(AddressFromLatLng value)? addressFromLatLng,
+    TResult? Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult? Function(MarkersAdded value)? markersAdded,
+  }) {
+    return markersAdded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LocationInitial value)? initial,
+    TResult Function(LocationLoading value)? loading,
+    TResult Function(ServiceDisabled value)? serviceDisabled,
+    TResult Function(LocationPermissionDenied value)? locationPermissionDenied,
+    TResult Function(LocationPermissionPermanentlyDenied value)?
+        locationPermissionPermanentlyDenied,
+    TResult Function(LocationPermissionGranted value)?
+        locationPermissionGranted,
+    TResult Function(LocatePosition value)? locatePosition,
+    TResult Function(AddressFromLatLng value)? addressFromLatLng,
+    TResult Function(OriginMarkerAdded value)? originMarkerAdded,
+    TResult Function(MarkersAdded value)? markersAdded,
+    required TResult orElse(),
+  }) {
+    if (markersAdded != null) {
+      return markersAdded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MarkersAdded implements LocationState {
+  const factory MarkersAdded(final List<Marker> markers) = _$MarkersAdded;
+
+  List<Marker> get markers;
+  @JsonKey(ignore: true)
+  _$$MarkersAddedCopyWith<_$MarkersAdded> get copyWith =>
       throw _privateConstructorUsedError;
 }

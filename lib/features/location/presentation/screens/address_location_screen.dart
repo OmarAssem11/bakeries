@@ -18,7 +18,7 @@ class AddressLocationScreen extends StatefulWidget {
 }
 
 class _AddressLocationScreenState extends State<AddressLocationScreen> {
-  Marker _marker = const Marker(markerId: MarkerId("value"));
+  Marker _origin = const Marker(markerId: MarkerId("value"));
   late final LocationCubit _locationCubit;
   late final double _subtotal;
   bool _isLoading = false;
@@ -44,12 +44,13 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
           state.maybeWhen(
             serviceDisabled: () =>
                 showErrorToast(S.current.pleaseEnableYourLocation),
-            locationPermissionsDenied: () =>
-                showErrorToast(S.current.locationPermissionsDenied),
-            locationPermissionsPermanentlyDenied: () =>
-                showErrorToast(S.current.locationPermissionsPermanentlyDenied),
-            locatePosition: (latLng) => _locationCubit.addMarker(latLng),
-            markerAdded: (newMarker) => _marker = newMarker,
+            locationPermissionDenied: () =>
+                showErrorToast(S.current.locationPermissionDenied),
+            locationPermissionPermanentlyDenied: () =>
+                showErrorToast(S.current.locationPermissionPermanentlyDenied),
+            locationPermissionGranted: () => _locationCubit.locatePosition(),
+            locatePosition: (latLng) => _locationCubit.addOriginMarker(latLng),
+            originMarkerAdded: (marker) => _origin = marker,
             addressFromLatLng: (address) => Navigator.of(context).pushNamed(
               AppRoutes.checkout,
               arguments: CheckoutArguments(
@@ -69,10 +70,10 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
                   zoom: 14.4746,
                 ),
                 onMapCreated: (mapController) =>
-                    _locationCubit.locatePosition(mapController),
-                onTap: (latLng) => _locationCubit.addMarker(latLng),
+                    _locationCubit.getLocationPermission(mapController),
+                onTap: (latLng) => _locationCubit.addOriginMarker(latLng),
                 markers: {
-                  _marker,
+                  _origin,
                 },
               ),
               Align(
