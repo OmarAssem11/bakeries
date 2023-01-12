@@ -16,7 +16,9 @@ class HomeDrawer extends StatelessWidget {
         child: Column(
           children: const [
             HomeDrawerHeader(),
-            Expanded(child: HomeDrawerItems()),
+            Expanded(
+              child: HomeDrawerItems(),
+            ),
           ],
         ),
       ),

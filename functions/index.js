@@ -7,12 +7,12 @@ const db = admin.firestore();
 
 exports.acceptOrder = functions.firestore
   .document("users/{userId}/orders/{orderId}")
-  .onCreate(async (_snapshot, context) => {
+  .onCreate(async (snapshot, context) => {
     const docSnapshot = await db
       .collection("users")
       .doc(context.params.userId)
       .get();
-    const token = docSnapshot.data()["token"];
+    const token = docSnapshot.data()["fcmToken"];
     const data = {
       message: {
         token: token,
@@ -26,6 +26,7 @@ exports.acceptOrder = functions.firestore
       },
     };
     setTimeout(() => {
-      admin.messaging().send(data.message);
+      if (snapshot.data()["status"] != "cancelled")
+        admin.messaging().send(data.message);
     }, 60000);
   });

@@ -8,14 +8,12 @@ class UserModel {
   final String name;
   final String email;
   final String password;
-  final String? fcmToken;
 
   const UserModel({
     required this.id,
     required this.name,
     required this.email,
     required this.password,
-    this.fcmToken,
   });
 
   Map<String, dynamic> toJson() => _$UserModelToJson(this);

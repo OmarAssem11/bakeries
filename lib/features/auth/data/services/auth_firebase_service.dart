@@ -19,15 +19,17 @@ class AuthFirebaseService {
       password: registerModel.password,
     );
     final uId = userCredential.user!.uid;
-    final fcmToken = await FirebaseMessaging.instance.getToken();
     final userModel = UserModel(
       id: uId,
       name: registerModel.name,
       email: registerModel.email,
       password: registerModel.password,
-      fcmToken: fcmToken,
     );
     await _usersCollection.doc(uId).set(userModel.toJson());
+    final fcmToken = await FirebaseMessaging.instance.getToken();
+    _usersCollection.doc(uId).update({
+      FirebasePath.fcmToken: fcmToken,
+    });
     return userModel;
   }
 
@@ -38,12 +40,12 @@ class AuthFirebaseService {
       password: loginModel.password,
     );
     final uId = userCredential.user!.uid;
-    final fcmToken = await FirebaseMessaging.instance.getToken();
-    await _usersCollection.doc(uId).update({
-      FirebasePath.fcmToken: fcmToken,
-    });
     final docSnapShot = await _usersCollection.doc(uId).get();
     final userModel = UserModel.fromJson(docSnapShot.data()!);
+    final fcmToken = await FirebaseMessaging.instance.getToken();
+    _usersCollection.doc(uId).update({
+      FirebasePath.fcmToken: fcmToken,
+    });
     return userModel;
   }
 

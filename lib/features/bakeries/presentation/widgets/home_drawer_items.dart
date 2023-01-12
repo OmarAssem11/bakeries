@@ -64,19 +64,16 @@ class _HomeDrawerItemsState extends State<HomeDrawerItems> {
               child: ListTile(
                 leading: const Icon(Icons.logout_outlined),
                 title: Text(S.current.logout),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  showDialog(
-                    context: context,
-                    builder: (_) => BlocProvider(
-                      create: (_) => getIt<AuthCubit>(),
-                      child: QuestionDialog(
-                        question: S.current.areYouSureYouWantToLogout,
-                        onSubmit: BlocProvider.of<AuthCubit>(context).logout,
-                      ),
+                onTap: () => showDialog(
+                  context: context,
+                  builder: (_) => BlocProvider(
+                    create: (_) => getIt<AuthCubit>(),
+                    child: QuestionDialog(
+                      question: S.current.areYouSureYouWantToLogout,
+                      onSubmit: BlocProvider.of<AuthCubit>(context).logout,
                     ),
-                  );
-                },
+                  ),
+                ),
               ),
             );
           },

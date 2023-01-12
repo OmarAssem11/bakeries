@@ -155,6 +155,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                 ],
               ),
             ),
+            cancelOrderLoading: () => const LoadingIndicator(),
             orElse: () => const SizedBox.expand(),
           );
         },
