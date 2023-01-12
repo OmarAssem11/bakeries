@@ -1,7 +1,7 @@
 import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
-import 'package:bakery/core/presentation/util/toast.dart';
+import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/validation/validators.dart';
 import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
@@ -9,7 +9,7 @@ import 'package:bakery/features/cart/presentation/widgets/payment_summery.dart';
 import 'package:bakery/features/checkout/domain/entities/checkout_data.dart';
 import 'package:bakery/features/checkout/presentation/cubit/checkout_cubit.dart';
 import 'package:bakery/features/checkout/presentation/cubit/checkout_state.dart';
-import 'package:bakery/features/checkout/presentation/screens/address_location_screen.dart';
+import 'package:bakery/features/location/presentation/screens/address_location_screen.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -113,7 +113,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 listener: (context, state) {
                   state.mapOrNull(
                     loading: (_) => isLoading = true,
-                    error: (_) => showToast(),
+                    error: (_) => showErrorToast(),
                     success: (successState) =>
                         Navigator.of(context).pushNamedAndRemoveUntil(
                       AppRoutes.orderDetails,

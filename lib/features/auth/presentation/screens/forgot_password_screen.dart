@@ -1,5 +1,5 @@
 import 'package:bakery/core/presentation/resources/values_manager.dart';
-import 'package:bakery/core/presentation/util/toast.dart';
+import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/validation/validators.dart';
 import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
@@ -48,8 +48,8 @@ class _ForgoPasswordScreenState extends State<ForgotPasswordScreen> {
                   bool isLoading = false;
                   state.mapOrNull(
                     loading: (_) => isLoading = true,
-                    error: (_) => showToast(),
-                    success: (_) => showToast(S.current.checkYourEmail),
+                    error: (_) => showErrorToast(),
+                    success: (_) => showErrorToast(S.current.checkYourEmail),
                   );
                   return CustomElevatedButton(
                     label: S.current.submit,

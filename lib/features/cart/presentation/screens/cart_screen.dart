@@ -1,6 +1,6 @@
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
-import 'package:bakery/core/presentation/util/toast.dart';
+import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
@@ -40,8 +40,8 @@ class _CartScreenState extends State<CartScreen> {
     return BlocConsumer<CartCubit, CartState>(
       listener: (context, state) {
         state.mapOrNull(
-          editCartError: (_) => showToast(),
-          deleteCartError: (_) => showToast(),
+          editCartError: (_) => showErrorToast(),
+          deleteCartError: (_) => showErrorToast(),
         );
       },
       builder: (context, state) {

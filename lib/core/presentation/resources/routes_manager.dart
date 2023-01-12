@@ -12,8 +12,9 @@ import 'package:bakery/features/categories/presentation/cubit/categories_cubit.d
 import 'package:bakery/features/categories/presentation/screens/categories_screen.dart';
 import 'package:bakery/features/categories/presentation/screens/category_bakeries_screen.dart';
 import 'package:bakery/features/checkout/presentation/cubit/checkout_cubit.dart';
-import 'package:bakery/features/checkout/presentation/screens/address_location_screen.dart';
 import 'package:bakery/features/checkout/presentation/screens/checkout_screen.dart';
+import 'package:bakery/features/location/presentation/cubit/location_cubit.dart';
+import 'package:bakery/features/location/presentation/screens/address_location_screen.dart';
 import 'package:bakery/features/orders/presentation/cubit/orders_cubit.dart';
 import 'package:bakery/features/orders/presentation/screens/order_details_screen.dart';
 import 'package:bakery/features/orders/presentation/screens/orders_screen.dart';
@@ -107,7 +108,10 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
       );
     case AppRoutes.addressLocation:
       return MaterialPageRoute(
-        builder: (_) => const AddressLocationScreen(),
+        builder: (_) => BlocProvider(
+          create: (_) => getIt<LocationCubit>(),
+          child: const AddressLocationScreen(),
+        ),
         settings: routeSettings,
       );
     case AppRoutes.checkout:

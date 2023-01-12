@@ -30,7 +30,9 @@ class CustomElevatedButton extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: onPressed,
+      onPressed: () {
+        if (isLoading == false) onPressed();
+      },
       child: isLoading
           ? const CircularProgressIndicator(
               color: ColorManager.white,

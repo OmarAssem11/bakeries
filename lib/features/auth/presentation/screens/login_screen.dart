@@ -1,6 +1,6 @@
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
-import 'package:bakery/core/presentation/util/toast.dart';
+import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/validation/validators.dart';
 import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   bool isLoading = false;
                   state.mapOrNull(
                     loading: (_) => isLoading = true,
-                    error: (_) => showToast(),
+                    error: (_) => showErrorToast(),
                     success: (_) =>
                         WidgetsBinding.instance.addPostFrameCallback((_) {
                       Navigator.of(context).popUntil((route) => route.isFirst);

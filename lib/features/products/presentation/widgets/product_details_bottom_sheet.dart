@@ -1,7 +1,7 @@
 import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
-import 'package:bakery/core/presentation/util/toast.dart';
+import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
@@ -114,7 +114,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                     listener: (context, state) {
                       state.mapOrNull(
                         addToCartLoading: (_) => isLoading = true,
-                        addToCartError: (_) => showToast(),
+                        addToCartError: (_) => showErrorToast(),
                       );
                     },
                     builder: (context, state) {

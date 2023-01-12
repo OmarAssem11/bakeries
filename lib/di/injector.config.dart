@@ -5,36 +5,36 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:bakery/core/data/datasources/cache_helper.dart' as _i52;
-import 'package:bakery/di/app_module.dart' as _i70;
+import 'package:bakery/core/data/datasources/cache_helper.dart' as _i53;
+import 'package:bakery/di/app_module.dart' as _i71;
 import 'package:bakery/features/auth/data/datasources/local_datasource/auth_local_datasource.dart'
-    as _i47;
-import 'package:bakery/features/auth/data/datasources/local_datasource/auth_local_datasource_impl.dart'
     as _i48;
+import 'package:bakery/features/auth/data/datasources/local_datasource/auth_local_datasource_impl.dart'
+    as _i49;
 import 'package:bakery/features/auth/data/datasources/remote_datasource/auth_remote_datasource.dart'
     as _i4;
 import 'package:bakery/features/auth/data/datasources/remote_datasource/auth_remote_datasource_impl.dart'
     as _i5;
 import 'package:bakery/features/auth/data/repository/auth_repository_impl.dart'
-    as _i50;
+    as _i51;
 import 'package:bakery/features/auth/data/services/auth_firebase_service.dart'
     as _i3;
 import 'package:bakery/features/auth/domain/repository/auth_repository.dart'
-    as _i49;
+    as _i50;
 import 'package:bakery/features/auth/domain/usecases/forgot_password_usecase.dart'
-    as _i57;
-import 'package:bakery/features/auth/domain/usecases/get_current_user_usecase.dart'
     as _i58;
+import 'package:bakery/features/auth/domain/usecases/get_current_user_usecase.dart'
+    as _i59;
 import 'package:bakery/features/auth/domain/usecases/is_logged_in_usecase.dart'
-    as _i62;
-import 'package:bakery/features/auth/domain/usecases/login_usecase.dart'
     as _i63;
-import 'package:bakery/features/auth/domain/usecases/logout_usecase.dart'
+import 'package:bakery/features/auth/domain/usecases/login_usecase.dart'
     as _i64;
+import 'package:bakery/features/auth/domain/usecases/logout_usecase.dart'
+    as _i65;
 import 'package:bakery/features/auth/domain/usecases/register_usecase.dart'
-    as _i68;
-import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart'
     as _i69;
+import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart'
+    as _i70;
 import 'package:bakery/features/bakeries/data/datasources/remote_datasource/bakeries_remote_datasource.dart'
     as _i7;
 import 'package:bakery/features/bakeries/data/datasources/remote_datasource/bakeries_remote_datasource_impl.dart'
@@ -50,7 +50,7 @@ import 'package:bakery/features/bakeries/domain/usecases/get_bakeries_list_useca
 import 'package:bakery/features/bakeries/domain/usecases/get_bakery_details_usecase.dart'
     as _i31;
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart'
-    as _i51;
+    as _i52;
 import 'package:bakery/features/cart/data/datasources/remote_datasource/cart_remote_datasource.dart'
     as _i12;
 import 'package:bakery/features/cart/data/datasources/remote_datasource/cart_remote_datasource_impl.dart'
@@ -62,7 +62,7 @@ import 'package:bakery/features/cart/data/services/cart_firebase_service.dart'
 import 'package:bakery/features/cart/domain/repository/cart_repository.dart'
     as _i14;
 import 'package:bakery/features/cart/domain/usecases/add_to_cart_usecase.dart'
-    as _i46;
+    as _i47;
 import 'package:bakery/features/cart/domain/usecases/delete_from_cart_usecase.dart'
     as _i27;
 import 'package:bakery/features/cart/domain/usecases/edit_cart_usecase.dart'
@@ -70,7 +70,7 @@ import 'package:bakery/features/cart/domain/usecases/edit_cart_usecase.dart'
 import 'package:bakery/features/cart/domain/usecases/get_cart_usecase.dart'
     as _i32;
 import 'package:bakery/features/cart/presentation/cubit/cart_cubit.dart'
-    as _i54;
+    as _i55;
 import 'package:bakery/features/categories/data/datasources/remote_datasource/categories_remote_datasource.dart'
     as _i17;
 import 'package:bakery/features/categories/data/datasources/remote_datasource/categories_remote_datasource_impl.dart'
@@ -86,7 +86,7 @@ import 'package:bakery/features/categories/domain/usecases/get_all_categories_us
 import 'package:bakery/features/categories/domain/usecases/get_category_bakeries_usecase.dart'
     as _i33;
 import 'package:bakery/features/categories/presentation/cubit/categories_cubit.dart'
-    as _i55;
+    as _i56;
 import 'package:bakery/features/checkout/data/datasources/remote_datasource/checkout_remote_datasource_impl.dart'
     as _i23;
 import 'package:bakery/features/checkout/data/repository/checkout_repository_impl.dart'
@@ -100,46 +100,48 @@ import 'package:bakery/features/checkout/domain/repository/checkout_repository.d
 import 'package:bakery/features/checkout/domain/usecases/checkout_usecase.dart'
     as _i26;
 import 'package:bakery/features/checkout/presentation/cubit/checkout_cubit.dart'
-    as _i56;
-import 'package:bakery/features/orders/data/datasources/remote_datasource/orders_remote_datasource.dart'
-    as _i35;
-import 'package:bakery/features/orders/data/datasources/remote_datasource/orders_remote_datasource_impl.dart'
-    as _i36;
-import 'package:bakery/features/orders/data/repository/orders_repository_impl.dart'
-    as _i38;
-import 'package:bakery/features/orders/data/services/orders_firebase_service.dart'
+    as _i57;
+import 'package:bakery/features/location/presentation/cubit/location_cubit.dart'
     as _i34;
-import 'package:bakery/features/orders/domain/repository/orders_repository.dart'
+import 'package:bakery/features/orders/data/datasources/remote_datasource/orders_remote_datasource.dart'
+    as _i36;
+import 'package:bakery/features/orders/data/datasources/remote_datasource/orders_remote_datasource_impl.dart'
     as _i37;
-import 'package:bakery/features/orders/domain/usecases/cancel_order_usecase.dart'
-    as _i53;
-import 'package:bakery/features/orders/domain/usecases/get_order_details_usecase.dart'
-    as _i59;
-import 'package:bakery/features/orders/domain/usecases/get_orders_usecase.dart'
-    as _i60;
-import 'package:bakery/features/orders/domain/usecases/mark_order_as_collected.dart'
-    as _i65;
-import 'package:bakery/features/orders/presentation/cubit/orders_cubit.dart'
-    as _i66;
-import 'package:bakery/features/products/data/datasources/remote_datasource/products_remote_datasource.dart'
-    as _i40;
-import 'package:bakery/features/products/data/datasources/remote_datasource/products_remote_datasource_impl.dart'
-    as _i41;
-import 'package:bakery/features/products/data/repository/products_repository_impl.dart'
-    as _i43;
-import 'package:bakery/features/products/data/services/products_firebase_service.dart'
+import 'package:bakery/features/orders/data/repository/orders_repository_impl.dart'
     as _i39;
-import 'package:bakery/features/products/domain/repository/products_repository.dart'
-    as _i42;
-import 'package:bakery/features/products/domain/usecases/get_product_details_usecase.dart'
+import 'package:bakery/features/orders/data/services/orders_firebase_service.dart'
+    as _i35;
+import 'package:bakery/features/orders/domain/repository/orders_repository.dart'
+    as _i38;
+import 'package:bakery/features/orders/domain/usecases/cancel_order_usecase.dart'
+    as _i54;
+import 'package:bakery/features/orders/domain/usecases/get_order_details_usecase.dart'
+    as _i60;
+import 'package:bakery/features/orders/domain/usecases/get_orders_usecase.dart'
     as _i61;
-import 'package:bakery/features/products/presentation/cubit/products_cubit.dart'
+import 'package:bakery/features/orders/domain/usecases/mark_order_as_collected.dart'
+    as _i66;
+import 'package:bakery/features/orders/presentation/cubit/orders_cubit.dart'
     as _i67;
-import 'package:bakery/features/settings/presentation/cubit/settings_cubit.dart'
+import 'package:bakery/features/products/data/datasources/remote_datasource/products_remote_datasource.dart'
+    as _i41;
+import 'package:bakery/features/products/data/datasources/remote_datasource/products_remote_datasource_impl.dart'
+    as _i42;
+import 'package:bakery/features/products/data/repository/products_repository_impl.dart'
     as _i44;
+import 'package:bakery/features/products/data/services/products_firebase_service.dart'
+    as _i40;
+import 'package:bakery/features/products/domain/repository/products_repository.dart'
+    as _i43;
+import 'package:bakery/features/products/domain/usecases/get_product_details_usecase.dart'
+    as _i62;
+import 'package:bakery/features/products/presentation/cubit/products_cubit.dart'
+    as _i68;
+import 'package:bakery/features/settings/presentation/cubit/settings_cubit.dart'
+    as _i45;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:shared_preferences/shared_preferences.dart' as _i45;
+import 'package:shared_preferences/shared_preferences.dart' as _i46;
 
 /// ignore_for_file: unnecessary_lambdas
 /// ignore_for_file: lines_longer_than_80_chars
@@ -199,89 +201,90 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i32.GetCartUseCase(gh<_i14.CartRepository>()));
     gh.lazySingleton<_i33.GetCategoryBakeriesUseCase>(
         () => _i33.GetCategoryBakeriesUseCase(gh<_i19.CategoriesRepository>()));
-    gh.lazySingleton<_i34.OrdersFirebaseService>(
-        () => _i34.OrdersFirebaseService());
-    gh.lazySingleton<_i35.OrdersRemoteDataSource>(() =>
-        _i36.OrdersRemoteDataSourceImpl(gh<_i34.OrdersFirebaseService>()));
-    gh.lazySingleton<_i37.OrdersRepository>(
-        () => _i38.OrdersRepositoryImpl(gh<_i35.OrdersRemoteDataSource>()));
-    gh.lazySingleton<_i39.ProductsFirebaseService>(
-        () => _i39.ProductsFirebaseService());
-    gh.lazySingleton<_i40.ProductsRemoteDataSource>(() =>
-        _i41.ProductsRemoteDataSourceImpl(gh<_i39.ProductsFirebaseService>()));
-    gh.lazySingleton<_i42.ProductsRepository>(
-        () => _i43.ProductsRepositoryImpl(gh<_i40.ProductsRemoteDataSource>()));
-    gh.singleton<_i44.SettingsCubit>(_i44.SettingsCubit());
-    await gh.factoryAsync<_i45.SharedPreferences>(
+    gh.factory<_i34.LocationCubit>(() => _i34.LocationCubit());
+    gh.lazySingleton<_i35.OrdersFirebaseService>(
+        () => _i35.OrdersFirebaseService());
+    gh.lazySingleton<_i36.OrdersRemoteDataSource>(() =>
+        _i37.OrdersRemoteDataSourceImpl(gh<_i35.OrdersFirebaseService>()));
+    gh.lazySingleton<_i38.OrdersRepository>(
+        () => _i39.OrdersRepositoryImpl(gh<_i36.OrdersRemoteDataSource>()));
+    gh.lazySingleton<_i40.ProductsFirebaseService>(
+        () => _i40.ProductsFirebaseService());
+    gh.lazySingleton<_i41.ProductsRemoteDataSource>(() =>
+        _i42.ProductsRemoteDataSourceImpl(gh<_i40.ProductsFirebaseService>()));
+    gh.lazySingleton<_i43.ProductsRepository>(
+        () => _i44.ProductsRepositoryImpl(gh<_i41.ProductsRemoteDataSource>()));
+    gh.singleton<_i45.SettingsCubit>(_i45.SettingsCubit());
+    await gh.factoryAsync<_i46.SharedPreferences>(
       () => appModule.sharedPreferences,
       preResolve: true,
     );
-    gh.lazySingleton<_i46.AddToCartUseCase>(
-        () => _i46.AddToCartUseCase(gh<_i14.CartRepository>()));
-    gh.lazySingleton<_i47.AuthLocalDataSource>(
-        () => _i48.AuthLocalDataSourceImpl(gh<_i45.SharedPreferences>()));
-    gh.lazySingleton<_i49.AuthRepository>(() => _i50.AuthRepositoryImpl(
-          gh<_i47.AuthLocalDataSource>(),
+    gh.lazySingleton<_i47.AddToCartUseCase>(
+        () => _i47.AddToCartUseCase(gh<_i14.CartRepository>()));
+    gh.lazySingleton<_i48.AuthLocalDataSource>(
+        () => _i49.AuthLocalDataSourceImpl(gh<_i46.SharedPreferences>()));
+    gh.lazySingleton<_i50.AuthRepository>(() => _i51.AuthRepositoryImpl(
+          gh<_i48.AuthLocalDataSource>(),
           gh<_i4.AuthRemoteDataSource>(),
         ));
-    gh.factory<_i51.BakeriesCubit>(() => _i51.BakeriesCubit(
+    gh.factory<_i52.BakeriesCubit>(() => _i52.BakeriesCubit(
           gh<_i30.GetBakeriesListUseCase>(),
           gh<_i31.GetBakeryDetailsUseCase>(),
         ));
-    gh.singleton<_i52.CacheHelper>(
-        _i52.CacheHelperImpl(gh<_i45.SharedPreferences>()));
-    gh.lazySingleton<_i53.CancelOrderUseCase>(
-        () => _i53.CancelOrderUseCase(gh<_i37.OrdersRepository>()));
-    gh.factory<_i54.CartCubit>(() => _i54.CartCubit(
-          gh<_i46.AddToCartUseCase>(),
+    gh.singleton<_i53.CacheHelper>(
+        _i53.CacheHelperImpl(gh<_i46.SharedPreferences>()));
+    gh.lazySingleton<_i54.CancelOrderUseCase>(
+        () => _i54.CancelOrderUseCase(gh<_i38.OrdersRepository>()));
+    gh.factory<_i55.CartCubit>(() => _i55.CartCubit(
+          gh<_i47.AddToCartUseCase>(),
           gh<_i28.EditCartUseCase>(),
           gh<_i32.GetCartUseCase>(),
           gh<_i27.DeleteFromCartUseCase>(),
         ));
-    gh.factory<_i55.CategoriesCubit>(() => _i55.CategoriesCubit(
+    gh.factory<_i56.CategoriesCubit>(() => _i56.CategoriesCubit(
           gh<_i29.GetAllCategoriesUseCase>(),
           gh<_i33.GetCategoryBakeriesUseCase>(),
         ));
-    gh.factory<_i56.CheckoutCubit>(
-        () => _i56.CheckoutCubit(gh<_i26.CheckoutUseCase>()));
-    gh.lazySingleton<_i57.ForgotPasswordUseCase>(
-        () => _i57.ForgotPasswordUseCase(gh<_i49.AuthRepository>()));
-    gh.lazySingleton<_i58.GetCurrentUserUseCase>(
-        () => _i58.GetCurrentUserUseCase(gh<_i49.AuthRepository>()));
-    gh.lazySingleton<_i59.GetOrderDetailsUseCase>(
-        () => _i59.GetOrderDetailsUseCase(gh<_i37.OrdersRepository>()));
-    gh.lazySingleton<_i60.GetOrdersUseCase>(
-        () => _i60.GetOrdersUseCase(gh<_i37.OrdersRepository>()));
-    gh.lazySingleton<_i61.GetProductDetailsUseCase>(
-        () => _i61.GetProductDetailsUseCase(gh<_i42.ProductsRepository>()));
-    gh.lazySingleton<_i62.IsLoggedInUseCase>(
-        () => _i62.IsLoggedInUseCase(gh<_i49.AuthRepository>()));
-    gh.lazySingleton<_i63.LoginUseCase>(
-        () => _i63.LoginUseCase(gh<_i49.AuthRepository>()));
-    gh.lazySingleton<_i64.LogoutUseCase>(
-        () => _i64.LogoutUseCase(gh<_i49.AuthRepository>()));
-    gh.lazySingleton<_i65.MarkOrderAsCollectedUseCase>(
-        () => _i65.MarkOrderAsCollectedUseCase(gh<_i37.OrdersRepository>()));
-    gh.factory<_i66.OrdersCubit>(() => _i66.OrdersCubit(
-          gh<_i60.GetOrdersUseCase>(),
-          gh<_i59.GetOrderDetailsUseCase>(),
-          gh<_i65.MarkOrderAsCollectedUseCase>(),
-          gh<_i53.CancelOrderUseCase>(),
+    gh.factory<_i57.CheckoutCubit>(
+        () => _i57.CheckoutCubit(gh<_i26.CheckoutUseCase>()));
+    gh.lazySingleton<_i58.ForgotPasswordUseCase>(
+        () => _i58.ForgotPasswordUseCase(gh<_i50.AuthRepository>()));
+    gh.lazySingleton<_i59.GetCurrentUserUseCase>(
+        () => _i59.GetCurrentUserUseCase(gh<_i50.AuthRepository>()));
+    gh.lazySingleton<_i60.GetOrderDetailsUseCase>(
+        () => _i60.GetOrderDetailsUseCase(gh<_i38.OrdersRepository>()));
+    gh.lazySingleton<_i61.GetOrdersUseCase>(
+        () => _i61.GetOrdersUseCase(gh<_i38.OrdersRepository>()));
+    gh.lazySingleton<_i62.GetProductDetailsUseCase>(
+        () => _i62.GetProductDetailsUseCase(gh<_i43.ProductsRepository>()));
+    gh.lazySingleton<_i63.IsLoggedInUseCase>(
+        () => _i63.IsLoggedInUseCase(gh<_i50.AuthRepository>()));
+    gh.lazySingleton<_i64.LoginUseCase>(
+        () => _i64.LoginUseCase(gh<_i50.AuthRepository>()));
+    gh.lazySingleton<_i65.LogoutUseCase>(
+        () => _i65.LogoutUseCase(gh<_i50.AuthRepository>()));
+    gh.lazySingleton<_i66.MarkOrderAsCollectedUseCase>(
+        () => _i66.MarkOrderAsCollectedUseCase(gh<_i38.OrdersRepository>()));
+    gh.factory<_i67.OrdersCubit>(() => _i67.OrdersCubit(
+          gh<_i61.GetOrdersUseCase>(),
+          gh<_i60.GetOrderDetailsUseCase>(),
+          gh<_i66.MarkOrderAsCollectedUseCase>(),
+          gh<_i54.CancelOrderUseCase>(),
         ));
-    gh.factory<_i67.ProductsCubit>(
-        () => _i67.ProductsCubit(gh<_i61.GetProductDetailsUseCase>()));
-    gh.lazySingleton<_i68.RegisterUseCase>(
-        () => _i68.RegisterUseCase(gh<_i49.AuthRepository>()));
-    gh.factory<_i69.AuthCubit>(() => _i69.AuthCubit(
-          gh<_i68.RegisterUseCase>(),
-          gh<_i63.LoginUseCase>(),
-          gh<_i64.LogoutUseCase>(),
-          gh<_i57.ForgotPasswordUseCase>(),
-          gh<_i62.IsLoggedInUseCase>(),
-          gh<_i58.GetCurrentUserUseCase>(),
+    gh.factory<_i68.ProductsCubit>(
+        () => _i68.ProductsCubit(gh<_i62.GetProductDetailsUseCase>()));
+    gh.lazySingleton<_i69.RegisterUseCase>(
+        () => _i69.RegisterUseCase(gh<_i50.AuthRepository>()));
+    gh.factory<_i70.AuthCubit>(() => _i70.AuthCubit(
+          gh<_i69.RegisterUseCase>(),
+          gh<_i64.LoginUseCase>(),
+          gh<_i65.LogoutUseCase>(),
+          gh<_i58.ForgotPasswordUseCase>(),
+          gh<_i63.IsLoggedInUseCase>(),
+          gh<_i59.GetCurrentUserUseCase>(),
         ));
     return this;
   }
 }
 
-class _$AppModule extends _i70.AppModule {}
+class _$AppModule extends _i71.AppModule {}
