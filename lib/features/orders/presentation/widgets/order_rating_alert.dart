@@ -45,7 +45,6 @@ class _OrderRatingDialogState extends State<OrderRatingDialog> {
               initialRating: rating,
               minRating: 1,
               allowHalfRating: true,
-              itemPadding: const EdgeInsets.symmetric(horizontal: Insets.xxs),
               itemBuilder: (context, _) => const Icon(
                 Icons.star,
                 color: Colors.amber,

@@ -18,8 +18,8 @@ class CartProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Container(
-      height: MediaQuery.of(context).size.height * 0.11,
       padding: const EdgeInsets.only(bottom: Insets.s),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,6 +59,8 @@ class CartProductItem extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: product.imageUrl,
               fit: BoxFit.cover,
+              height: screenSize.height * 0.09,
+              width: screenSize.width * 0.25,
             ),
           ),
         ],

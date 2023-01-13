@@ -93,7 +93,7 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.52,
+                  width: MediaQuery.of(context).size.width * 0.55,
                   margin: const EdgeInsets.only(bottom: Insets.xl),
                   child: CustomElevatedButton(
                     onPressed: () => _locationCubit.getAddressFromLatLong(),

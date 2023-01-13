@@ -8,25 +8,32 @@ const db = admin.firestore();
 exports.acceptOrder = functions.firestore
   .document("users/{userId}/orders/{orderId}")
   .onCreate(async (snapshot, context) => {
-    const docSnapshot = await db
+    const userSnapshot = await db
       .collection("users")
       .doc(context.params.userId)
       .get();
-    const token = docSnapshot.data()["fcmToken"];
+    const token = userSnapshot.data().fcmToken;
     const data = {
       message: {
         token: token,
         notification: {
           title: "Order Accepted",
-          body: "Your order has been accepted, and it's preparing now",
+          body: `Your order from ${
+            snapshot.data().orderProductsModels[0].bakeryName
+          } has been accepted, and it's preparing now`,
         },
         data: {
           click_action: "FLUTTER_NOTIFICATION_CLICK",
         },
       },
     };
-    setTimeout(() => {
-      if (snapshot.data()["status"] != "cancelled")
-        admin.messaging().send(data.message);
+    setTimeout(async () => {
+      const orderSnapshot = await snapshot.ref.get();
+      if (orderSnapshot.data().status !== "cancelled") {
+        await snapshot.ref.update({
+          status: "preparing",
+        });
+        return admin.messaging().send(data.message);
+      }
     }, 60000);
   });

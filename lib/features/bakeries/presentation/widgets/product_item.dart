@@ -50,7 +50,14 @@ class ProductItem extends StatelessWidget {
           ),
           const SizedBox(width: Sizes.s16),
           Expanded(
-            child: CachedNetworkImage(imageUrl: product.imageUrl),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(Sizes.s8)),
+              child: CachedNetworkImage(
+                imageUrl: product.imageUrl,
+                height: MediaQuery.of(context).size.height * 0.13,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
         ],
       ),

@@ -9,8 +9,10 @@ class FirebasePath {
   //Fields
   static const String fcmToken = 'fcmToken';
   static const String id = 'id';
+  static const String bakeryId = 'bakeryId';
   static const String productId = 'productId';
   static const String categoryId = 'categoryId';
+  static const String quantity = 'quantity';
   static const String status = 'status';
   static const String rating = 'rating';
   static const String numOfOrders = 'numOfOrders';

@@ -55,9 +55,10 @@ class CheckoutFirebaseService {
       orderProductsModels: orderProductsModels,
     );
     await doc.set(orderModel.toJson());
-    for (final queryDocSnapshot in cartQuerySnapshot.docs) {
-      queryDocSnapshot.reference.delete();
-    }
+    await Future.forEach(
+      cartQuerySnapshot.docs,
+      (queryDocSnapshot) async => queryDocSnapshot.reference.delete(),
+    );
     return doc.id;
   }
 }

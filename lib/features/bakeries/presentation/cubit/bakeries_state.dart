@@ -9,7 +9,7 @@ class BakeriesState with _$BakeriesState {
 
   const factory BakeriesState.getAllBakeriesLoading() = GetAllBakeriesLoading;
   const factory BakeriesState.getAllBakeriesSuccess(
-    List<Bakery> bakeriesList,
+    List<Bakery> bakeries,
   ) = GetAllBakeriesSuccess;
   const factory BakeriesState.getAllBakeriesError() = GetAllBakeriesError;
 

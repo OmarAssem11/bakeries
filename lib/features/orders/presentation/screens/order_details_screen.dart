@@ -98,43 +98,18 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       ],
                     )
                   else if (order.status != OrderStatus.cancelled)
-                    BlocProvider(
-                      create: (_) => getIt<OrdersCubit>(),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                    Column(
+                      children: [
+                        if (order.status != OrderStatus.pending)
                           TextButton.icon(
                             onPressed: () => showDialog(
                               context: context,
-                              builder: (_) => QuestionDialog(
-                                question: S
-                                    .current.areYouSureYouWantToCancelThisOrder,
-                                onSubmit: () {
-                                  BlocProvider.of<OrdersCubit>(context)
-                                      .cancelOrder(_orderId)
-                                      .then(
-                                        (_) => BlocProvider.of<OrdersCubit>(
-                                          context,
-                                        ).getOrderDetails(_orderId),
-                                      );
-                                },
-                              ),
-                            ),
-                            icon: const Icon(
-                              Icons.cancel_outlined,
-                              color: ColorManager.error,
-                            ),
-                            label: Text(
-                              S.current.cancelOrder,
-                              style: const TextStyle(color: ColorManager.error),
-                            ),
-                          ),
-                          TextButton.icon(
-                            onPressed: () => showDialog(
-                              context: context,
-                              builder: (_) => OrderRatingDialog(
-                                orderId: _orderId,
-                                productId: order.products.first.id,
+                              builder: (_) => BlocProvider(
+                                create: (_) => getIt<OrdersCubit>(),
+                                child: OrderRatingDialog(
+                                  orderId: _orderId,
+                                  productId: order.products.first.id,
+                                ),
                               ),
                             ).then(
                               (_) => BlocProvider.of<OrdersCubit>(context)
@@ -149,8 +124,33 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                               style: const TextStyle(color: ColorManager.done),
                             ),
                           ),
-                        ],
-                      ),
+                        TextButton.icon(
+                          onPressed: () => showDialog(
+                            context: context,
+                            builder: (_) => QuestionDialog(
+                              question:
+                                  S.current.areYouSureYouWantToCancelThisOrder,
+                              onSubmit: () {
+                                BlocProvider.of<OrdersCubit>(context)
+                                    .cancelOrder(_orderId)
+                                    .then(
+                                      (_) => BlocProvider.of<OrdersCubit>(
+                                        context,
+                                      ).getOrderDetails(_orderId),
+                                    );
+                              },
+                            ),
+                          ),
+                          icon: const Icon(
+                            Icons.cancel_outlined,
+                            color: ColorManager.error,
+                          ),
+                          label: Text(
+                            S.current.cancelOrder,
+                            style: const TextStyle(color: ColorManager.error),
+                          ),
+                        ),
+                      ],
                     ),
                 ],
               ),
