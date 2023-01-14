@@ -7,6 +7,7 @@ import 'package:bakery/features/settings/presentation/cubit/settings_cubit.dart'
 import 'package:bakery/features/settings/presentation/cubit/settings_state.dart';
 import 'package:bakery/firebase_options.dart';
 import 'package:bakery/generated/l10n.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,9 +16,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseAppCheck.instance
+      .activate(androidProvider: AndroidProvider.debug);
   await NotificationsHelper().listenOnMessages();
   Bloc.observer = AppBlocObserver();
   runApp(const App());
