@@ -22,13 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "addANote": MessageLookupByLibrary.simpleMessage("Add a note"),
         "addToBasket": MessageLookupByLibrary.simpleMessage("Add to basket"),
         "address": MessageLookupByLibrary.simpleMessage("Address"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
-        "anythingElseWeNeedToKnow": MessageLookupByLibrary.simpleMessage(
-            "Anything else we need to know?"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "areYouSureYouWantToCancelThisOrder":
             MessageLookupByLibrary.simpleMessage(
@@ -67,7 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "forgotPasswordCaption": MessageLookupByLibrary.simpleMessage(
-            "Don\'t worry it happens. Please enter the address \n associated with your account"),
+            "Don\'t worry it happens. Please enter the email address associated with your account."),
         "fullName": MessageLookupByLibrary.simpleMessage("Full name"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "invalidEmailFormat":
@@ -84,6 +81,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "locationPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
             "Location permission are permanently denied, we cannot request permission"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginCaption": MessageLookupByLibrary.simpleMessage(
+            "Login now to order from you favorite bakeries and get your order delivered to your doorstep."),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "markAsCollected":
             MessageLookupByLibrary.simpleMessage("Mark as collected"),
@@ -104,8 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneCanNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Phone can\'t be empty"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
-        "pickYourCategory":
-            MessageLookupByLibrary.simpleMessage("Pick your category"),
+        "pickCategory": MessageLookupByLibrary.simpleMessage("Pick a category"),
         "placeOrder": MessageLookupByLibrary.simpleMessage("place order"),
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "Please enable Your Location Service"),
@@ -113,13 +111,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "rateYourOrder":
             MessageLookupByLibrary.simpleMessage("Rate your order"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "registerCaption": MessageLookupByLibrary.simpleMessage(
+            "Register now to order from you favorite bakeries and get your order delivered to your doorstep."),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong!"),
-        "specialRequest":
-            MessageLookupByLibrary.simpleMessage("Special request"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
         "totalAmount": MessageLookupByLibrary.simpleMessage("Total amount"),

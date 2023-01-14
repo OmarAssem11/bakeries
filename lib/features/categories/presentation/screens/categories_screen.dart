@@ -38,7 +38,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              S.current.pickYourCategory,
+              S.current.pickCategory,
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: Sizes.s20),

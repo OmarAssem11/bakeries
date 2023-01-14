@@ -91,7 +91,7 @@ class LocationCubit extends Cubit<LocationState> {
         position: latLng,
         icon: await BitmapDescriptor.fromAssetImage(
           ImageConfiguration.empty,
-          Assets.images.bakery.path,
+          Assets.images.bakeryIcon.path,
         ),
       );
       markers.add(marker);

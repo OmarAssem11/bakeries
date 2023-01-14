@@ -26,7 +26,7 @@ class ProductDetailsBottomSheet extends StatefulWidget {
 
 class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
   int quantity = 1;
-  bool isLoading = false;
+  bool _isLoading = false;
   late TextTheme _textTheme;
   late Size _screenSize;
 
@@ -109,18 +109,22 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.only(
+                    right: Sizes.s16,
+                    left: Sizes.s16,
+                    bottom: Sizes.s16,
+                  ),
                   child: BlocConsumer<CartCubit, CartState>(
                     listener: (context, state) {
                       state.mapOrNull(
-                        addToCartLoading: (_) => isLoading = true,
+                        addToCartLoading: (_) => _isLoading = true,
                         addToCartError: (_) => showErrorToast(),
                       );
                     },
                     builder: (context, state) {
                       return state.maybeWhen(
                         addToCartSuccess: () {
-                          isLoading = false;
+                          _isLoading = false;
                           return CustomElevatedButton(
                             label: S.current.viewBasket,
                             onPressed: () =>
@@ -128,7 +132,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                               AppRoutes.cart,
                               (route) => route.isFirst,
                             ),
-                            isLoading: isLoading,
+                            isLoading: _isLoading,
                           );
                         },
                         orElse: () => CustomElevatedButton(
@@ -140,7 +144,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                               quantity: quantity,
                             ),
                           ),
-                          isLoading: isLoading,
+                          isLoading: _isLoading,
                         ),
                       );
                     },

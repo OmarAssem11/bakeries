@@ -22,13 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "addANote": MessageLookupByLibrary.simpleMessage("إضافة ملاحظة"),
         "addToBasket": MessageLookupByLibrary.simpleMessage("إضافة الي السلة"),
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
-        "anythingElseWeNeedToKnow":
-            MessageLookupByLibrary.simpleMessage("اي شئ آخر يجب ان نعرفه؟"),
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "areYouSureYouWantToCancelThisOrder":
             MessageLookupByLibrary.simpleMessage(
@@ -83,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "locationPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
             "تصريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصريح"),
         "login": MessageLookupByLibrary.simpleMessage("نسجيل دخول"),
+        "loginCaption": MessageLookupByLibrary.simpleMessage(
+            "سجل دخول الان حتي تطلب من المخابز المفضلة لديك ويتم توصيل طلبك حتي باب بيتك"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
         "markAsCollected":
             MessageLookupByLibrary.simpleMessage("أشر انها وصلت"),
@@ -102,8 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "رقم الهاتف لا يمكن ان يكون فارغ"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
-        "pickYourCategory":
-            MessageLookupByLibrary.simpleMessage("إختر التصنيف"),
+        "pickCategory": MessageLookupByLibrary.simpleMessage("إختر التصنيف"),
         "placeOrder": MessageLookupByLibrary.simpleMessage("تأكيد الطلب"),
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "برجاء قم بتفعيل تحديد الموقع"),
@@ -111,12 +109,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("النطاق بالكيلومترات"),
         "rateYourOrder": MessageLookupByLibrary.simpleMessage("قيم طلبك"),
         "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "registerCaption": MessageLookupByLibrary.simpleMessage(
+            "إنشئ حساب الان حتي تطلب من المخابز المفضلة لديك ويتم توصيل طلبك حتي باب بيتك"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة ضبط كلمة السر"),
         "retry": MessageLookupByLibrary.simpleMessage("أعد المحاولة"),
         "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "somethingWentWrong": MessageLookupByLibrary.simpleMessage("!حدث خطأ"),
-        "specialRequest": MessageLookupByLibrary.simpleMessage("طلب خاص"),
         "submit": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "subtotal": MessageLookupByLibrary.simpleMessage("المجموع"),
         "totalAmount": MessageLookupByLibrary.simpleMessage("الإجمالي"),

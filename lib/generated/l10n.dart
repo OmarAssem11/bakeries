@@ -90,11 +90,31 @@ class S {
     );
   }
 
+  /// `Register now to order from you favorite bakeries and get your order delivered to your doorstep.`
+  String get registerCaption {
+    return Intl.message(
+      'Register now to order from you favorite bakeries and get your order delivered to your doorstep.',
+      name: 'registerCaption',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Login`
   String get login {
     return Intl.message(
       'Login',
       name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login now to order from you favorite bakeries and get your order delivered to your doorstep.`
+  String get loginCaption {
+    return Intl.message(
+      'Login now to order from you favorite bakeries and get your order delivered to your doorstep.',
+      name: 'loginCaption',
       desc: '',
       args: [],
     );
@@ -380,36 +400,6 @@ class S {
     );
   }
 
-  /// `Special request`
-  String get specialRequest {
-    return Intl.message(
-      'Special request',
-      name: 'specialRequest',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add a note`
-  String get addANote {
-    return Intl.message(
-      'Add a note',
-      name: 'addANote',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Anything else we need to know?`
-  String get anythingElseWeNeedToKnow {
-    return Intl.message(
-      'Anything else we need to know?',
-      name: 'anythingElseWeNeedToKnow',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Payment summery`
   String get paymentSummery {
     return Intl.message(
@@ -610,10 +600,10 @@ class S {
     );
   }
 
-  /// `Don't worry it happens. Please enter the address \n associated with your account`
+  /// `Don't worry it happens. Please enter the email address associated with your account.`
   String get forgotPasswordCaption {
     return Intl.message(
-      'Don\'t worry it happens. Please enter the address \n associated with your account',
+      'Don\'t worry it happens. Please enter the email address associated with your account.',
       name: 'forgotPasswordCaption',
       desc: '',
       args: [],
@@ -730,11 +720,11 @@ class S {
     );
   }
 
-  /// `Pick your category`
-  String get pickYourCategory {
+  /// `Pick a category`
+  String get pickCategory {
     return Intl.message(
-      'Pick your category',
-      name: 'pickYourCategory',
+      'Pick a category',
+      name: 'pickCategory',
       desc: '',
       args: [],
     );

@@ -87,7 +87,7 @@ class ProductItem extends StatelessWidget {
             ),
           ],
           child: const FractionallySizedBox(
-            heightFactor: 0.65,
+            heightFactor: 0.68,
             child: ProductDetailsBottomSheet(),
           ),
         ),

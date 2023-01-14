@@ -66,7 +66,9 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                     ),
                   ),
                   const SizedBox(height: Sizes.s16),
-                  Lottie.asset(_statusLotties[order.status]!),
+                  Lottie.asset(
+                    _statusLotties[order.status]!,
+                  ),
                   const Divider(thickness: Sizes.s1),
                   ListView.separated(
                     itemBuilder: (_, index) => OrderedProductItem(
