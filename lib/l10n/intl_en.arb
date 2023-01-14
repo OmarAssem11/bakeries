@@ -68,5 +68,11 @@
     "orderRating": "Order Rating",
     "categories": "Categories",
     "pickYourCategory": "Pick your category",
-    "welcome": "Welcome"
+    "welcome": "Welcome",
+    "filter": "Filter",
+    "filterBakeriesByRange": "Filter bakeries by range",
+    "invalidNumber": "Invalid number",
+    "rangeByKm": "Range by km",
+    "bakeriesWithin": "Bakeries within",
+    "km": "km"
 }

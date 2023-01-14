@@ -1,11 +1,14 @@
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
+import 'package:bakery/di/injector.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_state.dart';
 import 'package:bakery/features/bakeries/presentation/widgets/bakeries_list.dart';
+import 'package:bakery/features/bakeries/presentation/widgets/filter_bakeries_alert.dart';
 import 'package:bakery/features/bakeries/presentation/widgets/home_drawer.dart';
+import 'package:bakery/features/location/presentation/cubit/location_cubit.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart ';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,11 +21,13 @@ class BakeriesScreen extends StatefulWidget {
 }
 
 class _BakeriesScreenState extends State<BakeriesScreen> {
+  late BakeriesCubit _bakeriesCubit;
   @override
   void initState() {
     super.initState();
+    _bakeriesCubit = BlocProvider.of<BakeriesCubit>(context);
     BlocProvider.of<AuthCubit>(context).isLoggedIn();
-    BlocProvider.of<BakeriesCubit>(context).getAllBakeries();
+    _bakeriesCubit.getAllBakeries();
   }
 
   @override
@@ -31,6 +36,23 @@ class _BakeriesScreenState extends State<BakeriesScreen> {
       appBar: AppBar(
         title: Text(S.current.bakeries),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.filter_list_rounded),
+            onPressed: () => showDialog(
+              context: context,
+              builder: (_) => MultiBlocProvider(
+                providers: [
+                  BlocProvider(
+                    create: (_) => getIt<LocationCubit>(),
+                  ),
+                  BlocProvider<BakeriesCubit>.value(
+                    value: _bakeriesCubit,
+                  ),
+                ],
+                child: const FilterBakeriesDialog(),
+              ),
+            ),
+          ),
           IconButton(
             icon: const Icon(Icons.location_on_outlined),
             onPressed: () =>
@@ -42,9 +64,9 @@ class _BakeriesScreenState extends State<BakeriesScreen> {
       body: BlocBuilder<BakeriesCubit, BakeriesState>(
         builder: (context, state) {
           return state.maybeWhen(
-            getAllBakeriesLoading: () => const LoadingIndicator(),
-            getAllBakeriesError: () => const ErrorIndicator(),
-            getAllBakeriesSuccess: (bakeries) => BakeriesList(bakeries),
+            getBakeriesLoading: () => const LoadingIndicator(),
+            getBakeriesError: () => const ErrorIndicator(),
+            getBakeriesSuccess: () => BakeriesList(_bakeriesCubit.allBakeries),
             orElse: () => const SizedBox.expand(),
           );
         },

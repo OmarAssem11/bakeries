@@ -68,5 +68,11 @@
     "orderRating": "تقييم الطلب",
     "categories": "التصنيفات",
     "pickYourCategory": "إختر التصنيف",
-    "welcome": "مرحبا"
+    "welcome": "مرحبا",
+    "filter": "تصفية",
+    "filterBakeriesByRange": "تصفية المخابز بالنطاق",
+    "invalidNumber": "رقم غير صالح",
+    "rangeByKm": "النطاق بالكيلومترات",
+    "bakeriesWithin": "مخابز في نطاق",
+    "km": "كم"
 }

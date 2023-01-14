@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد انك تريد تسجيل خروج؟"),
         "bakeries": MessageLookupByLibrary.simpleMessage("مخابز"),
+        "bakeriesWithin": MessageLookupByLibrary.simpleMessage("مخابز في نطاق"),
         "basket": MessageLookupByLibrary.simpleMessage("السلة"),
         "canNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("لا يمكن ان يكون فارغ"),
@@ -59,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "البريد الإكتروني لا يمكن ان يكون فارغ"),
         "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
+        "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
+        "filterBakeriesByRange":
+            MessageLookupByLibrary.simpleMessage("تصفية المخابز بالنطاق"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
         "forgotPasswordCaption": MessageLookupByLibrary.simpleMessage(
@@ -67,10 +71,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "invalidEmailFormat":
             MessageLookupByLibrary.simpleMessage("صيغة الريد الإكتروني خاطئة"),
+        "invalidNumber": MessageLookupByLibrary.simpleMessage("رقم غير صالح"),
         "invalidPhoneNumber":
             MessageLookupByLibrary.simpleMessage("رقم الهاتف غير صالح"),
         "itemAddedToYourBasket":
             MessageLookupByLibrary.simpleMessage("تم إضافة العنصر إلي السلة"),
+        "km": MessageLookupByLibrary.simpleMessage("كم"),
         "localeName": MessageLookupByLibrary.simpleMessage("ar"),
         "locationPermissionDenied": MessageLookupByLibrary.simpleMessage(
             "تصريح الوصول إلي موقع الهاتف مرفوضة"),
@@ -101,6 +107,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "placeOrder": MessageLookupByLibrary.simpleMessage("تأكيد الطلب"),
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "برجاء قم بتفعيل تحديد الموقع"),
+        "rangeByKm":
+            MessageLookupByLibrary.simpleMessage("النطاق بالكيلومترات"),
         "rateYourOrder": MessageLookupByLibrary.simpleMessage("قيم طلبك"),
         "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "resetPassword":

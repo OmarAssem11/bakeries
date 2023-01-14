@@ -19,9 +19,9 @@ mixin _$BakeriesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAllBakeriesLoading,
-    required TResult Function(List<Bakery> bakeriesList) getAllBakeriesSuccess,
-    required TResult Function() getAllBakeriesError,
+    required TResult Function() getBakeriesLoading,
+    required TResult Function() getBakeriesSuccess,
+    required TResult Function() getBakeriesError,
     required TResult Function() getBakeryDetailsLoading,
     required TResult Function(Bakery bakery) getBakeryDetailsSuccess,
     required TResult Function() getBakeryDetailsError,
@@ -30,9 +30,9 @@ mixin _$BakeriesState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAllBakeriesLoading,
-    TResult? Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult? Function()? getAllBakeriesError,
+    TResult? Function()? getBakeriesLoading,
+    TResult? Function()? getBakeriesSuccess,
+    TResult? Function()? getBakeriesError,
     TResult? Function()? getBakeryDetailsLoading,
     TResult? Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult? Function()? getBakeryDetailsError,
@@ -41,9 +41,9 @@ mixin _$BakeriesState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAllBakeriesLoading,
-    TResult Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult Function()? getAllBakeriesError,
+    TResult Function()? getBakeriesLoading,
+    TResult Function()? getBakeriesSuccess,
+    TResult Function()? getBakeriesError,
     TResult Function()? getBakeryDetailsLoading,
     TResult Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult Function()? getBakeryDetailsError,
@@ -53,11 +53,9 @@ mixin _$BakeriesState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BakeriesInitial value) initial,
-    required TResult Function(GetAllBakeriesLoading value)
-        getAllBakeriesLoading,
-    required TResult Function(GetAllBakeriesSuccess value)
-        getAllBakeriesSuccess,
-    required TResult Function(GetAllBakeriesError value) getAllBakeriesError,
+    required TResult Function(GetBakeriesLoading value) getBakeriesLoading,
+    required TResult Function(GetBakeriesSuccess value) getBakeriesSuccess,
+    required TResult Function(GetBakeriesError value) getBakeriesError,
     required TResult Function(GetBakeryDetailsLoading value)
         getBakeryDetailsLoading,
     required TResult Function(GetBakeryDetailsSuccess value)
@@ -69,9 +67,9 @@ mixin _$BakeriesState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BakeriesInitial value)? initial,
-    TResult? Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult? Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult? Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult? Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult? Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult? Function(GetBakeriesError value)? getBakeriesError,
     TResult? Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult? Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult? Function(GetBakeryDetailsError value)? getBakeryDetailsError,
@@ -80,9 +78,9 @@ mixin _$BakeriesState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BakeriesInitial value)? initial,
-    TResult Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult Function(GetBakeriesError value)? getBakeriesError,
     TResult Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult Function(GetBakeryDetailsError value)? getBakeryDetailsError,
@@ -148,9 +146,9 @@ class _$BakeriesInitial implements BakeriesInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAllBakeriesLoading,
-    required TResult Function(List<Bakery> bakeriesList) getAllBakeriesSuccess,
-    required TResult Function() getAllBakeriesError,
+    required TResult Function() getBakeriesLoading,
+    required TResult Function() getBakeriesSuccess,
+    required TResult Function() getBakeriesError,
     required TResult Function() getBakeryDetailsLoading,
     required TResult Function(Bakery bakery) getBakeryDetailsSuccess,
     required TResult Function() getBakeryDetailsError,
@@ -162,9 +160,9 @@ class _$BakeriesInitial implements BakeriesInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAllBakeriesLoading,
-    TResult? Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult? Function()? getAllBakeriesError,
+    TResult? Function()? getBakeriesLoading,
+    TResult? Function()? getBakeriesSuccess,
+    TResult? Function()? getBakeriesError,
     TResult? Function()? getBakeryDetailsLoading,
     TResult? Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult? Function()? getBakeryDetailsError,
@@ -176,9 +174,9 @@ class _$BakeriesInitial implements BakeriesInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAllBakeriesLoading,
-    TResult Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult Function()? getAllBakeriesError,
+    TResult Function()? getBakeriesLoading,
+    TResult Function()? getBakeriesSuccess,
+    TResult Function()? getBakeriesError,
     TResult Function()? getBakeryDetailsLoading,
     TResult Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult Function()? getBakeryDetailsError,
@@ -194,11 +192,9 @@ class _$BakeriesInitial implements BakeriesInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BakeriesInitial value) initial,
-    required TResult Function(GetAllBakeriesLoading value)
-        getAllBakeriesLoading,
-    required TResult Function(GetAllBakeriesSuccess value)
-        getAllBakeriesSuccess,
-    required TResult Function(GetAllBakeriesError value) getAllBakeriesError,
+    required TResult Function(GetBakeriesLoading value) getBakeriesLoading,
+    required TResult Function(GetBakeriesSuccess value) getBakeriesSuccess,
+    required TResult Function(GetBakeriesError value) getBakeriesError,
     required TResult Function(GetBakeryDetailsLoading value)
         getBakeryDetailsLoading,
     required TResult Function(GetBakeryDetailsSuccess value)
@@ -213,9 +209,9 @@ class _$BakeriesInitial implements BakeriesInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BakeriesInitial value)? initial,
-    TResult? Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult? Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult? Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult? Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult? Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult? Function(GetBakeriesError value)? getBakeriesError,
     TResult? Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult? Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult? Function(GetBakeryDetailsError value)? getBakeryDetailsError,
@@ -227,9 +223,9 @@ class _$BakeriesInitial implements BakeriesInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BakeriesInitial value)? initial,
-    TResult Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult Function(GetBakeriesError value)? getBakeriesError,
     TResult Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult Function(GetBakeryDetailsError value)? getBakeryDetailsError,
@@ -247,35 +243,35 @@ abstract class BakeriesInitial implements BakeriesState {
 }
 
 /// @nodoc
-abstract class _$$GetAllBakeriesLoadingCopyWith<$Res> {
-  factory _$$GetAllBakeriesLoadingCopyWith(_$GetAllBakeriesLoading value,
-          $Res Function(_$GetAllBakeriesLoading) then) =
-      __$$GetAllBakeriesLoadingCopyWithImpl<$Res>;
+abstract class _$$GetBakeriesLoadingCopyWith<$Res> {
+  factory _$$GetBakeriesLoadingCopyWith(_$GetBakeriesLoading value,
+          $Res Function(_$GetBakeriesLoading) then) =
+      __$$GetBakeriesLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAllBakeriesLoadingCopyWithImpl<$Res>
-    extends _$BakeriesStateCopyWithImpl<$Res, _$GetAllBakeriesLoading>
-    implements _$$GetAllBakeriesLoadingCopyWith<$Res> {
-  __$$GetAllBakeriesLoadingCopyWithImpl(_$GetAllBakeriesLoading _value,
-      $Res Function(_$GetAllBakeriesLoading) _then)
+class __$$GetBakeriesLoadingCopyWithImpl<$Res>
+    extends _$BakeriesStateCopyWithImpl<$Res, _$GetBakeriesLoading>
+    implements _$$GetBakeriesLoadingCopyWith<$Res> {
+  __$$GetBakeriesLoadingCopyWithImpl(
+      _$GetBakeriesLoading _value, $Res Function(_$GetBakeriesLoading) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAllBakeriesLoading implements GetAllBakeriesLoading {
-  const _$GetAllBakeriesLoading();
+class _$GetBakeriesLoading implements GetBakeriesLoading {
+  const _$GetBakeriesLoading();
 
   @override
   String toString() {
-    return 'BakeriesState.getAllBakeriesLoading()';
+    return 'BakeriesState.getBakeriesLoading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllBakeriesLoading);
+        (other.runtimeType == runtimeType && other is _$GetBakeriesLoading);
   }
 
   @override
@@ -285,44 +281,44 @@ class _$GetAllBakeriesLoading implements GetAllBakeriesLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAllBakeriesLoading,
-    required TResult Function(List<Bakery> bakeriesList) getAllBakeriesSuccess,
-    required TResult Function() getAllBakeriesError,
+    required TResult Function() getBakeriesLoading,
+    required TResult Function() getBakeriesSuccess,
+    required TResult Function() getBakeriesError,
     required TResult Function() getBakeryDetailsLoading,
     required TResult Function(Bakery bakery) getBakeryDetailsSuccess,
     required TResult Function() getBakeryDetailsError,
   }) {
-    return getAllBakeriesLoading();
+    return getBakeriesLoading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAllBakeriesLoading,
-    TResult? Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult? Function()? getAllBakeriesError,
+    TResult? Function()? getBakeriesLoading,
+    TResult? Function()? getBakeriesSuccess,
+    TResult? Function()? getBakeriesError,
     TResult? Function()? getBakeryDetailsLoading,
     TResult? Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult? Function()? getBakeryDetailsError,
   }) {
-    return getAllBakeriesLoading?.call();
+    return getBakeriesLoading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAllBakeriesLoading,
-    TResult Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult Function()? getAllBakeriesError,
+    TResult Function()? getBakeriesLoading,
+    TResult Function()? getBakeriesSuccess,
+    TResult Function()? getBakeriesError,
     TResult Function()? getBakeryDetailsLoading,
     TResult Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult Function()? getBakeryDetailsError,
     required TResult orElse(),
   }) {
-    if (getAllBakeriesLoading != null) {
-      return getAllBakeriesLoading();
+    if (getBakeriesLoading != null) {
+      return getBakeriesLoading();
     }
     return orElse();
   }
@@ -331,11 +327,9 @@ class _$GetAllBakeriesLoading implements GetAllBakeriesLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BakeriesInitial value) initial,
-    required TResult Function(GetAllBakeriesLoading value)
-        getAllBakeriesLoading,
-    required TResult Function(GetAllBakeriesSuccess value)
-        getAllBakeriesSuccess,
-    required TResult Function(GetAllBakeriesError value) getAllBakeriesError,
+    required TResult Function(GetBakeriesLoading value) getBakeriesLoading,
+    required TResult Function(GetBakeriesSuccess value) getBakeriesSuccess,
+    required TResult Function(GetBakeriesError value) getBakeriesError,
     required TResult Function(GetBakeryDetailsLoading value)
         getBakeryDetailsLoading,
     required TResult Function(GetBakeryDetailsSuccess value)
@@ -343,254 +337,76 @@ class _$GetAllBakeriesLoading implements GetAllBakeriesLoading {
     required TResult Function(GetBakeryDetailsError value)
         getBakeryDetailsError,
   }) {
-    return getAllBakeriesLoading(this);
+    return getBakeriesLoading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BakeriesInitial value)? initial,
-    TResult? Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult? Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult? Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult? Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult? Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult? Function(GetBakeriesError value)? getBakeriesError,
     TResult? Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult? Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult? Function(GetBakeryDetailsError value)? getBakeryDetailsError,
   }) {
-    return getAllBakeriesLoading?.call(this);
+    return getBakeriesLoading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BakeriesInitial value)? initial,
-    TResult Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult Function(GetBakeriesError value)? getBakeriesError,
     TResult Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult Function(GetBakeryDetailsError value)? getBakeryDetailsError,
     required TResult orElse(),
   }) {
-    if (getAllBakeriesLoading != null) {
-      return getAllBakeriesLoading(this);
+    if (getBakeriesLoading != null) {
+      return getBakeriesLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class GetAllBakeriesLoading implements BakeriesState {
-  const factory GetAllBakeriesLoading() = _$GetAllBakeriesLoading;
+abstract class GetBakeriesLoading implements BakeriesState {
+  const factory GetBakeriesLoading() = _$GetBakeriesLoading;
 }
 
 /// @nodoc
-abstract class _$$GetAllBakeriesSuccessCopyWith<$Res> {
-  factory _$$GetAllBakeriesSuccessCopyWith(_$GetAllBakeriesSuccess value,
-          $Res Function(_$GetAllBakeriesSuccess) then) =
-      __$$GetAllBakeriesSuccessCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<Bakery> bakeriesList});
+abstract class _$$GetBakeriesSuccessCopyWith<$Res> {
+  factory _$$GetBakeriesSuccessCopyWith(_$GetBakeriesSuccess value,
+          $Res Function(_$GetBakeriesSuccess) then) =
+      __$$GetBakeriesSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAllBakeriesSuccessCopyWithImpl<$Res>
-    extends _$BakeriesStateCopyWithImpl<$Res, _$GetAllBakeriesSuccess>
-    implements _$$GetAllBakeriesSuccessCopyWith<$Res> {
-  __$$GetAllBakeriesSuccessCopyWithImpl(_$GetAllBakeriesSuccess _value,
-      $Res Function(_$GetAllBakeriesSuccess) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? bakeriesList = null,
-  }) {
-    return _then(_$GetAllBakeriesSuccess(
-      null == bakeriesList
-          ? _value._bakeriesList
-          : bakeriesList // ignore: cast_nullable_to_non_nullable
-              as List<Bakery>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetAllBakeriesSuccess implements GetAllBakeriesSuccess {
-  const _$GetAllBakeriesSuccess(final List<Bakery> bakeriesList)
-      : _bakeriesList = bakeriesList;
-
-  final List<Bakery> _bakeriesList;
-  @override
-  List<Bakery> get bakeriesList {
-    if (_bakeriesList is EqualUnmodifiableListView) return _bakeriesList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_bakeriesList);
-  }
-
-  @override
-  String toString() {
-    return 'BakeriesState.getAllBakeriesSuccess(bakeriesList: $bakeriesList)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllBakeriesSuccess &&
-            const DeepCollectionEquality()
-                .equals(other._bakeriesList, _bakeriesList));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_bakeriesList));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAllBakeriesSuccessCopyWith<_$GetAllBakeriesSuccess> get copyWith =>
-      __$$GetAllBakeriesSuccessCopyWithImpl<_$GetAllBakeriesSuccess>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllBakeriesLoading,
-    required TResult Function(List<Bakery> bakeriesList) getAllBakeriesSuccess,
-    required TResult Function() getAllBakeriesError,
-    required TResult Function() getBakeryDetailsLoading,
-    required TResult Function(Bakery bakery) getBakeryDetailsSuccess,
-    required TResult Function() getBakeryDetailsError,
-  }) {
-    return getAllBakeriesSuccess(bakeriesList);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllBakeriesLoading,
-    TResult? Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult? Function()? getAllBakeriesError,
-    TResult? Function()? getBakeryDetailsLoading,
-    TResult? Function(Bakery bakery)? getBakeryDetailsSuccess,
-    TResult? Function()? getBakeryDetailsError,
-  }) {
-    return getAllBakeriesSuccess?.call(bakeriesList);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllBakeriesLoading,
-    TResult Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult Function()? getAllBakeriesError,
-    TResult Function()? getBakeryDetailsLoading,
-    TResult Function(Bakery bakery)? getBakeryDetailsSuccess,
-    TResult Function()? getBakeryDetailsError,
-    required TResult orElse(),
-  }) {
-    if (getAllBakeriesSuccess != null) {
-      return getAllBakeriesSuccess(bakeriesList);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(BakeriesInitial value) initial,
-    required TResult Function(GetAllBakeriesLoading value)
-        getAllBakeriesLoading,
-    required TResult Function(GetAllBakeriesSuccess value)
-        getAllBakeriesSuccess,
-    required TResult Function(GetAllBakeriesError value) getAllBakeriesError,
-    required TResult Function(GetBakeryDetailsLoading value)
-        getBakeryDetailsLoading,
-    required TResult Function(GetBakeryDetailsSuccess value)
-        getBakeryDetailsSuccess,
-    required TResult Function(GetBakeryDetailsError value)
-        getBakeryDetailsError,
-  }) {
-    return getAllBakeriesSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(BakeriesInitial value)? initial,
-    TResult? Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult? Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult? Function(GetAllBakeriesError value)? getAllBakeriesError,
-    TResult? Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
-    TResult? Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
-    TResult? Function(GetBakeryDetailsError value)? getBakeryDetailsError,
-  }) {
-    return getAllBakeriesSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(BakeriesInitial value)? initial,
-    TResult Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult Function(GetAllBakeriesError value)? getAllBakeriesError,
-    TResult Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
-    TResult Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
-    TResult Function(GetBakeryDetailsError value)? getBakeryDetailsError,
-    required TResult orElse(),
-  }) {
-    if (getAllBakeriesSuccess != null) {
-      return getAllBakeriesSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAllBakeriesSuccess implements BakeriesState {
-  const factory GetAllBakeriesSuccess(final List<Bakery> bakeriesList) =
-      _$GetAllBakeriesSuccess;
-
-  List<Bakery> get bakeriesList;
-  @JsonKey(ignore: true)
-  _$$GetAllBakeriesSuccessCopyWith<_$GetAllBakeriesSuccess> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GetAllBakeriesErrorCopyWith<$Res> {
-  factory _$$GetAllBakeriesErrorCopyWith(_$GetAllBakeriesError value,
-          $Res Function(_$GetAllBakeriesError) then) =
-      __$$GetAllBakeriesErrorCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetAllBakeriesErrorCopyWithImpl<$Res>
-    extends _$BakeriesStateCopyWithImpl<$Res, _$GetAllBakeriesError>
-    implements _$$GetAllBakeriesErrorCopyWith<$Res> {
-  __$$GetAllBakeriesErrorCopyWithImpl(
-      _$GetAllBakeriesError _value, $Res Function(_$GetAllBakeriesError) _then)
+class __$$GetBakeriesSuccessCopyWithImpl<$Res>
+    extends _$BakeriesStateCopyWithImpl<$Res, _$GetBakeriesSuccess>
+    implements _$$GetBakeriesSuccessCopyWith<$Res> {
+  __$$GetBakeriesSuccessCopyWithImpl(
+      _$GetBakeriesSuccess _value, $Res Function(_$GetBakeriesSuccess) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAllBakeriesError implements GetAllBakeriesError {
-  const _$GetAllBakeriesError();
+class _$GetBakeriesSuccess implements GetBakeriesSuccess {
+  const _$GetBakeriesSuccess();
 
   @override
   String toString() {
-    return 'BakeriesState.getAllBakeriesError()';
+    return 'BakeriesState.getBakeriesSuccess()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllBakeriesError);
+        (other.runtimeType == runtimeType && other is _$GetBakeriesSuccess);
   }
 
   @override
@@ -600,44 +416,44 @@ class _$GetAllBakeriesError implements GetAllBakeriesError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAllBakeriesLoading,
-    required TResult Function(List<Bakery> bakeriesList) getAllBakeriesSuccess,
-    required TResult Function() getAllBakeriesError,
+    required TResult Function() getBakeriesLoading,
+    required TResult Function() getBakeriesSuccess,
+    required TResult Function() getBakeriesError,
     required TResult Function() getBakeryDetailsLoading,
     required TResult Function(Bakery bakery) getBakeryDetailsSuccess,
     required TResult Function() getBakeryDetailsError,
   }) {
-    return getAllBakeriesError();
+    return getBakeriesSuccess();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAllBakeriesLoading,
-    TResult? Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult? Function()? getAllBakeriesError,
+    TResult? Function()? getBakeriesLoading,
+    TResult? Function()? getBakeriesSuccess,
+    TResult? Function()? getBakeriesError,
     TResult? Function()? getBakeryDetailsLoading,
     TResult? Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult? Function()? getBakeryDetailsError,
   }) {
-    return getAllBakeriesError?.call();
+    return getBakeriesSuccess?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAllBakeriesLoading,
-    TResult Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult Function()? getAllBakeriesError,
+    TResult Function()? getBakeriesLoading,
+    TResult Function()? getBakeriesSuccess,
+    TResult Function()? getBakeriesError,
     TResult Function()? getBakeryDetailsLoading,
     TResult Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult Function()? getBakeryDetailsError,
     required TResult orElse(),
   }) {
-    if (getAllBakeriesError != null) {
-      return getAllBakeriesError();
+    if (getBakeriesSuccess != null) {
+      return getBakeriesSuccess();
     }
     return orElse();
   }
@@ -646,11 +462,9 @@ class _$GetAllBakeriesError implements GetAllBakeriesError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BakeriesInitial value) initial,
-    required TResult Function(GetAllBakeriesLoading value)
-        getAllBakeriesLoading,
-    required TResult Function(GetAllBakeriesSuccess value)
-        getAllBakeriesSuccess,
-    required TResult Function(GetAllBakeriesError value) getAllBakeriesError,
+    required TResult Function(GetBakeriesLoading value) getBakeriesLoading,
+    required TResult Function(GetBakeriesSuccess value) getBakeriesSuccess,
+    required TResult Function(GetBakeriesError value) getBakeriesError,
     required TResult Function(GetBakeryDetailsLoading value)
         getBakeryDetailsLoading,
     required TResult Function(GetBakeryDetailsSuccess value)
@@ -658,44 +472,179 @@ class _$GetAllBakeriesError implements GetAllBakeriesError {
     required TResult Function(GetBakeryDetailsError value)
         getBakeryDetailsError,
   }) {
-    return getAllBakeriesError(this);
+    return getBakeriesSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BakeriesInitial value)? initial,
-    TResult? Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult? Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult? Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult? Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult? Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult? Function(GetBakeriesError value)? getBakeriesError,
     TResult? Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult? Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult? Function(GetBakeryDetailsError value)? getBakeryDetailsError,
   }) {
-    return getAllBakeriesError?.call(this);
+    return getBakeriesSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BakeriesInitial value)? initial,
-    TResult Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult Function(GetBakeriesError value)? getBakeriesError,
     TResult Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult Function(GetBakeryDetailsError value)? getBakeryDetailsError,
     required TResult orElse(),
   }) {
-    if (getAllBakeriesError != null) {
-      return getAllBakeriesError(this);
+    if (getBakeriesSuccess != null) {
+      return getBakeriesSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class GetAllBakeriesError implements BakeriesState {
-  const factory GetAllBakeriesError() = _$GetAllBakeriesError;
+abstract class GetBakeriesSuccess implements BakeriesState {
+  const factory GetBakeriesSuccess() = _$GetBakeriesSuccess;
+}
+
+/// @nodoc
+abstract class _$$GetBakeriesErrorCopyWith<$Res> {
+  factory _$$GetBakeriesErrorCopyWith(
+          _$GetBakeriesError value, $Res Function(_$GetBakeriesError) then) =
+      __$$GetBakeriesErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetBakeriesErrorCopyWithImpl<$Res>
+    extends _$BakeriesStateCopyWithImpl<$Res, _$GetBakeriesError>
+    implements _$$GetBakeriesErrorCopyWith<$Res> {
+  __$$GetBakeriesErrorCopyWithImpl(
+      _$GetBakeriesError _value, $Res Function(_$GetBakeriesError) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetBakeriesError implements GetBakeriesError {
+  const _$GetBakeriesError();
+
+  @override
+  String toString() {
+    return 'BakeriesState.getBakeriesError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetBakeriesError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBakeriesLoading,
+    required TResult Function() getBakeriesSuccess,
+    required TResult Function() getBakeriesError,
+    required TResult Function() getBakeryDetailsLoading,
+    required TResult Function(Bakery bakery) getBakeryDetailsSuccess,
+    required TResult Function() getBakeryDetailsError,
+  }) {
+    return getBakeriesError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBakeriesLoading,
+    TResult? Function()? getBakeriesSuccess,
+    TResult? Function()? getBakeriesError,
+    TResult? Function()? getBakeryDetailsLoading,
+    TResult? Function(Bakery bakery)? getBakeryDetailsSuccess,
+    TResult? Function()? getBakeryDetailsError,
+  }) {
+    return getBakeriesError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBakeriesLoading,
+    TResult Function()? getBakeriesSuccess,
+    TResult Function()? getBakeriesError,
+    TResult Function()? getBakeryDetailsLoading,
+    TResult Function(Bakery bakery)? getBakeryDetailsSuccess,
+    TResult Function()? getBakeryDetailsError,
+    required TResult orElse(),
+  }) {
+    if (getBakeriesError != null) {
+      return getBakeriesError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BakeriesInitial value) initial,
+    required TResult Function(GetBakeriesLoading value) getBakeriesLoading,
+    required TResult Function(GetBakeriesSuccess value) getBakeriesSuccess,
+    required TResult Function(GetBakeriesError value) getBakeriesError,
+    required TResult Function(GetBakeryDetailsLoading value)
+        getBakeryDetailsLoading,
+    required TResult Function(GetBakeryDetailsSuccess value)
+        getBakeryDetailsSuccess,
+    required TResult Function(GetBakeryDetailsError value)
+        getBakeryDetailsError,
+  }) {
+    return getBakeriesError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BakeriesInitial value)? initial,
+    TResult? Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult? Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult? Function(GetBakeriesError value)? getBakeriesError,
+    TResult? Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
+    TResult? Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
+    TResult? Function(GetBakeryDetailsError value)? getBakeryDetailsError,
+  }) {
+    return getBakeriesError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BakeriesInitial value)? initial,
+    TResult Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult Function(GetBakeriesError value)? getBakeriesError,
+    TResult Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
+    TResult Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
+    TResult Function(GetBakeryDetailsError value)? getBakeryDetailsError,
+    required TResult orElse(),
+  }) {
+    if (getBakeriesError != null) {
+      return getBakeriesError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBakeriesError implements BakeriesState {
+  const factory GetBakeriesError() = _$GetBakeriesError;
 }
 
 /// @nodoc
@@ -738,9 +687,9 @@ class _$GetBakeryDetailsLoading implements GetBakeryDetailsLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAllBakeriesLoading,
-    required TResult Function(List<Bakery> bakeriesList) getAllBakeriesSuccess,
-    required TResult Function() getAllBakeriesError,
+    required TResult Function() getBakeriesLoading,
+    required TResult Function() getBakeriesSuccess,
+    required TResult Function() getBakeriesError,
     required TResult Function() getBakeryDetailsLoading,
     required TResult Function(Bakery bakery) getBakeryDetailsSuccess,
     required TResult Function() getBakeryDetailsError,
@@ -752,9 +701,9 @@ class _$GetBakeryDetailsLoading implements GetBakeryDetailsLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAllBakeriesLoading,
-    TResult? Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult? Function()? getAllBakeriesError,
+    TResult? Function()? getBakeriesLoading,
+    TResult? Function()? getBakeriesSuccess,
+    TResult? Function()? getBakeriesError,
     TResult? Function()? getBakeryDetailsLoading,
     TResult? Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult? Function()? getBakeryDetailsError,
@@ -766,9 +715,9 @@ class _$GetBakeryDetailsLoading implements GetBakeryDetailsLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAllBakeriesLoading,
-    TResult Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult Function()? getAllBakeriesError,
+    TResult Function()? getBakeriesLoading,
+    TResult Function()? getBakeriesSuccess,
+    TResult Function()? getBakeriesError,
     TResult Function()? getBakeryDetailsLoading,
     TResult Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult Function()? getBakeryDetailsError,
@@ -784,11 +733,9 @@ class _$GetBakeryDetailsLoading implements GetBakeryDetailsLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BakeriesInitial value) initial,
-    required TResult Function(GetAllBakeriesLoading value)
-        getAllBakeriesLoading,
-    required TResult Function(GetAllBakeriesSuccess value)
-        getAllBakeriesSuccess,
-    required TResult Function(GetAllBakeriesError value) getAllBakeriesError,
+    required TResult Function(GetBakeriesLoading value) getBakeriesLoading,
+    required TResult Function(GetBakeriesSuccess value) getBakeriesSuccess,
+    required TResult Function(GetBakeriesError value) getBakeriesError,
     required TResult Function(GetBakeryDetailsLoading value)
         getBakeryDetailsLoading,
     required TResult Function(GetBakeryDetailsSuccess value)
@@ -803,9 +750,9 @@ class _$GetBakeryDetailsLoading implements GetBakeryDetailsLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BakeriesInitial value)? initial,
-    TResult? Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult? Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult? Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult? Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult? Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult? Function(GetBakeriesError value)? getBakeriesError,
     TResult? Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult? Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult? Function(GetBakeryDetailsError value)? getBakeryDetailsError,
@@ -817,9 +764,9 @@ class _$GetBakeryDetailsLoading implements GetBakeryDetailsLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BakeriesInitial value)? initial,
-    TResult Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult Function(GetBakeriesError value)? getBakeriesError,
     TResult Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult Function(GetBakeryDetailsError value)? getBakeryDetailsError,
@@ -912,9 +859,9 @@ class _$GetBakeryDetailsSuccess implements GetBakeryDetailsSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAllBakeriesLoading,
-    required TResult Function(List<Bakery> bakeriesList) getAllBakeriesSuccess,
-    required TResult Function() getAllBakeriesError,
+    required TResult Function() getBakeriesLoading,
+    required TResult Function() getBakeriesSuccess,
+    required TResult Function() getBakeriesError,
     required TResult Function() getBakeryDetailsLoading,
     required TResult Function(Bakery bakery) getBakeryDetailsSuccess,
     required TResult Function() getBakeryDetailsError,
@@ -926,9 +873,9 @@ class _$GetBakeryDetailsSuccess implements GetBakeryDetailsSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAllBakeriesLoading,
-    TResult? Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult? Function()? getAllBakeriesError,
+    TResult? Function()? getBakeriesLoading,
+    TResult? Function()? getBakeriesSuccess,
+    TResult? Function()? getBakeriesError,
     TResult? Function()? getBakeryDetailsLoading,
     TResult? Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult? Function()? getBakeryDetailsError,
@@ -940,9 +887,9 @@ class _$GetBakeryDetailsSuccess implements GetBakeryDetailsSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAllBakeriesLoading,
-    TResult Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult Function()? getAllBakeriesError,
+    TResult Function()? getBakeriesLoading,
+    TResult Function()? getBakeriesSuccess,
+    TResult Function()? getBakeriesError,
     TResult Function()? getBakeryDetailsLoading,
     TResult Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult Function()? getBakeryDetailsError,
@@ -958,11 +905,9 @@ class _$GetBakeryDetailsSuccess implements GetBakeryDetailsSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BakeriesInitial value) initial,
-    required TResult Function(GetAllBakeriesLoading value)
-        getAllBakeriesLoading,
-    required TResult Function(GetAllBakeriesSuccess value)
-        getAllBakeriesSuccess,
-    required TResult Function(GetAllBakeriesError value) getAllBakeriesError,
+    required TResult Function(GetBakeriesLoading value) getBakeriesLoading,
+    required TResult Function(GetBakeriesSuccess value) getBakeriesSuccess,
+    required TResult Function(GetBakeriesError value) getBakeriesError,
     required TResult Function(GetBakeryDetailsLoading value)
         getBakeryDetailsLoading,
     required TResult Function(GetBakeryDetailsSuccess value)
@@ -977,9 +922,9 @@ class _$GetBakeryDetailsSuccess implements GetBakeryDetailsSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BakeriesInitial value)? initial,
-    TResult? Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult? Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult? Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult? Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult? Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult? Function(GetBakeriesError value)? getBakeriesError,
     TResult? Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult? Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult? Function(GetBakeryDetailsError value)? getBakeryDetailsError,
@@ -991,9 +936,9 @@ class _$GetBakeryDetailsSuccess implements GetBakeryDetailsSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BakeriesInitial value)? initial,
-    TResult Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult Function(GetBakeriesError value)? getBakeriesError,
     TResult Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult Function(GetBakeryDetailsError value)? getBakeryDetailsError,
@@ -1055,9 +1000,9 @@ class _$GetBakeryDetailsError implements GetBakeryDetailsError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAllBakeriesLoading,
-    required TResult Function(List<Bakery> bakeriesList) getAllBakeriesSuccess,
-    required TResult Function() getAllBakeriesError,
+    required TResult Function() getBakeriesLoading,
+    required TResult Function() getBakeriesSuccess,
+    required TResult Function() getBakeriesError,
     required TResult Function() getBakeryDetailsLoading,
     required TResult Function(Bakery bakery) getBakeryDetailsSuccess,
     required TResult Function() getBakeryDetailsError,
@@ -1069,9 +1014,9 @@ class _$GetBakeryDetailsError implements GetBakeryDetailsError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAllBakeriesLoading,
-    TResult? Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult? Function()? getAllBakeriesError,
+    TResult? Function()? getBakeriesLoading,
+    TResult? Function()? getBakeriesSuccess,
+    TResult? Function()? getBakeriesError,
     TResult? Function()? getBakeryDetailsLoading,
     TResult? Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult? Function()? getBakeryDetailsError,
@@ -1083,9 +1028,9 @@ class _$GetBakeryDetailsError implements GetBakeryDetailsError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAllBakeriesLoading,
-    TResult Function(List<Bakery> bakeriesList)? getAllBakeriesSuccess,
-    TResult Function()? getAllBakeriesError,
+    TResult Function()? getBakeriesLoading,
+    TResult Function()? getBakeriesSuccess,
+    TResult Function()? getBakeriesError,
     TResult Function()? getBakeryDetailsLoading,
     TResult Function(Bakery bakery)? getBakeryDetailsSuccess,
     TResult Function()? getBakeryDetailsError,
@@ -1101,11 +1046,9 @@ class _$GetBakeryDetailsError implements GetBakeryDetailsError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BakeriesInitial value) initial,
-    required TResult Function(GetAllBakeriesLoading value)
-        getAllBakeriesLoading,
-    required TResult Function(GetAllBakeriesSuccess value)
-        getAllBakeriesSuccess,
-    required TResult Function(GetAllBakeriesError value) getAllBakeriesError,
+    required TResult Function(GetBakeriesLoading value) getBakeriesLoading,
+    required TResult Function(GetBakeriesSuccess value) getBakeriesSuccess,
+    required TResult Function(GetBakeriesError value) getBakeriesError,
     required TResult Function(GetBakeryDetailsLoading value)
         getBakeryDetailsLoading,
     required TResult Function(GetBakeryDetailsSuccess value)
@@ -1120,9 +1063,9 @@ class _$GetBakeryDetailsError implements GetBakeryDetailsError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BakeriesInitial value)? initial,
-    TResult? Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult? Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult? Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult? Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult? Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult? Function(GetBakeriesError value)? getBakeriesError,
     TResult? Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult? Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult? Function(GetBakeryDetailsError value)? getBakeryDetailsError,
@@ -1134,9 +1077,9 @@ class _$GetBakeryDetailsError implements GetBakeryDetailsError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BakeriesInitial value)? initial,
-    TResult Function(GetAllBakeriesLoading value)? getAllBakeriesLoading,
-    TResult Function(GetAllBakeriesSuccess value)? getAllBakeriesSuccess,
-    TResult Function(GetAllBakeriesError value)? getAllBakeriesError,
+    TResult Function(GetBakeriesLoading value)? getBakeriesLoading,
+    TResult Function(GetBakeriesSuccess value)? getBakeriesSuccess,
+    TResult Function(GetBakeriesError value)? getBakeriesError,
     TResult Function(GetBakeryDetailsLoading value)? getBakeryDetailsLoading,
     TResult Function(GetBakeryDetailsSuccess value)? getBakeryDetailsSuccess,
     TResult Function(GetBakeryDetailsError value)? getBakeryDetailsError,

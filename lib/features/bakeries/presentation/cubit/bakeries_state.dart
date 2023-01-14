@@ -7,11 +7,9 @@ part 'bakeries_state.freezed.dart';
 class BakeriesState with _$BakeriesState {
   const factory BakeriesState.initial() = BakeriesInitial;
 
-  const factory BakeriesState.getAllBakeriesLoading() = GetAllBakeriesLoading;
-  const factory BakeriesState.getAllBakeriesSuccess(
-    List<Bakery> bakeries,
-  ) = GetAllBakeriesSuccess;
-  const factory BakeriesState.getAllBakeriesError() = GetAllBakeriesError;
+  const factory BakeriesState.getBakeriesLoading() = GetBakeriesLoading;
+  const factory BakeriesState.getBakeriesSuccess() = GetBakeriesSuccess;
+  const factory BakeriesState.getBakeriesError() = GetBakeriesError;
 
   const factory BakeriesState.getBakeryDetailsLoading() =
       GetBakeryDetailsLoading;

@@ -3,7 +3,7 @@ import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
-import 'package:bakery/core/presentation/widgets/logout_alert.dart';
+import 'package:bakery/core/presentation/widgets/question_alert.dart';
 import 'package:bakery/core/presentation/widgets/rating_widget.dart';
 import 'package:bakery/di/injector.dart';
 import 'package:bakery/features/cart/presentation/widgets/payment_summery.dart';

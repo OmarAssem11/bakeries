@@ -1,5 +1,5 @@
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
-import 'package:bakery/core/presentation/widgets/logout_alert.dart';
+import 'package:bakery/core/presentation/widgets/question_alert.dart';
 import 'package:bakery/di/injector.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_state.dart';

@@ -22,6 +22,7 @@ class _BakeriesLocationScreenState extends State<BakeriesLocationScreen> {
   Marker _origin = const Marker(markerId: MarkerId("value"));
   List<Marker> _bakeriesMarkers = [];
   late final LocationCubit _locationCubit;
+  late final BakeriesCubit _bakeriesCubit;
   bool _isLoading = false;
 
   @override
@@ -35,9 +36,10 @@ class _BakeriesLocationScreenState extends State<BakeriesLocationScreen> {
     return Scaffold(
       body: BlocConsumer<BakeriesCubit, BakeriesState>(
         listener: (context, state) {
-          if (state is GetAllBakeriesSuccess) {
-            final latLngList =
-                state.bakeriesList.map((bakery) => bakery.location!).toList();
+          if (state is GetBakeriesSuccess) {
+            final latLngList = _bakeriesCubit.allBakeries
+                .map((bakery) => bakery.location!)
+                .toList();
             _locationCubit.addBakeriesMarkers(latLngList);
           }
         },
@@ -56,9 +58,9 @@ class _BakeriesLocationScreenState extends State<BakeriesLocationScreen> {
                   showErrorToast(S.current.locationPermissionPermanentlyDenied),
               locationPermissionGranted: () {
                 _locationCubit.locatePosition();
-                BlocProvider.of<BakeriesCubit>(context).getAllBakeries();
+                _bakeriesCubit.getAllBakeries();
               },
-              locatePosition: (latLng) =>
+              positionLocated: (latLng) =>
                   _locationCubit.addOriginMarker(latLng),
               originMarkerAdded: (marker) => _origin = marker,
               markersAdded: (markers) => _bakeriesMarkers = markers,

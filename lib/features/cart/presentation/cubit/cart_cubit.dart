@@ -23,7 +23,7 @@ class CartCubit extends Cubit<CartState> {
   final GetCartUseCase _getCartUseCase;
   final DeleteFromCartUseCase _deleteFromCartUseCase;
 
-  List<Product> cartProductsList = [];
+  List<Product> cartProducts = [];
 
   Future<void> addToCart(CartOrder cartOrder) async {
     emit(const AddToCartLoading());
@@ -43,8 +43,8 @@ class CartCubit extends Cubit<CartState> {
       result.fold(
         (failure) => const GetCartError(),
         (cart) {
-          cartProductsList = [];
-          cartProductsList.addAll(cart.products);
+          cartProducts = [];
+          cartProducts.addAll(cart.products);
           return const GetCartSuccess();
         },
       ),
@@ -52,15 +52,15 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> editCart(CartOrder cartOrder) async {
-    final index = cartProductsList.indexWhere(
+    final index = cartProducts.indexWhere(
       (product) => product.id == cartOrder.productId,
     );
-    final cartProductAfterEdit = cartProductsList
+    final cartProductAfterEdit = cartProducts
         .singleWhere(
           (product) => product.id == cartOrder.productId,
         )
         .copyWith(quantity: cartOrder.quantity);
-    cartProductsList[index] = cartProductAfterEdit;
+    cartProducts[index] = cartProductAfterEdit;
     emit(const EditCartLoading());
     final result = await _editCartUseCase(EditCartParams(cartOrder));
     emit(
@@ -72,7 +72,7 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> deleteFromCart(String productId) async {
-    cartProductsList.removeWhere(
+    cartProducts.removeWhere(
       (product) => product.id == productId,
     );
     emit(const DeleteCartLoading());

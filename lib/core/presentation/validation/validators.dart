@@ -27,6 +27,15 @@ String? phoneValidator(String? phone) {
   return null;
 }
 
+String? numberValidator(String? value) {
+  if (value == null || value.isEmpty) {
+    return S.current.canNotBeEmpty;
+  } else if (double.tryParse(value) == null) {
+    return S.current.invalidNumber;
+  }
+  return null;
+}
+
 String? generalValidator({
   required String fieldName,
   required String? value,

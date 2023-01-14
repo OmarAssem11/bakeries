@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to logout?"),
         "bakeries": MessageLookupByLibrary.simpleMessage("Bakeries"),
+        "bakeriesWithin":
+            MessageLookupByLibrary.simpleMessage("Bakeries within"),
         "basket": MessageLookupByLibrary.simpleMessage("Basket"),
         "canNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Can\'t be empty"),
@@ -59,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailCanNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Email can\'t be empty"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+        "filterBakeriesByRange":
+            MessageLookupByLibrary.simpleMessage("Filter bakeries by range"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "forgotPasswordCaption": MessageLookupByLibrary.simpleMessage(
@@ -67,10 +72,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "invalidEmailFormat":
             MessageLookupByLibrary.simpleMessage("Invalid email format"),
+        "invalidNumber": MessageLookupByLibrary.simpleMessage("Invalid number"),
         "invalidPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Invalid phone number"),
         "itemAddedToYourBasket":
             MessageLookupByLibrary.simpleMessage("Item added to your basket"),
+        "km": MessageLookupByLibrary.simpleMessage("km"),
         "localeName": MessageLookupByLibrary.simpleMessage("en"),
         "locationPermissionDenied": MessageLookupByLibrary.simpleMessage(
             "Location permission are denied"),
@@ -102,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "placeOrder": MessageLookupByLibrary.simpleMessage("place order"),
         "pleaseEnableYourLocation": MessageLookupByLibrary.simpleMessage(
             "Please enable Your Location Service"),
+        "rangeByKm": MessageLookupByLibrary.simpleMessage("Range by km"),
         "rateYourOrder":
             MessageLookupByLibrary.simpleMessage("Rate your order"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),

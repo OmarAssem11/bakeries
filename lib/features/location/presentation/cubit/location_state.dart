@@ -16,7 +16,7 @@ class LocationState with _$LocationState {
   const factory LocationState.locationPermissionGranted() =
       LocationPermissionGranted;
 
-  const factory LocationState.locatePosition(LatLng latLng) = LocatePosition;
+  const factory LocationState.positionLocated(LatLng latLng) = PositionLocated;
 
   const factory LocationState.addressFromLatLng(String address) =
       AddressFromLatLng;

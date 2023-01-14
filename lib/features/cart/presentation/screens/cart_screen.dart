@@ -45,7 +45,7 @@ class _CartScreenState extends State<CartScreen> {
         );
       },
       builder: (context, state) {
-        final products = BlocProvider.of<CartCubit>(context).cartProductsList;
+        final products = BlocProvider.of<CartCubit>(context).cartProducts;
         return state.maybeWhen(
           getCartLoading: () => Scaffold(
             appBar: AppBar(),

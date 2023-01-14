@@ -49,7 +49,7 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
             locationPermissionPermanentlyDenied: () =>
                 showErrorToast(S.current.locationPermissionPermanentlyDenied),
             locationPermissionGranted: () => _locationCubit.locatePosition(),
-            locatePosition: (latLng) => _locationCubit.addOriginMarker(latLng),
+            positionLocated: (latLng) => _locationCubit.addOriginMarker(latLng),
             originMarkerAdded: (marker) => _origin = marker,
             addressFromLatLng: (address) => Navigator.of(context).pushNamed(
               AppRoutes.checkout,

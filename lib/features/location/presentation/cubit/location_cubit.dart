@@ -14,7 +14,7 @@ class LocationCubit extends Cubit<LocationState> {
   late GoogleMapController _mapController;
   late LatLng _currentPosition;
 
-  Future<void> getLocationPermission(GoogleMapController controller) async {
+  Future<void> getLocationPermission([GoogleMapController? controller]) async {
     emit(const LocationLoading());
     final isServiceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!isServiceEnabled) {
@@ -31,7 +31,7 @@ class LocationCubit extends Cubit<LocationState> {
     if (permission == LocationPermission.deniedForever) {
       emit(const LocationPermissionPermanentlyDenied());
     }
-    _mapController = controller;
+    if (controller != null) _mapController = controller;
     emit(const LocationPermissionGranted());
   }
 
@@ -45,7 +45,16 @@ class LocationCubit extends Cubit<LocationState> {
     _mapController
         .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
     _currentPosition = latLng;
-    emit(LocatePosition(latLng));
+    emit(PositionLocated(latLng));
+  }
+
+  Future<void> getLocationWithoutMap() async {
+    emit(const LocationLoading());
+    final position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
+    final latLng = LatLng(position.latitude, position.longitude);
+    emit(PositionLocated(latLng));
   }
 
   Future<void> getAddressFromLatLong() async {

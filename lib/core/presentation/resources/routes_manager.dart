@@ -6,6 +6,7 @@ import 'package:bakery/features/auth/presentation/screens/register_screen.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/screens/bakeries_screen.dart';
 import 'package:bakery/features/bakeries/presentation/screens/bakery_details_screen.dart';
+import 'package:bakery/features/bakeries/presentation/screens/filtered_bakeries_screen.dart';
 import 'package:bakery/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:bakery/features/cart/presentation/screens/cart_screen.dart';
 import 'package:bakery/features/categories/presentation/cubit/categories_cubit.dart';
@@ -27,6 +28,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AppRoutes {
   static const String bakeries = '/';
   static const String bakeriesLocations = '/bakeries-locations';
+  static const String filteredBakeries = '/filtered-bakeries';
   static const String bakeryDetails = '/bakery-details';
   static const String login = '/login';
   static const String register = '/register';
@@ -62,6 +64,11 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
           ],
           child: const BakeriesLocationScreen(),
         ),
+      );
+    case AppRoutes.filteredBakeries:
+      return MaterialPageRoute(
+        builder: (_) => const FilteredBakeriesScreen(),
+        settings: routeSettings,
       );
     case AppRoutes.bakeryDetails:
       return MaterialPageRoute(

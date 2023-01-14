@@ -749,6 +749,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Filter`
+  String get filter {
+    return Intl.message(
+      'Filter',
+      name: 'filter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter bakeries by range`
+  String get filterBakeriesByRange {
+    return Intl.message(
+      'Filter bakeries by range',
+      name: 'filterBakeriesByRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid number`
+  String get invalidNumber {
+    return Intl.message(
+      'Invalid number',
+      name: 'invalidNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Range by km`
+  String get rangeByKm {
+    return Intl.message(
+      'Range by km',
+      name: 'rangeByKm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bakeries within`
+  String get bakeriesWithin {
+    return Intl.message(
+      'Bakeries within',
+      name: 'bakeriesWithin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `km`
+  String get km {
+    return Intl.message(
+      'km',
+      name: 'km',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
