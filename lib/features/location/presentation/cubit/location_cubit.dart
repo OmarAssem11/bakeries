@@ -26,10 +26,12 @@ class LocationCubit extends Cubit<LocationState> {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
         emit(const LocationPermissionDenied());
+        return;
       }
     }
     if (permission == LocationPermission.deniedForever) {
       emit(const LocationPermissionPermanentlyDenied());
+      return;
     }
     if (controller != null) _mapController = controller;
     emit(const LocationPermissionGranted());

@@ -5,6 +5,8 @@ import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
+import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:bakery/features/auth/presentation/cubit/auth_state.dart';
 import 'package:bakery/features/cart/domain/entities/cart_order/cart_order.dart';
 import 'package:bakery/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:bakery/features/cart/presentation/cubit/cart_state.dart';
@@ -135,16 +137,29 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                             isLoading: _isLoading,
                           );
                         },
-                        orElse: () => DefaultElevatedButton(
-                          label: S.current.addToBasket,
-                          onPressed: () =>
-                              BlocProvider.of<CartCubit>(context).addToCart(
-                            CartOrder(
-                              productId: product.id,
-                              quantity: quantity,
-                            ),
+                        orElse: () => BlocListener<AuthCubit, AuthState>(
+                          listener: (context, state) {
+                            state.mapOrNull(
+                              loggedIn: (_) =>
+                                  BlocProvider.of<CartCubit>(context).addToCart(
+                                CartOrder(
+                                  productId: product.id,
+                                  quantity: quantity,
+                                ),
+                              ),
+                              notLoggedIn: (_) {
+                                showErrorToast(S.current.youNeedToLogInFirst);
+                                Navigator.of(context)
+                                    .pushNamed(AppRoutes.login);
+                              },
+                            );
+                          },
+                          child: DefaultElevatedButton(
+                            label: S.current.addToBasket,
+                            onPressed: () => BlocProvider.of<AuthCubit>(context)
+                                .isLoggedIn(),
+                            isLoading: _isLoading,
                           ),
-                          isLoading: _isLoading,
                         ),
                       );
                     },

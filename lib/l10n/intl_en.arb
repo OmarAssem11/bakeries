@@ -73,5 +73,7 @@
     "invalidNumber": "Invalid number",
     "rangeByKm": "Range by km",
     "bakeriesWithin": "Bakeries within",
-    "km": "km"
+    "km": "km",
+    "noBakeriesWithinThisRange": "No bakeries within this range!",
+    "youNeedToLogInFirst": "You need to log in first"
 }

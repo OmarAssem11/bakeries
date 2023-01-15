@@ -1,4 +1,5 @@
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
+import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/widgets/question_alert.dart';
 import 'package:bakery/di/injector.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
@@ -40,14 +41,26 @@ class _HomeDrawerItemsState extends State<HomeDrawerItems> {
         ListTile(
           leading: const Icon(Icons.shopping_basket_outlined),
           title: Text(S.of(context).basket),
-          onTap: () => Navigator.of(context)
-              .pushNamed(isLoggedIn ? AppRoutes.cart : AppRoutes.login),
+          onTap: () {
+            if (isLoggedIn) {
+              Navigator.of(context).pushNamed(AppRoutes.cart);
+            } else {
+              showErrorToast(S.current.youNeedToLogInFirst);
+              Navigator.of(context).pushNamed(AppRoutes.login);
+            }
+          },
         ),
         ListTile(
           leading: const Icon(Icons.delivery_dining_outlined),
           title: Text(S.of(context).myOrders),
-          onTap: () => Navigator.of(context)
-              .pushNamed(isLoggedIn ? AppRoutes.orders : AppRoutes.login),
+          onTap: () {
+            if (isLoggedIn) {
+              Navigator.of(context).pushNamed(AppRoutes.orders);
+            } else {
+              showErrorToast(S.current.youNeedToLogInFirst);
+              Navigator.of(context).pushNamed(AppRoutes.login);
+            }
+          },
         ),
         ListTile(
           leading: const Icon(Icons.settings_outlined),

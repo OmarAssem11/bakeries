@@ -79,7 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "تصريح الوصول إلي موقع الهاتف مرفوضة"),
         "locationPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
             "تصريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصريح"),
-        "login": MessageLookupByLibrary.simpleMessage("نسجيل دخول"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "loginCaption": MessageLookupByLibrary.simpleMessage(
             "سجل دخول الان حتي تطلب من المخابز المفضلة لديك ويتم توصيل طلبك حتي باب بيتك"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
@@ -87,6 +87,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أشر انها وصلت"),
         "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
         "no": MessageLookupByLibrary.simpleMessage("لا"),
+        "noBakeriesWithinThisRange":
+            MessageLookupByLibrary.simpleMessage("لا يوجد مخابز في هذا النطاق"),
         "noPageFound": MessageLookupByLibrary.simpleMessage("!لا يوجد صفحة"),
         "orderDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
         "orderId": MessageLookupByLibrary.simpleMessage("رقم الطلب"),
@@ -124,6 +126,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "yes": MessageLookupByLibrary.simpleMessage("نعم"),
         "youHaveNoOrdersYet":
             MessageLookupByLibrary.simpleMessage("ليس لديك اي طلبات بعد!"),
+        "youNeedToLogInFirst":
+            MessageLookupByLibrary.simpleMessage("يجب أن تسجل دخول أولا"),
         "yourBasketIsEmpty":
             MessageLookupByLibrary.simpleMessage("السلة فارغة!")
       };

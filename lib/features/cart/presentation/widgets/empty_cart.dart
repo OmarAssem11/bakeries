@@ -17,7 +17,7 @@ class EmptyCart extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Lottie.asset(
-            Assets.lottie.cart,
+            Assets.lottie.emptyCart,
             height: MediaQuery.of(context).size.height * .3,
           ),
           Text(

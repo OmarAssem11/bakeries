@@ -39,11 +39,11 @@ class $AssetsLottieGen {
   /// File path: assets/lottie/cancelled.json
   String get cancelled => 'assets/lottie/cancelled.json';
 
-  /// File path: assets/lottie/cart.json
-  String get cart => 'assets/lottie/cart.json';
-
   /// File path: assets/lottie/delivered.json
   String get delivered => 'assets/lottie/delivered.json';
+
+  /// File path: assets/lottie/empty_cart.json
+  String get emptyCart => 'assets/lottie/empty_cart.json';
 
   /// File path: assets/lottie/loading.json
   String get loading => 'assets/lottie/loading.json';
@@ -58,8 +58,15 @@ class $AssetsLottieGen {
   String get preparing => 'assets/lottie/preparing.json';
 
   /// List of all assets
-  List<String> get values =>
-      [cancelled, cart, delivered, loading, outForDelivery, pending, preparing];
+  List<String> get values => [
+        cancelled,
+        delivered,
+        emptyCart,
+        loading,
+        outForDelivery,
+        pending,
+        preparing
+      ];
 }
 
 class Assets {

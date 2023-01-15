@@ -59,6 +59,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
               padding: const EdgeInsets.symmetric(horizontal: Insets.l),
               child: ListView(
                 children: [
+                  const SizedBox(height: Sizes.s12),
                   Center(
                     child: OrderStatusText(
                       status: order.status,
@@ -68,7 +69,9 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   const SizedBox(height: Sizes.s16),
                   Lottie.asset(
                     _statusLotties[order.status]!,
+                    height: MediaQuery.of(context).size.height * 0.2,
                   ),
+                  const SizedBox(height: Sizes.s16),
                   const Divider(thickness: Sizes.s1),
                   ListView.separated(
                     itemBuilder: (_, index) => OrderedProductItem(

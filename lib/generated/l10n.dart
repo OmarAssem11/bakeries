@@ -799,6 +799,26 @@ class S {
       args: [],
     );
   }
+
+  /// `No bakeries within this range!`
+  String get noBakeriesWithinThisRange {
+    return Intl.message(
+      'No bakeries within this range!',
+      name: 'noBakeriesWithinThisRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You need to log in first`
+  String get youNeedToLogInFirst {
+    return Intl.message(
+      'You need to log in first',
+      name: 'youNeedToLogInFirst',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -88,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Mark as collected"),
         "myOrders": MessageLookupByLibrary.simpleMessage("My orders"),
         "no": MessageLookupByLibrary.simpleMessage("No"),
+        "noBakeriesWithinThisRange": MessageLookupByLibrary.simpleMessage(
+            "No bakeries within this range!"),
         "noPageFound": MessageLookupByLibrary.simpleMessage("No page found!"),
         "orderDetails": MessageLookupByLibrary.simpleMessage("Order details"),
         "orderId": MessageLookupByLibrary.simpleMessage("Order ID"),
@@ -126,6 +128,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "youHaveNoOrdersYet":
             MessageLookupByLibrary.simpleMessage("You have no orders yet!"),
+        "youNeedToLogInFirst":
+            MessageLookupByLibrary.simpleMessage("You need to log in first"),
         "yourBasketIsEmpty":
             MessageLookupByLibrary.simpleMessage("Your basket is empty!")
       };

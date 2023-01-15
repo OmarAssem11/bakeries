@@ -28,7 +28,14 @@ class _FilteredBakeriesScreenState extends State<FilteredBakeriesScreen> {
           '${S.current.bakeriesWithin} ${_args.rangeText} ${S.current.km}',
         ),
       ),
-      body: BakeriesList(_args.filteredBakeries),
+      body: _args.filteredBakeries.isEmpty
+          ? Center(
+              child: Text(
+                S.current.noBakeriesWithinThisRange,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            )
+          : BakeriesList(_args.filteredBakeries),
     );
   }
 }

@@ -4,7 +4,7 @@
     "somethingWentWrong": "!حدث خطأ",
     "register": "إنشاء حساب",
     "registerCaption": "إنشئ حساب الان حتي تطلب من المخابز المفضلة لديك ويتم توصيل طلبك حتي باب بيتك",
-    "login": "نسجيل دخول",
+    "login": "تسجيل دخول",
     "loginCaption": "سجل دخول الان حتي تطلب من المخابز المفضلة لديك ويتم توصيل طلبك حتي باب بيتك",
     "emailAddress": "البريد الإكتروني",
     "password": "كلمة السر",
@@ -73,5 +73,7 @@
     "invalidNumber": "رقم غير صالح",
     "rangeByKm": "النطاق بالكيلومترات",
     "bakeriesWithin": "مخابز في نطاق",
-    "km": "كم"
+    "km": "كم",
+    "noBakeriesWithinThisRange": "لا يوجد مخابز في هذا النطاق",
+    "youNeedToLogInFirst": "يجب أن تسجل دخول أولا"
 }

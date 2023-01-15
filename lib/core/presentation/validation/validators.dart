@@ -30,7 +30,7 @@ String? phoneValidator(String? phone) {
 String? numberValidator(String? value) {
   if (value == null || value.isEmpty) {
     return S.current.canNotBeEmpty;
-  } else if (double.tryParse(value) == null) {
+  } else if (double.tryParse(value) == null || double.tryParse(value)! <= 0) {
     return S.current.invalidNumber;
   }
   return null;
