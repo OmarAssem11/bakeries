@@ -5,7 +5,6 @@ import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
 import 'package:bakery/core/presentation/widgets/question_alert.dart';
 import 'package:bakery/core/presentation/widgets/rating_widget.dart';
-import 'package:bakery/di/injector.dart';
 import 'package:bakery/features/cart/presentation/widgets/payment_summery.dart';
 import 'package:bakery/features/orders/presentation/cubit/orders_cubit.dart';
 import 'package:bakery/features/orders/presentation/cubit/orders_state.dart';
@@ -25,7 +24,6 @@ class OrderDetailsScreen extends StatefulWidget {
 }
 
 class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
-  late final String _orderId;
   final _statusLotties = {
     OrderStatus.pending: Assets.lottie.pending,
     OrderStatus.preparing: Assets.lottie.preparing,
@@ -33,13 +31,16 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
     OrderStatus.delivered: Assets.lottie.delivered,
     OrderStatus.cancelled: Assets.lottie.cancelled,
   };
+  late final String _orderId;
+  late final OrdersCubit _ordersCubit;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _orderId = ModalRoute.of(context)!.settings.arguments! as String;
-      BlocProvider.of<OrdersCubit>(context).getOrderDetails(_orderId);
+      _ordersCubit = BlocProvider.of<OrdersCubit>(context);
+      _ordersCubit.getOrderDetails(_orderId);
     });
   }
 
@@ -109,16 +110,13 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                           TextButton.icon(
                             onPressed: () => showDialog(
                               context: context,
-                              builder: (_) => BlocProvider(
-                                create: (_) => getIt<OrdersCubit>(),
+                              builder: (_) => BlocProvider<OrdersCubit>.value(
+                                value: _ordersCubit,
                                 child: OrderRatingDialog(
                                   orderId: _orderId,
                                   productId: order.products.first.id,
                                 ),
                               ),
-                            ).then(
-                              (_) => BlocProvider.of<OrdersCubit>(context)
-                                  .getOrderDetails(_orderId),
                             ),
                             icon: const Icon(
                               Icons.done,
@@ -136,9 +134,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                               question:
                                   S.current.areYouSureYouWantToCancelThisOrder,
                               onSubmit: () {
-                                BlocProvider.of<OrdersCubit>(context)
-                                    .cancelOrder(_orderId)
-                                    .then(
+                                _ordersCubit.cancelOrder(_orderId).then(
                                       (_) => BlocProvider.of<OrdersCubit>(
                                         context,
                                       ).getOrderDetails(_orderId),

@@ -37,36 +37,36 @@ class _BakeryDetailsScreenState extends State<BakeryDetailsScreen> {
           return state.maybeWhen(
             getBakeryDetailsLoading: () => const LoadingIndicator(),
             getBakeryDetailsError: () => const ErrorIndicator(),
-            getBakeryDetailsSuccess: (bakery) => Column(
-              children: [
-                Stack(
-                  children: [
-                    CachedNetworkImage(
-                      imageUrl: bakery.imageUrl,
-                      fit: BoxFit.cover,
-                      height: MediaQuery.of(context).size.height * .3,
-                      width: double.infinity,
-                    ),
-                    Positioned(
-                      top: Sizes.s40,
-                      left: Sizes.s16,
-                      child: InkWell(
-                        onTap: Navigator.of(context).pop,
-                        child: const CircleAvatar(
-                          radius: Sizes.s20,
-                          backgroundColor: ColorManager.white,
-                          child: Icon(
-                            Icons.arrow_back,
-                            color: ColorManager.black,
-                            size: Sizes.s28,
+            getBakeryDetailsSuccess: (bakery) => SingleChildScrollView(
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      CachedNetworkImage(
+                        imageUrl: bakery.imageUrl,
+                        fit: BoxFit.cover,
+                        height: MediaQuery.of(context).size.height * .3,
+                        width: double.infinity,
+                      ),
+                      Positioned(
+                        top: Sizes.s40,
+                        left: Sizes.s16,
+                        child: InkWell(
+                          onTap: Navigator.of(context).pop,
+                          child: const CircleAvatar(
+                            radius: Sizes.s20,
+                            backgroundColor: ColorManager.white,
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: ColorManager.black,
+                              size: Sizes.s28,
+                            ),
                           ),
                         ),
-                      ),
-                    )
-                  ],
-                ),
-                Expanded(
-                  child: Padding(
+                      )
+                    ],
+                  ),
+                  Padding(
                     padding: const EdgeInsets.symmetric(horizontal: Insets.l),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,24 +87,24 @@ class _BakeryDetailsScreenState extends State<BakeryDetailsScreen> {
                           bakery.description,
                           style: _textTheme.bodyLarge,
                         ),
-                        Expanded(
-                          child: ListView.separated(
-                            itemBuilder: (context, index) => ProductItem(
-                              bakery.products![index],
-                            ),
-                            itemCount: bakery.products!.length,
-                            physics: const BouncingScrollPhysics(),
-                            separatorBuilder: (_, __) => const Divider(
-                              color: ColorManager.lightGrey,
-                              height: Sizes.s32,
-                            ),
+                        ListView.separated(
+                          itemBuilder: (context, index) => ProductItem(
+                            bakery.products![index],
+                          ),
+                          itemCount: bakery.products!.length,
+                          shrinkWrap: true,
+                          physics: const ClampingScrollPhysics(),
+                          separatorBuilder: (_, __) => const Divider(
+                            color: ColorManager.lightGrey,
+                            height: Sizes.s32,
                           ),
                         ),
+                        const SizedBox(height: Sizes.s12),
                       ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             orElse: () => const SizedBox.expand(),
           );

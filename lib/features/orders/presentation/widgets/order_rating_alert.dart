@@ -61,7 +61,11 @@ class _OrderRatingDialogState extends State<OrderRatingDialog> {
               listener: (context, state) {
                 state.maybeWhen(
                   markOrderAsCollectedLoading: () => _isLoading = true,
-                  markOrderAsCollectedSuccess: Navigator.of(context).pop,
+                  markOrderAsCollectedSuccess: () {
+                    BlocProvider.of<OrdersCubit>(context)
+                        .getOrderDetails(widget.orderId);
+                    Navigator.of(context).pop();
+                  },
                   orElse: () => _isLoading = false,
                 );
               },
