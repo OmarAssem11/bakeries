@@ -2,8 +2,8 @@ import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/validation/validators.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
-import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
+import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
+import 'package:bakery/core/presentation/widgets/default_text_form_field.dart';
 import 'package:bakery/core/presentation/widgets/password_text_form_field.dart';
 import 'package:bakery/features/auth/domain/entities/login_data/login_data.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
@@ -42,14 +42,14 @@ class _LoginScreenState extends State<LoginScreen> {
             ClippedImage(
               child: Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * .33,
+                height: MediaQuery.of(context).size.height * .37,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Colors.white,
                   image: DecorationImage(
                     image: AssetImage(
                       Assets.images.bakeries.path,
                     ),
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       S.current.loginCaption,
                       style: _textTheme.bodyLarge,
                     ),
-                    CustomTextFormField(
+                    DefaultTextFormField(
                       controller: _emailController,
                       hintText: S.current.emailAddress,
                       prefixIcon: Icons.email_outlined,
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             );
                           }),
                         );
-                        return CustomElevatedButton(
+                        return DefaultElevatedButton(
                           label: S.current.login,
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {

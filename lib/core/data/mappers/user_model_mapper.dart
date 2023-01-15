@@ -5,6 +5,7 @@ extension UserModelMapper on UserModel {
   User get fromModel => User(
         name: name,
         email: email,
+        phone: phone,
         password: password,
       );
 }

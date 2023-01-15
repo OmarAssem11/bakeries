@@ -10,7 +10,6 @@ TextStyle _getTextStyle({
       color: color,
       fontSize: fontSize,
       fontWeight: fontWeight,
-      fontFamily: FontConstants.fontFamily,
     );
 
 TextStyle getLightTextStyle({

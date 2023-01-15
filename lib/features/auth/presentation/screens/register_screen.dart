@@ -2,8 +2,8 @@ import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/validation/validators.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
-import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
+import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
+import 'package:bakery/core/presentation/widgets/default_text_form_field.dart';
 import 'package:bakery/core/presentation/widgets/password_text_form_field.dart';
 import 'package:bakery/features/auth/domain/entities/register_data/register_data.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
@@ -25,6 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
   late TextTheme _textTheme;
 
@@ -43,14 +44,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ClippedImage(
               child: Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * .33,
+                height: MediaQuery.of(context).size.height * .37,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Colors.white,
                   image: DecorationImage(
                     image: AssetImage(
                       Assets.images.bakeries.path,
                     ),
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
@@ -72,7 +73,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       S.current.registerCaption,
                       style: _textTheme.bodyLarge,
                     ),
-                    CustomTextFormField(
+                    DefaultTextFormField(
                       controller: _nameController,
                       hintText: S.current.fullName,
                       prefixIcon: Icons.person_outline,
@@ -82,12 +83,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         fieldName: S.current.fullName,
                       ),
                     ),
-                    CustomTextFormField(
+                    DefaultTextFormField(
                       controller: _emailController,
                       hintText: S.current.emailAddress,
                       prefixIcon: Icons.email_outlined,
                       keyboardType: TextInputType.emailAddress,
                       validator: (email) => emailValidator(email),
+                    ),
+                    DefaultTextFormField(
+                      controller: _phoneController,
+                      hintText: S.current.phoneNumber,
+                      prefixIcon: Icons.phone_android_outlined,
+                      keyboardType: TextInputType.phone,
+                      validator: (phone) => phoneValidator(phone),
                     ),
                     PasswordTextFormField(controller: _passwordController),
                     const SizedBox(height: Sizes.s16),
@@ -107,7 +115,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             );
                           }),
                         );
-                        return CustomElevatedButton(
+                        return DefaultElevatedButton(
                           label: S.current.register,
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
@@ -115,6 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 RegisterData(
                                   name: _nameController.text,
                                   email: _emailController.text,
+                                  phone: _phoneController.text,
                                   password: _passwordController.text,
                                 ),
                               );

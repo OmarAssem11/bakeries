@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$User {
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +30,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String name, String email, String password});
+  $Res call({String name, String email, String phone, String password});
 }
 
 /// @nodoc
@@ -47,6 +48,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? name = null,
     Object? email = null,
+    Object? phone = null,
     Object? password = null,
   }) {
     return _then(_value.copyWith(
@@ -57,6 +59,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String,
       password: null == password
           ? _value.password
@@ -72,7 +78,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$_UserCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String email, String password});
+  $Res call({String name, String email, String phone, String password});
 }
 
 /// @nodoc
@@ -86,6 +92,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
   $Res call({
     Object? name = null,
     Object? email = null,
+    Object? phone = null,
     Object? password = null,
   }) {
     return _then(_$_User(
@@ -96,6 +103,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String,
       password: null == password
           ? _value.password
@@ -109,18 +120,23 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 
 class _$_User implements _User {
   const _$_User(
-      {required this.name, required this.email, required this.password});
+      {required this.name,
+      required this.email,
+      required this.phone,
+      required this.password});
 
   @override
   final String name;
   @override
   final String email;
   @override
+  final String phone;
+  @override
   final String password;
 
   @override
   String toString() {
-    return 'User(name: $name, email: $email, password: $password)';
+    return 'User(name: $name, email: $email, phone: $phone, password: $password)';
   }
 
   @override
@@ -130,12 +146,13 @@ class _$_User implements _User {
             other is _$_User &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, email, password);
+  int get hashCode => Object.hash(runtimeType, name, email, phone, password);
 
   @JsonKey(ignore: true)
   @override
@@ -148,12 +165,15 @@ abstract class _User implements User {
   const factory _User(
       {required final String name,
       required final String email,
+      required final String phone,
       required final String password}) = _$_User;
 
   @override
   String get name;
   @override
   String get email;
+  @override
+  String get phone;
   @override
   String get password;
   @override

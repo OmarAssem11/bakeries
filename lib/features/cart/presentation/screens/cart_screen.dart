@@ -1,7 +1,8 @@
+import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/error_toast.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
 import 'package:bakery/features/cart/presentation/cubit/cart_cubit.dart';
@@ -69,9 +70,11 @@ class _CartScreenState extends State<CartScreen> {
                       title: Column(
                         children: [
                           Text(S.current.basket),
+                          const SizedBox(height: Sizes.s4),
                           Text(
-                            '${products.first.name} - ${products.first.bakeryAddress}',
-                            style: _textTheme.bodySmall,
+                            '${products.first.bakeryName} - ${products.first.bakeryAddress}',
+                            style: _textTheme.bodySmall
+                                ?.copyWith(color: ColorManager.white),
                           ),
                         ],
                       ),
@@ -96,7 +99,7 @@ class _CartScreenState extends State<CartScreen> {
                             deliveryFee: 20,
                           ),
                           const SizedBox(height: Sizes.s24),
-                          CustomElevatedButton(
+                          DefaultElevatedButton(
                             label: S.current.checkout,
                             onPressed: () => Navigator.of(context).pushNamed(
                               AppRoutes.addressLocation,

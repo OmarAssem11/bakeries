@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$RegisterData {
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31,7 +32,7 @@ abstract class $RegisterDataCopyWith<$Res> {
           RegisterData value, $Res Function(RegisterData) then) =
       _$RegisterDataCopyWithImpl<$Res, RegisterData>;
   @useResult
-  $Res call({String name, String email, String password});
+  $Res call({String name, String email, String phone, String password});
 }
 
 /// @nodoc
@@ -49,6 +50,7 @@ class _$RegisterDataCopyWithImpl<$Res, $Val extends RegisterData>
   $Res call({
     Object? name = null,
     Object? email = null,
+    Object? phone = null,
     Object? password = null,
   }) {
     return _then(_value.copyWith(
@@ -59,6 +61,10 @@ class _$RegisterDataCopyWithImpl<$Res, $Val extends RegisterData>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String,
       password: null == password
           ? _value.password
@@ -76,7 +82,7 @@ abstract class _$$_RegisterDataCopyWith<$Res>
       __$$_RegisterDataCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String email, String password});
+  $Res call({String name, String email, String phone, String password});
 }
 
 /// @nodoc
@@ -92,6 +98,7 @@ class __$$_RegisterDataCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
     Object? email = null,
+    Object? phone = null,
     Object? password = null,
   }) {
     return _then(_$_RegisterData(
@@ -102,6 +109,10 @@ class __$$_RegisterDataCopyWithImpl<$Res>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String,
       password: null == password
           ? _value.password
@@ -115,18 +126,23 @@ class __$$_RegisterDataCopyWithImpl<$Res>
 
 class _$_RegisterData implements _RegisterData {
   const _$_RegisterData(
-      {required this.name, required this.email, required this.password});
+      {required this.name,
+      required this.email,
+      required this.phone,
+      required this.password});
 
   @override
   final String name;
   @override
   final String email;
   @override
+  final String phone;
+  @override
   final String password;
 
   @override
   String toString() {
-    return 'RegisterData(name: $name, email: $email, password: $password)';
+    return 'RegisterData(name: $name, email: $email, phone: $phone, password: $password)';
   }
 
   @override
@@ -136,12 +152,13 @@ class _$_RegisterData implements _RegisterData {
             other is _$_RegisterData &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, email, password);
+  int get hashCode => Object.hash(runtimeType, name, email, phone, password);
 
   @JsonKey(ignore: true)
   @override
@@ -154,12 +171,15 @@ abstract class _RegisterData implements RegisterData {
   const factory _RegisterData(
       {required final String name,
       required final String email,
+      required final String phone,
       required final String password}) = _$_RegisterData;
 
   @override
   String get name;
   @override
   String get email;
+  @override
+  String get phone;
   @override
   String get password;
   @override

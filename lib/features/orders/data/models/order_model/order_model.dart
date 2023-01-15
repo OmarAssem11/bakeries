@@ -16,6 +16,8 @@ class OrderModel {
   final double subTotal;
   final double totalPrice;
   final List<OrderProductModel> orderProductsModels;
+  final String address;
+  final String phone;
   final double? rating;
 
   const OrderModel({
@@ -26,6 +28,8 @@ class OrderModel {
     required this.subTotal,
     required this.totalPrice,
     required this.orderProductsModels,
+    required this.address,
+    required this.phone,
     this.rating,
   });
 

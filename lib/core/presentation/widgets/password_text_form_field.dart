@@ -13,12 +13,12 @@ class PasswordTextFormField extends StatefulWidget {
 }
 
 class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
-  late bool isObscure;
+  late bool _isObscure;
 
   @override
   void initState() {
     super.initState();
-    isObscure = true;
+    _isObscure = true;
   }
 
   @override
@@ -31,18 +31,18 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
           prefixIcon: const Icon(Icons.lock_outline),
           suffixIcon: IconButton(
             icon: Icon(
-              isObscure
+              _isObscure
                   ? Icons.visibility_off_outlined
                   : Icons.visibility_outlined,
             ),
-            onPressed: () => setState(() => isObscure = !isObscure),
+            onPressed: () => setState(() => _isObscure = !_isObscure),
           ),
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(Sizes.s12)),
           ),
           errorStyle: const TextStyle(fontSize: Sizes.s12),
         ),
-        obscureText: isObscure,
+        obscureText: _isObscure,
         autocorrect: false,
         enableSuggestions: false,
         controller: widget.controller,

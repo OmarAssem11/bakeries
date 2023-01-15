@@ -19,7 +19,7 @@ class CheckoutFirebaseService {
       .doc(FirebaseAuth.instance.currentUser!.uid)
       .collection(FirebasePath.cart);
 
-  Future<String> checkout(CheckoutDataModel checkoutModel) async {
+  Future<String> checkout(CheckoutDataModel checkoutDataModel) async {
     final doc = _ordersCollection.doc();
     final cartQuerySnapshot = await _cartCollection.get();
     final cartProductsModels = cartQuerySnapshot.docs
@@ -53,6 +53,8 @@ class CheckoutFirebaseService {
       subTotal: subtotal,
       totalPrice: subtotal + deliveryFee,
       orderProductsModels: orderProductsModels,
+      address: checkoutDataModel.address,
+      phone: checkoutDataModel.phone,
     );
     await doc.set(orderModel.toJson());
     await Future.forEach(

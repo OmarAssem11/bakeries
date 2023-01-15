@@ -6,6 +6,7 @@ extension UserMapper on User {
         id: '',
         name: name,
         email: email,
+        phone: phone,
         password: password,
       );
 }

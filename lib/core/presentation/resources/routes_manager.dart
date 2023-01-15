@@ -135,8 +135,15 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
       );
     case AppRoutes.checkout:
       return MaterialPageRoute(
-        builder: (_) => BlocProvider(
-          create: (_) => getIt<CheckoutCubit>(),
+        builder: (_) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (_) => getIt<CheckoutCubit>(),
+            ),
+            BlocProvider(
+              create: (_) => getIt<AuthCubit>(),
+            ),
+          ],
           child: const CheckoutScreen(),
         ),
         settings: routeSettings,

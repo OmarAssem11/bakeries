@@ -29,29 +29,29 @@ class _HomeDrawerItemsState extends State<HomeDrawerItems> {
       children: [
         ListTile(
           leading: const Icon(Icons.bakery_dining_outlined),
-          title: Text(S.current.bakeries),
+          title: Text(S.of(context).bakeries),
           onTap: () => Navigator.of(context).pop(),
         ),
         ListTile(
           leading: const Icon(Icons.cake_outlined),
-          title: Text(S.current.categories),
+          title: Text(S.of(context).categories),
           onTap: () => Navigator.of(context).pushNamed(AppRoutes.categories),
         ),
         ListTile(
           leading: const Icon(Icons.shopping_basket_outlined),
-          title: Text(S.current.basket),
+          title: Text(S.of(context).basket),
           onTap: () => Navigator.of(context)
               .pushNamed(isLoggedIn ? AppRoutes.cart : AppRoutes.login),
         ),
         ListTile(
           leading: const Icon(Icons.delivery_dining_outlined),
-          title: Text(S.current.myOrders),
+          title: Text(S.of(context).myOrders),
           onTap: () => Navigator.of(context)
               .pushNamed(isLoggedIn ? AppRoutes.orders : AppRoutes.login),
         ),
         ListTile(
           leading: const Icon(Icons.settings_outlined),
-          title: Text(S.current.settings),
+          title: Text(S.of(context).settings),
           onTap: () => Navigator.of(context).pushNamed(AppRoutes.settings),
         ),
         BlocConsumer<AuthCubit, AuthState>(
@@ -63,13 +63,13 @@ class _HomeDrawerItemsState extends State<HomeDrawerItems> {
               visible: isLoggedIn,
               child: ListTile(
                 leading: const Icon(Icons.logout_outlined),
-                title: Text(S.current.logout),
+                title: Text(S.of(context).logout),
                 onTap: () => showDialog(
                   context: context,
                   builder: (_) => BlocProvider(
                     create: (_) => getIt<AuthCubit>(),
                     child: QuestionDialog(
-                      question: S.current.areYouSureYouWantToLogout,
+                      question: S.of(context).areYouSureYouWantToLogout,
                       onSubmit: BlocProvider.of<AuthCubit>(context).logout,
                     ),
                   ),

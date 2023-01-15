@@ -1,7 +1,6 @@
 import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/error_toast.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_state.dart';
 import 'package:bakery/features/location/presentation/cubit/location_cubit.dart';
@@ -23,12 +22,12 @@ class _BakeriesLocationScreenState extends State<BakeriesLocationScreen> {
   List<Marker> _bakeriesMarkers = [];
   late final LocationCubit _locationCubit;
   late final BakeriesCubit _bakeriesCubit;
-  bool _isLoading = false;
 
   @override
   void initState() {
     super.initState();
     _locationCubit = BlocProvider.of<LocationCubit>(context);
+    _bakeriesCubit = BlocProvider.of<BakeriesCubit>(context);
   }
 
   @override
@@ -45,10 +44,6 @@ class _BakeriesLocationScreenState extends State<BakeriesLocationScreen> {
         },
         builder: (context, state) => BlocConsumer<LocationCubit, LocationState>(
           listener: (context, state) {
-            state.maybeMap(
-              loading: (_) => _isLoading = true,
-              orElse: () => _isLoading = false,
-            );
             state.maybeWhen(
               serviceDisabled: () =>
                   showErrorToast(S.current.pleaseEnableYourLocation),
@@ -93,18 +88,6 @@ class _BakeriesLocationScreenState extends State<BakeriesLocationScreen> {
                         Icons.my_location_outlined,
                         color: ColorManager.black,
                       ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.52,
-                    margin: const EdgeInsets.only(bottom: Insets.xl),
-                    child: CustomElevatedButton(
-                      onPressed: () => _locationCubit.getAddressFromLatLong(),
-                      label: S.current.confirmAddress,
-                      isLoading: _isLoading,
                     ),
                   ),
                 ),

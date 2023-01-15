@@ -1,8 +1,8 @@
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/validation/validators.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
-import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
+import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
+import 'package:bakery/core/presentation/widgets/default_text_form_field.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bakery/features/auth/presentation/cubit/auth_state.dart';
 import 'package:bakery/generated/assets.gen.dart';
@@ -68,7 +68,7 @@ class _ForgoPasswordScreenState extends State<ForgotPasswordScreen> {
                       S.current.forgotPasswordCaption,
                       style: _textTheme.bodyLarge,
                     ),
-                    CustomTextFormField(
+                    DefaultTextFormField(
                       controller: _emailController,
                       hintText: S.current.emailAddress,
                       prefixIcon: Icons.email_outlined,
@@ -85,7 +85,7 @@ class _ForgoPasswordScreenState extends State<ForgotPasswordScreen> {
                           success: (_) =>
                               showErrorToast(S.current.checkYourEmail),
                         );
-                        return CustomElevatedButton(
+                        return DefaultElevatedButton(
                           label: S.current.submit,
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {

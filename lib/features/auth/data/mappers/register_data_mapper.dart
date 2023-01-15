@@ -5,6 +5,7 @@ extension RegisterDataMapper on RegisterData {
   RegisterDataModel get toModel => RegisterDataModel(
         name: name,
         email: email,
+        phone: phone,
         password: password,
       );
 }

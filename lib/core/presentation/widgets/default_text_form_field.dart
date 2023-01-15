@@ -1,8 +1,8 @@
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
+class DefaultTextFormField extends StatelessWidget {
+  const DefaultTextFormField({
     required this.controller,
     required this.hintText,
     this.prefixIcon,

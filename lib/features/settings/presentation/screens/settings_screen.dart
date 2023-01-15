@@ -9,11 +9,9 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
-    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.current.settings),
+        title: Text(S.of(context).settings),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: Insets.l),

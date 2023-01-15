@@ -39,7 +39,7 @@ class App extends StatelessWidget {
           builder: (ctx, state) {
             final cubit = BlocProvider.of<SettingsCubit>(ctx);
             return MaterialApp(
-              title: 'Bakery',
+              title: 'Bakeries',
               debugShowCheckedModeBanner: false,
               onGenerateRoute: onGenerateRoute,
               theme: getLightTheme(),

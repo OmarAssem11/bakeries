@@ -2,21 +2,15 @@ import 'package:flutter/material.dart';
 
 class ClippedImage extends StatelessWidget {
   final Widget child;
-  final double? curvedDistance;
-  final double? curvedHight;
 
-  const ClippedImage({
-    required this.child,
-    this.curvedDistance = 80,
-    this.curvedHight = 80,
-  });
+  const ClippedImage({required this.child});
 
   @override
   Widget build(BuildContext context) {
     return ClipPath(
       clipper: BackgroundClipper(
-        curvedDistance: curvedDistance,
-        curvedHeight: curvedHight,
+        curvedDistance: 80,
+        curvedHeight: 80,
       ),
       child: child,
     );
@@ -60,7 +54,5 @@ class BackgroundClipper extends CustomClipper<Path> {
   }
 
   @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return false;
-  }
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
 }

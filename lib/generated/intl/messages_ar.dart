@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "هل أنت متأكد انك تريد إلغاء الطلب؟"),
         "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد انك تريد تسجيل خروج؟"),
-        "bakeries": MessageLookupByLibrary.simpleMessage("مخابز"),
+        "bakeries": MessageLookupByLibrary.simpleMessage("المخابز"),
         "bakeriesWithin": MessageLookupByLibrary.simpleMessage("مخابز في نطاق"),
         "basket": MessageLookupByLibrary.simpleMessage("السلة"),
         "canNotBeEmpty":

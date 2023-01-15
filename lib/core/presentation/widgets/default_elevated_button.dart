@@ -2,8 +2,8 @@ import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 
-class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({
+class DefaultElevatedButton extends StatelessWidget {
+  const DefaultElevatedButton({
     required this.label,
     required this.onPressed,
     this.isLoading = false,

@@ -2,7 +2,7 @@ import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/error_toast.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
 import 'package:bakery/features/cart/domain/entities/cart_order/cart_order.dart';
@@ -125,7 +125,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                       return state.maybeWhen(
                         addToCartSuccess: () {
                           _isLoading = false;
-                          return CustomElevatedButton(
+                          return DefaultElevatedButton(
                             label: S.current.viewBasket,
                             onPressed: () =>
                                 Navigator.of(context).pushNamedAndRemoveUntil(
@@ -135,7 +135,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                             isLoading: _isLoading,
                           );
                         },
-                        orElse: () => CustomElevatedButton(
+                        orElse: () => DefaultElevatedButton(
                           label: S.current.addToBasket,
                           onPressed: () =>
                               BlocProvider.of<CartCubit>(context).addToCart(

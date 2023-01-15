@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-class FontConstants {
-  static const fontFamily = '';
-}
-
 class FontWeightManager {
   static const light = FontWeight.w300;
   static const regular = FontWeight.w400;

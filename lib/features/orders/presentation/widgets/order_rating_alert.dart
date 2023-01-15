@@ -1,6 +1,6 @@
 import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
 import 'package:bakery/features/orders/domain/entities/collect_order_data.dart/collect_order_data.dart';
 import 'package:bakery/features/orders/presentation/cubit/orders_cubit.dart';
 import 'package:bakery/features/orders/presentation/cubit/orders_state.dart';
@@ -23,8 +23,8 @@ class OrderRatingDialog extends StatefulWidget {
 }
 
 class _OrderRatingDialogState extends State<OrderRatingDialog> {
-  double rating = 3;
-  bool isLoading = false;
+  double _rating = 3;
+  bool _isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class _OrderRatingDialogState extends State<OrderRatingDialog> {
             ),
             const SizedBox(height: Sizes.s16),
             RatingBar.builder(
-              initialRating: rating,
+              initialRating: _rating,
               minRating: 1,
               allowHalfRating: true,
               itemBuilder: (context, _) => const Icon(
@@ -50,30 +50,30 @@ class _OrderRatingDialogState extends State<OrderRatingDialog> {
                 color: Colors.amber,
               ),
               onRatingUpdate: (updatedRating) {
-                rating = updatedRating;
+                _rating = updatedRating;
               },
             ),
             const SizedBox(height: Sizes.s24),
             BlocConsumer<OrdersCubit, OrdersState>(
               listener: (context, state) {
                 state.maybeWhen(
-                  markOrderAsCollectedLoading: () => isLoading = true,
+                  markOrderAsCollectedLoading: () => _isLoading = true,
                   markOrderAsCollectedSuccess: Navigator.of(context).pop,
-                  orElse: () => isLoading = false,
+                  orElse: () => _isLoading = false,
                 );
               },
               builder: (context, state) {
-                return CustomElevatedButton(
+                return DefaultElevatedButton(
                   label: S.current.submit,
                   onPressed: () => BlocProvider.of<OrdersCubit>(context)
                       .markOrderAsCollected(
                     CollectOrderData(
                       orderId: widget.orderId,
-                      orderRating: rating,
+                      orderRating: _rating,
                       productId: widget.productId,
                     ),
                   ),
-                  isLoading: isLoading,
+                  isLoading: _isLoading,
                 );
               },
             ),

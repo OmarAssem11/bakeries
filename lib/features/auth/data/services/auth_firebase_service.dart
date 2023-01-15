@@ -23,6 +23,7 @@ class AuthFirebaseService {
       id: uId,
       name: registerModel.name,
       email: registerModel.email,
+      phone: registerModel.phone,
       password: registerModel.password,
     );
     await _usersCollection.doc(uId).set(userModel.toJson());

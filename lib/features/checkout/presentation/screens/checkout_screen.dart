@@ -3,8 +3,10 @@ import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/validation/validators.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
-import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
+import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
+import 'package:bakery/core/presentation/widgets/default_text_form_field.dart';
+import 'package:bakery/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:bakery/features/auth/presentation/cubit/auth_state.dart';
 import 'package:bakery/features/cart/presentation/widgets/payment_summery.dart';
 import 'package:bakery/features/checkout/domain/entities/checkout_data.dart';
 import 'package:bakery/features/checkout/presentation/cubit/checkout_cubit.dart';
@@ -24,10 +26,16 @@ class CheckoutScreen extends StatefulWidget {
 class _CheckoutScreenState extends State<CheckoutScreen> {
   final _formKey = GlobalKey<FormState>();
   final _addressController = TextEditingController();
-  final _phoneController = TextEditingController(text: '01098031996');
+  final _phoneController = TextEditingController();
   late CheckoutArguments _arguments;
   late TextTheme _textTheme;
-  bool isLoading = false;
+  bool _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<AuthCubit>(context).getCurrentUser();
+  }
 
   @override
   void didChangeDependencies() {
@@ -57,7 +65,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomTextFormField(
+              DefaultTextFormField(
                 controller: _addressController,
                 hintText: S.current.address,
                 prefixIcon: Icons.location_on_outlined,
@@ -67,12 +75,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   fieldName: S.current.address,
                 ),
               ),
-              CustomTextFormField(
-                controller: _phoneController,
-                hintText: S.current.phone,
-                prefixIcon: Icons.phone_outlined,
-                keyboardType: TextInputType.phone,
-                validator: (phone) => phoneValidator(phone),
+              BlocConsumer<AuthCubit, AuthState>(
+                listener: (context, state) {
+                  if (state is CurrentUser) {
+                    _phoneController.text = state.user.phone;
+                  }
+                },
+                builder: (context, state) {
+                  return DefaultTextFormField(
+                    controller: _phoneController,
+                    hintText: S.current.phone,
+                    prefixIcon: Icons.phone_outlined,
+                    keyboardType: TextInputType.phone,
+                    validator: (phone) => phoneValidator(phone),
+                  );
+                },
               ),
               const SizedBox(height: Sizes.s16),
               Text(S.current.payWith, style: _textTheme.titleLarge),
@@ -112,7 +129,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               BlocConsumer<CheckoutCubit, CheckoutState>(
                 listener: (context, state) {
                   state.mapOrNull(
-                    loading: (_) => isLoading = true,
+                    loading: (_) => _isLoading = true,
                     error: (_) => showErrorToast(),
                     success: (successState) =>
                         Navigator.of(context).pushNamedAndRemoveUntil(
@@ -123,7 +140,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   );
                 },
                 builder: (context, state) {
-                  return CustomElevatedButton(
+                  return DefaultElevatedButton(
                     label: S.current.placeOrder,
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
@@ -135,7 +152,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         );
                       }
                     },
-                    isLoading: isLoading,
+                    isLoading: _isLoading,
                   );
                 },
               ),

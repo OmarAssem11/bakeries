@@ -2,7 +2,7 @@ import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/error_toast.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
 import 'package:bakery/features/location/presentation/cubit/location_cubit.dart';
 import 'package:bakery/features/location/presentation/cubit/location_state.dart';
 import 'package:bakery/generated/l10n.dart';
@@ -95,7 +95,7 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.55,
                   margin: const EdgeInsets.only(bottom: Insets.xl),
-                  child: CustomElevatedButton(
+                  child: DefaultElevatedButton(
                     onPressed: () => _locationCubit.getAddressFromLatLong(),
                     label: S.current.confirmAddress,
                     isLoading: _isLoading,

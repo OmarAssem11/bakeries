@@ -3,8 +3,8 @@ import 'package:bakery/core/presentation/resources/routes_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/util/error_toast.dart';
 import 'package:bakery/core/presentation/validation/validators.dart';
-import 'package:bakery/core/presentation/widgets/custom_elevated_button.dart';
-import 'package:bakery/core/presentation/widgets/custom_text_form_field.dart';
+import 'package:bakery/core/presentation/widgets/default_elevated_button.dart';
+import 'package:bakery/core/presentation/widgets/default_text_form_field.dart';
 import 'package:bakery/features/bakeries/domain/entities/bakery.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_cubit.dart';
 import 'package:bakery/features/bakeries/presentation/cubit/bakeries_state.dart';
@@ -51,7 +51,7 @@ class _FilterBakeriesDialogState extends State<FilterBakeriesDialog> {
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(height: Sizes.s8),
-              CustomTextFormField(
+              DefaultTextFormField(
                 controller: _rangeController,
                 hintText: S.current.rangeByKm,
                 keyboardType: TextInputType.number,
@@ -97,7 +97,7 @@ class _FilterBakeriesDialogState extends State<FilterBakeriesDialog> {
                       );
                     },
                     builder: (context, state) {
-                      return CustomElevatedButton(
+                      return DefaultElevatedButton(
                         label: S.current.filter,
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {

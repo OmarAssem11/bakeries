@@ -7,6 +7,7 @@ class RegisterData with _$RegisterData {
   const factory RegisterData({
     required String name,
     required String email,
+    required String phone,
     required String password,
   }) = _RegisterData;
 }

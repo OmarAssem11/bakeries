@@ -34,7 +34,7 @@ class _BakeriesScreenState extends State<BakeriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.current.bakeries),
+        title: Text(S.of(context).bakeries),
         actions: [
           IconButton(
             icon: const Icon(Icons.filter_list_rounded),
