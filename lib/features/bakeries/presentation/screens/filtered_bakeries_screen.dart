@@ -1,3 +1,4 @@
+import 'package:bakery/core/presentation/widgets/no_results.dart';
 import 'package:bakery/features/bakeries/presentation/widgets/bakeries_list.dart';
 import 'package:bakery/features/bakeries/presentation/widgets/filter_bakeries_alert.dart';
 import 'package:bakery/generated/l10n.dart';
@@ -29,12 +30,7 @@ class _FilteredBakeriesScreenState extends State<FilteredBakeriesScreen> {
         ),
       ),
       body: _args.filteredBakeries.isEmpty
-          ? Center(
-              child: Text(
-                S.current.noBakeriesWithinThisRange,
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-            )
+          ? NoResults(S.current.noBakeriesWithinThisRange)
           : BakeriesList(_args.filteredBakeries),
     );
   }

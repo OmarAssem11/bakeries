@@ -630,10 +630,10 @@ class S {
     );
   }
 
-  /// `Location permission are permanently denied, we cannot request permission`
+  /// `Location permission are permanently denied, we can not request permission`
   String get locationPermissionPermanentlyDenied {
     return Intl.message(
-      'Location permission are permanently denied, we cannot request permission',
+      'Location permission are permanently denied, we can not request permission',
       name: 'locationPermissionPermanentlyDenied',
       desc: '',
       args: [],

@@ -57,7 +57,7 @@
     "forgotPasswordCaption": "Don't worry it happens. Please enter the email address associated with your account.",
     "pleaseEnableYourLocation": "Please enable Your Location Service",
     "locationPermissionDenied": "Location permission are denied",
-    "locationPermissionPermanentlyDenied": "Location permission are permanently denied, we cannot request permission",
+    "locationPermissionPermanentlyDenied": "Location permission are permanently denied, we can not request permission",
     "retry": "Retry",
     "youHaveNoOrdersYet": "You have no orders yet!",
     "markAsCollected": "Mark as collected",

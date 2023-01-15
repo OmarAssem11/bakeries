@@ -79,7 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "locationPermissionDenied": MessageLookupByLibrary.simpleMessage(
             "Location permission are denied"),
         "locationPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
-            "Location permission are permanently denied, we cannot request permission"),
+            "Location permission are permanently denied, we can not request permission"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginCaption": MessageLookupByLibrary.simpleMessage(
             "Login now to order from you favorite bakeries and get your order delivered to your doorstep."),

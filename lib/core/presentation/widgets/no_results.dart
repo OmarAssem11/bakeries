@@ -1,9 +1,10 @@
 import 'package:bakery/generated/assets.gen.dart';
-import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-class NoOrders extends StatelessWidget {
-  const NoOrders();
+class NoResults extends StatelessWidget {
+  const NoResults(this.text);
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class NoOrders extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Text(
-            S.current.youHaveNoOrdersYet,
+            text,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ],

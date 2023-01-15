@@ -1,3 +1,4 @@
+import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,9 @@ class QuestionDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return AlertDialog(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(Sizes.s20)),
+      ),
       title: Text(
         question,
         style: textTheme.bodyMedium,

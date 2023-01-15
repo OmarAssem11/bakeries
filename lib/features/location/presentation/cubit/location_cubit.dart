@@ -89,7 +89,7 @@ class LocationCubit extends Cubit<LocationState> {
     final List<Marker> markers = [];
     for (final latLng in latLngList) {
       final marker = Marker(
-        markerId: const MarkerId("bakery"),
+        markerId: MarkerId("bakery $latLng"),
         position: latLng,
         icon: await BitmapDescriptor.fromAssetImage(
           ImageConfiguration.empty,

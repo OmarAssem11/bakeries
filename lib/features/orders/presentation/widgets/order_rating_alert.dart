@@ -29,6 +29,9 @@ class _OrderRatingDialogState extends State<OrderRatingDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(Sizes.s20)),
+      ),
       content: Container(
         color: ColorManager.white,
         padding: const EdgeInsets.all(Sizes.s16),

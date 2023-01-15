@@ -2,9 +2,9 @@ import 'package:bakery/core/presentation/resources/color_manager.dart';
 import 'package:bakery/core/presentation/resources/values_manager.dart';
 import 'package:bakery/core/presentation/widgets/error_indicator.dart';
 import 'package:bakery/core/presentation/widgets/loading_indicator.dart';
+import 'package:bakery/core/presentation/widgets/no_results.dart';
 import 'package:bakery/features/orders/presentation/cubit/orders_cubit.dart';
 import 'package:bakery/features/orders/presentation/cubit/orders_state.dart';
-import 'package:bakery/features/orders/presentation/widgets/no_orders.dart';
 import 'package:bakery/features/orders/presentation/widgets/order_item.dart';
 import 'package:bakery/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +36,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
             getOrdersLoading: () => const LoadingIndicator(),
             getOrdersError: () => const ErrorIndicator(),
             getOrdersSuccess: (orders) => orders.isEmpty
-                ? const NoOrders()
+                ? NoResults(S.current.youHaveNoOrdersYet)
                 : ListView.separated(
                     itemBuilder: (_, index) => Padding(
                       padding: const EdgeInsets.all(Insets.xs),
